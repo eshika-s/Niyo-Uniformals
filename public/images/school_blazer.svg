@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <!-- Drop Shadow for Flat-lay depth -->
+    <filter id="flatShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.15" />
+    </filter>
+    
+    <!-- Gradients for realistic fabric textures and lighting -->
+    <linearGradient id="blazerBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a" />
+      <stop offset="60%" stop-color="#1e3a8a" />
+      <stop offset="100%" stop-color="#172554" />
+    </linearGradient>
+    
+    <linearGradient id="blazerLapel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#1e3a8a" />
+    </linearGradient>
+
+    <linearGradient id="shirtGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+    
+    <linearGradient id="tieRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b91c1c" />
+      <stop offset="100%" stop-color="#7f1d1d" />
+    </linearGradient>
+
+    <linearGradient id="tieGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+
+    <linearGradient id="buttonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#cbd5e1" />
+      <stop offset="100%" stop-color="#64748b" />
+    </linearGradient>
+  </defs>
+
+  <!-- Canvas Background (matching ProductCard styling but keeping transparency clean) -->
+  <rect width="100%" height="100%" fill="none" />
+
+  <g filter="url(#flatShadow)">
+    <!-- 1. White Inner Collared Shirt -->
+    <!-- Collar Left -->
+    <path d="M 175,100 L 200,140 L 200,105 Z" fill="url(#shirtGrad)" stroke="#cbd5e1" stroke-width="1" />
+    <!-- Collar Right -->
+    <path d="M 225,100 L 200,140 L 200,105 Z" fill="url(#shirtGrad)" stroke="#cbd5e1" stroke-width="1" />
+    
+    <!-- 2. Striped School Tie -->
+    <g>
+      <!-- Tie Knot -->
+      <path d="M 193,127 L 207,127 L 204,142 L 196,142 Z" fill="url(#tieRed)" />
+      <path d="M 194,130 Q 200,133 206,130 L 203,142 L 197,142 Z" fill="url(#tieGold)" />
+      
+      <!-- Tie Body -->
+      <path d="M 196,142 L 204,142 L 208,240 L 200,255 L 192,240 Z" fill="url(#tieRed)" />
+      
+      <!-- Diagonal Gold Stripes -->
+      <path d="M 195,160 L 205,170 L 205,178 L 195,168 Z" fill="url(#tieGold)" />
+      <path d="M 194,185 L 206,197 L 206,205 L 194,193 Z" fill="url(#tieGold)" />
+      <path d="M 193,210 L 207,224 L 207,232 L 193,218 Z" fill="url(#tieGold)" />
+    </g>
+
+    <!-- 3. Blazer Back Collar -->
+    <path d="M 155,105 Q 200,90 245,105 L 235,120 Q 200,110 165,120 Z" fill="#172554" />
+
+    <!-- 4. Blazer Main Body -->
+    <!-- Left Panel -->
+    <path d="M 160,115 C 120,130 110,210 110,340 C 110,350 120,355 130,355 L 200,340 L 200,140 Z" fill="url(#blazerBody)" />
+    <!-- Right Panel -->
+    <path d="M 240,115 C 280,130 290,210 290,340 C 290,350 280,355 270,355 L 200,340 L 200,140 Z" fill="url(#blazerBody)" />
+
+    <!-- 5. Sleeves (Flat-lay style) -->
+    <!-- Left Sleeve -->
+    <path d="M 125,125 C 90,160 80,260 85,320 C 86,325 95,327 98,322 L 115,260 L 115,160 Z" fill="#1e3b8b" />
+    <path d="M 85,320 L 98,322 L 95,325 L 82,323 Z" fill="#0f172a" opacity="0.3" /> <!-- Sleeve opening shadow -->
+    <!-- Right Sleeve -->
+    <path d="M 275,125 C 310,160 320,260 315,320 C 314,325 305,327 302,322 L 285,260 L 285,160 Z" fill="#172554" />
+    <path d="M 315,320 L 302,322 L 305,325 L 318,323 Z" fill="#0f172a" opacity="0.3" />
+
+    <!-- 6. Lapels -->
+    <!-- Left Lapel -->
+    <path d="M 165,112 L 145,185 L 180,215 L 200,320 L 200,140 Z" fill="url(#blazerLapel)" stroke="#1d4ed8" stroke-width="0.5" />
+    <!-- Right Lapel -->
+    <path d="M 235,112 L 255,185 L 220,215 L 200,320 L 200,140 Z" fill="url(#blazerLapel)" stroke="#1d4ed8" stroke-width="0.5" />
+
+    <!-- 7. Pockets -->
+    <!-- Left Lower Pocket -->
+    <path d="M 125,270 L 165,265 C 167,265 168,268 168,270 L 163,300 C 163,305 127,310 123,305 L 122,275 C 122,272 123,270 125,270 Z" fill="#172554" stroke="#1d4ed8" stroke-width="0.5" />
+    <path d="M 123,267 L 167,262 C 169,262 170,265 170,267 L 170,273 L 121,278 L 121,272 C 121,269 122,267 123,267 Z" fill="#1e3a8a" />
+    
+    <!-- Right Lower Pocket -->
+    <path d="M 275,270 L 235,265 C 233,265 232,268 232,270 L 237,300 C 237,305 273,310 277,305 L 278,275 C 278,272 277,270 275,270 Z" fill="#172554" stroke="#1d4ed8" stroke-width="0.5" />
+    <path d="M 277,267 L 233,262 C 231,262 230,265 230,267 L 230,273 L 279,278 L 279,272 C 279,269 278,267 277,267 Z" fill="#1e3a8a" />
+
+    <!-- Breast Pocket (Right side visual / Left side of blazer chest) -->
+    <path d="M 138,190 L 165,185 L 164,210 L 137,215 Z" fill="#172554" stroke="#1d4ed8" stroke-width="0.5" />
+    <!-- Crest on Breast Pocket -->
+    <path d="M 147,196 C 147,196 150,192 153,195 C 156,192 159,196 159,196 C 159,203 153,208 153,208 C 153,208 147,203 147,196 Z" fill="#eab308" />
+    <circle cx="153" cy="201" r="2" fill="#1e3a8a" />
+
+    <!-- 8. Buttons -->
+    <!-- Top Button -->
+    <circle cx="206" cy="235" r="5" fill="url(#buttonGrad)" stroke="#334155" stroke-width="0.5" />
+    <circle cx="206" cy="235" r="2.5" fill="#1e293b" />
+    <!-- Bottom Button -->
+    <circle cx="205" cy="275" r="5" fill="url(#buttonGrad)" stroke="#334155" stroke-width="0.5" />
+    <circle cx="205" cy="275" r="2.5" fill="#1e293b" />
+  </g>
+</svg>

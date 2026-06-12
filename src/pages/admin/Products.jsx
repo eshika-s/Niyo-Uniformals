@@ -1,10 +1,15 @@
-import { useState, useEffect } from 'react'
-import { Plus, Pencil, Trash2, Star, StarOff, Loader2, Package, X, Upload } from 'lucide-react'
-import AdminSidebar from '@/components/layout/AdminSidebar'
+import { useState, useEffect, useMemo } from 'react'
+import {
+  Plus, Pencil, Trash2, Star, StarOff, Loader2, Package,
+  X, Upload, Eye, EyeOff, Search, Filter, ChevronUp, ChevronDown
+} from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import AdminLayout from '@/components/layout/AdminLayout'
 import { productService } from '@/services/productService'
 import { useCategories } from '@/hooks/useCategories'
 import toast from 'react-hot-toast'
 
+// ─── Product Form Modal ────────────────────────────────────────────────────────
 function ProductForm({ product, categories, onSave, onClose }) {
   const [form, setForm] = useState({
     name: product?.name || '',
@@ -13,6 +18,8 @@ function ProductForm({ product, categories, onSave, onClose }) {
     fabric: product?.fabric || '',
     price_range: product?.price_range || '',
     min_order_qty: product?.min_order_qty || '',
+    colors: product?.colors || '',
+    tags: product?.tags || '',
     is_featured: product?.is_featured || false,
     is_visible: product?.is_visible ?? true,
     images: product?.images || [],
@@ -23,14 +30,14 @@ function ProductForm({ product, categories, onSave, onClose }) {
   const set = f => e => setForm(p => ({ ...p, [f]: e.target.type === 'checkbox' ? e.target.checked : e.target.value }))
 
   const handleImageUpload = async e => {
-    const file = e.target.files?.[0]
-    if (!file) return
+    const files = Array.from(e.target.files || [])
+    if (!files.length) return
     setUploading(true)
     try {
       const id = product?.id || `temp-${Date.now()}`
-      const url = await productService.uploadImage(file, id)
-      setForm(p => ({ ...p, images: [...p.images, url] }))
-      toast.success('Image uploaded')
+      const urls = await Promise.all(files.map(f => productService.uploadImage(f, id)))
+      setForm(p => ({ ...p, images: [...p.images, ...urls] }))
+      toast.success(`${urls.length} image${urls.length > 1 ? 's' : ''} uploaded`)
     } catch {
       toast.error('Image upload failed')
     } finally {
@@ -39,116 +46,201 @@ function ProductForm({ product, categories, onSave, onClose }) {
   }
 
   const removeImage = url => setForm(p => ({ ...p, images: p.images.filter(i => i !== url) }))
+  const moveImage = (idx, dir) => {
+    const imgs = [...form.images]
+    const swap = idx + dir
+    if (swap < 0 || swap >= imgs.length) return
+    ;[imgs[idx], imgs[swap]] = [imgs[swap], imgs[idx]]
+    setForm(p => ({ ...p, images: imgs }))
+  }
 
   const handleSave = async () => {
-    if (!form.name) return toast.error('Product name is required')
+    if (!form.name.trim()) return toast.error('Product name is required')
     setSaving(true)
     try {
       const data = { ...form, min_order_qty: form.min_order_qty ? parseInt(form.min_order_qty) : null }
       if (product) await productService.update(product.id, data)
       else await productService.create(data)
-      toast.success(product ? 'Product updated' : 'Product created')
+      toast.success(product ? 'Product updated!' : 'Product created!')
       onSave()
     } catch { toast.error('Failed to save product') }
     finally { setSaving(false) }
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-950/70 backdrop-blur-sm">
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 sticky top-0 bg-white">
-          <h2 className="font-display font-bold text-navy-900">{product ? 'Edit Product' : 'Add Product'}</h2>
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-950/80 backdrop-blur-sm"
+    >
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95, y: 15 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.95, y: 15 }}
+        transition={{ duration: 0.25, ease: 'easeOut' }}
+        className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[92vh] overflow-y-auto"
+      >
+        {/* Header */}
+        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 sticky top-0 bg-white z-10">
+          <div>
+            <h2 className="font-display font-bold text-navy-900">{product ? 'Edit Product' : 'Add New Product'}</h2>
+            <p className="text-xs text-slate-400 mt-0.5">{product ? 'Update the details below' : 'Fill in product information'}</p>
+          </div>
           <button onClick={onClose} className="p-2 hover:bg-slate-100 rounded-lg transition-colors"><X size={16} /></button>
         </div>
-        <div className="p-6 space-y-4">
+
+        <div className="p-6 space-y-5">
+          {/* Name */}
           <div>
-            <label className="text-xs font-medium text-slate-500 block mb-1.5">Product Name *</label>
-            <input type="text" value={form.name} onChange={set('name')} placeholder="e.g. School Winter Uniform"
-              className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-navy-300" />
+            <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider block mb-1.5">Product Name *</label>
+            <input type="text" value={form.name} onChange={set('name')} placeholder="e.g. School Winter Uniform Set"
+              className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-navy-300 transition-all" />
           </div>
+
+          {/* Category & Fabric */}
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="text-xs font-medium text-slate-500 block mb-1.5">Category</label>
+              <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider block mb-1.5">Category</label>
               <select value={form.category_id} onChange={set('category_id')}
-                className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-navy-300 bg-white">
+                className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-navy-300 bg-white transition-all">
                 <option value="">Select category</option>
                 {categories.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
               </select>
             </div>
             <div>
-              <label className="text-xs font-medium text-slate-500 block mb-1.5">Fabric</label>
-              <input type="text" value={form.fabric} onChange={set('fabric')} placeholder="e.g. Cotton-Polyester"
-                className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-navy-300" />
+              <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider block mb-1.5">Fabric</label>
+              <input type="text" value={form.fabric} onChange={set('fabric')} placeholder="e.g. Cotton-Polyester Blend"
+                className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-navy-300 transition-all" />
             </div>
           </div>
+
+          {/* Price Range & MOQ */}
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="text-xs font-medium text-slate-500 block mb-1.5">Price Range</label>
-              <input type="text" value={form.price_range} onChange={set('price_range')} placeholder="e.g. ₹250 - ₹450"
-                className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-navy-300" />
+              <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider block mb-1.5">Price Range</label>
+              <input type="text" value={form.price_range} onChange={set('price_range')} placeholder="e.g. ₹250 – ₹450"
+                className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-navy-300 transition-all" />
             </div>
             <div>
-              <label className="text-xs font-medium text-slate-500 block mb-1.5">Min. Order Qty</label>
+              <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider block mb-1.5">Min. Order Qty</label>
               <input type="number" value={form.min_order_qty} onChange={set('min_order_qty')} placeholder="50"
-                className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-navy-300" />
+                className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-navy-300 transition-all" />
             </div>
           </div>
-          <div>
-            <label className="text-xs font-medium text-slate-500 block mb-1.5">Description</label>
-            <textarea value={form.description} onChange={set('description')} rows={3} placeholder="Product description…"
-              className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-navy-300 resize-none" />
+
+          {/* Colors & Tags */}
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider block mb-1.5">Available Colors</label>
+              <input type="text" value={form.colors} onChange={set('colors')} placeholder="Navy, White, Grey"
+                className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-navy-300 transition-all" />
+            </div>
+            <div>
+              <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider block mb-1.5">Tags</label>
+              <input type="text" value={form.tags} onChange={set('tags')} placeholder="school, winter, blazer"
+                className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-navy-300 transition-all" />
+            </div>
           </div>
-            <label className="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" checked={form.is_featured} onChange={set('is_featured')} className="rounded" />
-              <span className="text-sm text-slate-600">Feature on homepage</span>
+
+          {/* Description */}
+          <div>
+            <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider block mb-1.5">Description</label>
+            <textarea value={form.description} onChange={set('description')} rows={3} placeholder="Detailed product description…"
+              className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-navy-300 resize-none transition-all" />
+          </div>
+
+          {/* Toggles */}
+          <div className="flex gap-6 bg-slate-50 rounded-xl p-4">
+            <label className="flex items-center gap-2.5 cursor-pointer">
+              <div className={`relative w-10 h-5 rounded-full transition-colors ${form.is_featured ? 'bg-gold-500' : 'bg-slate-300'}`}
+                onClick={() => setForm(p => ({ ...p, is_featured: !p.is_featured }))}>
+                <div className={`absolute top-0.5 w-4 h-4 bg-white rounded-full shadow transition-transform ${form.is_featured ? 'translate-x-5' : 'translate-x-0.5'}`} />
+              </div>
+              <span className="text-sm text-slate-700 font-medium">Featured on homepage</span>
             </label>
-            <label className="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" checked={form.is_visible} onChange={set('is_visible')} className="rounded" />
-              <span className="text-sm text-slate-600">Visible in catalogue</span>
+            <label className="flex items-center gap-2.5 cursor-pointer">
+              <div className={`relative w-10 h-5 rounded-full transition-colors ${form.is_visible ? 'bg-navy-600' : 'bg-slate-300'}`}
+                onClick={() => setForm(p => ({ ...p, is_visible: !p.is_visible }))}>
+                <div className={`absolute top-0.5 w-4 h-4 bg-white rounded-full shadow transition-transform ${form.is_visible ? 'translate-x-5' : 'translate-x-0.5'}`} />
+              </div>
+              <span className="text-sm text-slate-700 font-medium">Visible in catalogue</span>
             </label>
+          </div>
+
           {/* Images */}
           <div>
-            <label className="text-xs font-medium text-slate-500 block mb-2">Product Images</label>
+            <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider block mb-2">
+              Product Images <span className="text-slate-400 font-normal normal-case">(first image is the cover)</span>
+            </label>
             <div className="flex gap-3 flex-wrap">
-              {form.images.map(url => (
-                <div key={url} className="relative w-20 h-20 rounded-xl overflow-hidden border border-slate-200 group">
-                  <img src={url} alt="" className="w-full h-full object-cover" />
+              {form.images.map((url, idx) => (
+                <div key={url} className="relative group">
+                  <div className="w-20 h-20 rounded-xl overflow-hidden border border-slate-200">
+                    <img src={url} alt="" className="w-full h-full object-cover" />
+                  </div>
+                  {/* Remove */}
                   <button onClick={() => removeImage(url)}
-                    className="absolute inset-0 bg-red-500/70 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                    <X size={14} className="text-white" />
+                    className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow">
+                    <X size={10} className="text-white" />
                   </button>
+                  {/* Reorder arrows */}
+                  <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                    {idx > 0 && (
+                      <button onClick={() => moveImage(idx, -1)}
+                        className="w-5 h-5 bg-navy-700/80 rounded flex items-center justify-center">
+                        <ChevronUp size={10} className="text-white" />
+                      </button>
+                    )}
+                    {idx < form.images.length - 1 && (
+                      <button onClick={() => moveImage(idx, 1)}
+                        className="w-5 h-5 bg-navy-700/80 rounded flex items-center justify-center">
+                        <ChevronDown size={10} className="text-white" />
+                      </button>
+                    )}
+                  </div>
+                  {idx === 0 && (
+                    <span className="absolute top-1 left-1 text-[9px] bg-gold-500 text-white font-bold px-1 rounded">COVER</span>
+                  )}
                 </div>
               ))}
-              <label className="w-20 h-20 rounded-xl border-2 border-dashed border-slate-200 flex flex-col items-center justify-center cursor-pointer hover:border-navy-400 transition-colors">
+              <label className="w-20 h-20 rounded-xl border-2 border-dashed border-slate-200 flex flex-col items-center justify-center cursor-pointer hover:border-navy-400 hover:bg-navy-50/40 transition-all gap-1">
                 {uploading ? <Loader2 size={18} className="animate-spin text-slate-400" /> : <Upload size={18} className="text-slate-400" />}
-                <input type="file" accept="image/*" onChange={handleImageUpload} className="hidden" />
+                <span className="text-[9px] text-slate-400 font-medium">Add Image</span>
+                <input type="file" accept="image/*" multiple onChange={handleImageUpload} className="hidden" />
               </label>
             </div>
+            <p className="text-xs text-slate-400 mt-2">You can upload multiple images at once. Hover to reorder.</p>
           </div>
         </div>
-        <div className="px-6 py-4 border-t border-slate-100 flex justify-end gap-3">
-          <button onClick={onClose} className="px-4 py-2 text-sm border border-slate-200 rounded-xl hover:bg-slate-50 transition-colors">Cancel</button>
+
+        {/* Footer */}
+        <div className="px-6 py-4 border-t border-slate-100 flex justify-end gap-3 sticky bottom-0 bg-white">
+          <button onClick={onClose} className="px-5 py-2 text-sm border border-slate-200 rounded-xl hover:bg-slate-50 transition-colors">Cancel</button>
           <button onClick={handleSave} disabled={saving}
-            className="flex items-center gap-2 px-6 py-2 bg-navy-700 text-white text-sm font-semibold rounded-xl hover:bg-navy-800 transition-colors disabled:opacity-60">
+            className="flex items-center gap-2 px-7 py-2 bg-navy-700 text-white text-sm font-semibold rounded-xl hover:bg-navy-800 transition-colors disabled:opacity-60">
             {saving && <Loader2 size={13} className="animate-spin" />}
-            {saving ? 'Saving…' : 'Save Product'}
+            {saving ? 'Saving…' : product ? 'Save Changes' : 'Create Product'}
           </button>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   )
 }
 
+// ─── Main Products Page ────────────────────────────────────────────────────────
 export default function AdminProducts() {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
   const [editing, setEditing] = useState(null)
   const [showForm, setShowForm] = useState(false)
+  const [search, setSearch] = useState('')
+  const [catFilter, setCatFilter] = useState('')
   const { categories } = useCategories()
 
   const load = async () => {
     setLoading(true)
-    const { data } = await productService.getAll({ limit: 100, showHidden: true })
+    const { data } = await productService.getAll({ limit: 200, showHidden: true })
     setProducts(data ?? [])
     setLoading(false)
   }
@@ -156,7 +248,7 @@ export default function AdminProducts() {
   useEffect(() => { load() }, [])
 
   const handleDelete = async id => {
-    if (!confirm('Delete this product?')) return
+    if (!confirm('Delete this product? This cannot be undone.')) return
     await productService.delete(id)
     toast.success('Product deleted')
     load()
@@ -168,92 +260,202 @@ export default function AdminProducts() {
     load()
   }
 
-  return (
-    <div className="flex min-h-screen bg-slate-50">
-      <AdminSidebar />
-      <main className="flex-1 p-8">
-        <title>Products — Niyo Admin</title>
-        <div className="flex items-center justify-between mb-8">
-          <div>
-            <h1 className="text-2xl font-display font-bold text-navy-900">Products</h1>
-            <p className="text-slate-500 text-sm">{products.length} products total</p>
-          </div>
-          <button onClick={() => { setEditing(null); setShowForm(true) }}
-            className="flex items-center gap-2 px-5 py-2.5 bg-navy-700 text-white text-sm font-semibold rounded-xl hover:bg-navy-800 transition-colors">
-            <Plus size={16} />
-            Add Product
-          </button>
-        </div>
+  const toggleVisible = async (id, val) => {
+    await productService.update(id, { is_visible: !val })
+    toast.success(!val ? 'Product is now visible' : 'Product hidden from catalogue')
+    load()
+  }
 
-        {loading ? (
-          <div className="space-y-3">
-            {[...Array(5)].map((_, i) => <div key={i} className="h-16 bg-white rounded-2xl animate-pulse border border-slate-100" />)}
-          </div>
-        ) : (
-          <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-slate-50">
-                  <th className="text-left px-6 py-3 text-xs font-medium text-slate-400 uppercase">Product</th>
-                  <th className="text-left px-4 py-3 text-xs font-medium text-slate-400 uppercase hidden md:table-cell">Category</th>
-                  <th className="text-left px-4 py-3 text-xs font-medium text-slate-400 uppercase hidden lg:table-cell">Price</th>
-                  <th className="px-4 py-3 text-xs font-medium text-slate-400 uppercase text-center">Featured</th>
-                  <th className="px-4 py-3 text-xs font-medium text-slate-400 uppercase text-right">Actions</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-50">
-                {products.map(p => (
-                  <tr key={p.id} className="hover:bg-slate-50/50 transition-colors">
+  // Client-side search + filter
+  const filtered = useMemo(() => {
+    let list = products
+    if (search.trim()) {
+      const s = search.toLowerCase()
+      list = list.filter(p => p.name.toLowerCase().includes(s) || p.categories?.name?.toLowerCase().includes(s))
+    }
+    if (catFilter) list = list.filter(p => p.category_id === catFilter || p.categories?.id === catFilter)
+    return list
+  }, [products, search, catFilter])
+
+  const addBtn = (
+    <motion.button
+      id="admin-add-product-btn"
+      onClick={() => { setEditing(null); setShowForm(true) }}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      className="flex items-center gap-2 px-5 py-2.5 bg-navy-700 text-white text-sm font-semibold rounded-xl hover:bg-navy-800 transition-colors"
+    >
+      <Plus size={16} /> Add Product
+    </motion.button>
+  )
+
+  return (
+    <AdminLayout
+      title="Products"
+      subtitle={`${products.length} products total`}
+      actions={addBtn}
+    >
+      <title>Products — Niyo Admin</title>
+
+      {/* Search + Filter bar */}
+      <motion.div 
+        className="flex flex-wrap gap-3 mb-6"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        <div className="relative flex-1 min-w-52">
+          <Search size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+          <input
+            type="text"
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            placeholder="Search products…"
+            className="w-full pl-9 pr-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-navy-300 bg-white transition-all"
+          />
+        </div>
+        <div className="flex items-center gap-2">
+          <Filter size={14} className="text-slate-400" />
+          <select
+            value={catFilter}
+            onChange={e => setCatFilter(e.target.value)}
+            className="text-sm border border-slate-200 rounded-xl px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-navy-300 bg-white"
+          >
+            <option value="">All Categories</option>
+            {categories.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
+          </select>
+        </div>
+        {(search || catFilter) && (
+          <button
+            onClick={() => { setSearch(''); setCatFilter('') }}
+            className="flex items-center gap-1.5 px-3 py-2 text-xs text-slate-500 border border-slate-200 rounded-xl hover:bg-slate-50 transition-colors"
+          >
+            <X size={12} /> Clear
+          </button>
+        )}
+      </motion.div>
+
+      {/* Table */}
+      {loading ? (
+        <div className="space-y-3">
+          {[...Array(5)].map((_, i) => <div key={i} className="h-16 bg-white rounded-2xl animate-pulse border border-slate-100" />)}
+        </div>
+      ) : (
+        <motion.div 
+          className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4 }}
+        >
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-slate-100 bg-slate-50/50">
+                <th className="text-left px-6 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wider">Product</th>
+                <th className="text-left px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wider hidden md:table-cell">Category</th>
+                <th className="text-left px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wider hidden lg:table-cell">Price</th>
+                <th className="px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wider text-center">Featured</th>
+                <th className="px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wider text-center">Visible</th>
+                <th className="px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wider text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-50">
+              <AnimatePresence initial={false}>
+                {filtered.map(p => (
+                  <motion.tr 
+                    key={p.id}
+                    layoutId={`product-row-${p.id}`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className={`hover:bg-slate-50/50 transition-colors ${!p.is_visible ? 'opacity-50' : ''}`}
+                  >
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-lg bg-slate-100 overflow-hidden shrink-0">
-                          {p.images?.[0] ? <img src={p.images[0]} alt="" className="w-full h-full object-cover" /> : <Package size={16} className="text-slate-300 m-auto mt-3" />}
+                          {p.images?.[0]
+                            ? <img src={p.images[0]} alt="" className="w-full h-full object-cover" />
+                            : <Package size={16} className="text-slate-300 m-auto mt-3" />
+                          }
                         </div>
-                        <p className="font-medium text-navy-900 line-clamp-1">{p.name}</p>
+                        <div>
+                          <p className="font-medium text-navy-900 line-clamp-1">{p.name}</p>
+                          {p.images?.length > 0 ? (
+                            <p className="text-xs text-slate-400 mt-0.5">{p.images.length} image{p.images.length !== 1 ? 's' : ''}</p>
+                          ) : (
+                            <span className="inline-flex items-center gap-1 mt-1 px-2 py-0.5 bg-red-50 text-red-600 text-[10px] font-bold uppercase tracking-wider rounded border border-red-100">
+                              Missing Image
+                            </span>
+                          )}
+                        </div>
                       </div>
                     </td>
-                    <td className="px-4 py-4 text-slate-500 hidden md:table-cell">{p.categories?.name || '—'}</td>
-                    <td className="px-4 py-4 text-slate-500 hidden lg:table-cell">{p.price_range || '—'}</td>
+                    <td className="px-4 py-4 text-slate-500 hidden md:table-cell">
+                      <span className="px-2.5 py-1 bg-slate-100 rounded-lg text-xs font-medium">
+                        {p.categories?.name || '—'}
+                      </span>
+                    </td>
+                    <td className="px-4 py-4 text-slate-600 hidden lg:table-cell text-xs font-medium">{p.price_range || '—'}</td>
                     <td className="px-4 py-4 text-center">
                       <button onClick={() => toggleFeatured(p.id, p.is_featured)}
+                        title={p.is_featured ? 'Remove from featured' : 'Mark as featured'}
                         className="p-1.5 rounded-lg hover:bg-slate-100 transition-colors">
-                        {p.is_featured ? <Star size={16} className="text-gold-500" fill="currentColor" /> : <StarOff size={16} className="text-slate-300" />}
+                        {p.is_featured
+                          ? <Star size={16} className="text-gold-500" fill="currentColor" />
+                          : <StarOff size={16} className="text-slate-300" />
+                        }
+                      </button>
+                    </td>
+                    <td className="px-4 py-4 text-center">
+                      <button onClick={() => toggleVisible(p.id, p.is_visible)}
+                        title={p.is_visible ? 'Hide from catalogue' : 'Show in catalogue'}
+                        className="p-1.5 rounded-lg hover:bg-slate-100 transition-colors">
+                        {p.is_visible
+                          ? <Eye size={16} className="text-emerald-500" />
+                          : <EyeOff size={16} className="text-slate-300" />
+                        }
                       </button>
                     </td>
                     <td className="px-4 py-4 text-right">
-                      <div className="flex items-center justify-end gap-2">
+                      <div className="flex items-center justify-end gap-1.5">
                         <button onClick={() => { setEditing(p); setShowForm(true) }}
-                          className="p-2 hover:bg-slate-100 rounded-lg transition-colors text-slate-500 hover:text-navy-700">
+                          title="Edit product"
+                          className="p-2 hover:bg-slate-100 rounded-lg transition-colors text-slate-400 hover:text-navy-700">
                           <Pencil size={14} />
                         </button>
                         <button onClick={() => handleDelete(p.id)}
-                          className="p-2 hover:bg-red-50 rounded-lg transition-colors text-slate-500 hover:text-red-600">
+                          title="Delete product"
+                          className="p-2 hover:bg-red-50 rounded-lg transition-colors text-slate-400 hover:text-red-600">
                           <Trash2 size={14} />
                         </button>
                       </div>
                     </td>
-                  </tr>
+                  </motion.tr>
                 ))}
-              </tbody>
-            </table>
-            {products.length === 0 && (
-              <div className="py-16 text-center text-slate-400">
-                <Package size={40} className="mx-auto mb-3 opacity-30" />
-                <p>No products yet. Add your first product!</p>
-              </div>
-            )}
-          </div>
-        )}
-      </main>
+              </AnimatePresence>
+            </tbody>
+          </table>
 
-      {showForm && (
-        <ProductForm
-          product={editing}
-          categories={categories}
-          onSave={() => { setShowForm(false); load() }}
-          onClose={() => setShowForm(false)}
-        />
+          {filtered.length === 0 && (
+            <div className="py-16 text-center text-slate-400">
+              <Package size={40} className="mx-auto mb-3 opacity-30" />
+              <p className="font-medium">{search || catFilter ? 'No products match your filters' : 'No products yet'}</p>
+              <p className="text-xs mt-1">{search || catFilter ? 'Try clearing the search or filter' : 'Click "Add Product" to get started'}</p>
+            </div>
+          )}
+        </motion.div>
       )}
-    </div>
+
+      <AnimatePresence>
+        {showForm && (
+          <ProductForm
+            product={editing}
+            categories={categories}
+            onSave={() => { setShowForm(false); load() }}
+            onClose={() => setShowForm(false)}
+          />
+        )}
+      </AnimatePresence>
+    </AdminLayout>
   )
 }

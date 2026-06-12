@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <filter id="flatShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.12" />
+    </filter>
+    
+    <linearGradient id="trouserGrey" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6b7280" />
+      <stop offset="70%" stop-color="#4b5563" />
+      <stop offset="100%" stop-color="#374151" />
+    </linearGradient>
+
+    <linearGradient id="creaseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4b5563" />
+      <stop offset="50%" stop-color="#9ca3af" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#374151" />
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="none" />
+
+  <g filter="url(#flatShadow)">
+    <!-- 1. Left Folded Leg (Underneath slightly) -->
+    <path d="M 155,140 L 195,140 L 180,355 L 140,355 Z" fill="#374151" />
+    <path d="M 140,355 L 180,355 L 180,360 L 140,360 Z" fill="#1f2937" /> <!-- Cuff fold -->
+
+    <!-- 2. Right Folded Leg (Overlaid) -->
+    <path d="M 195,140 L 235,140 L 255,355 L 215,355 Z" fill="url(#trouserGrey)" stroke="#374151" stroke-width="0.5" />
+    <path d="M 215,355 L 255,355 L 255,360 L 215,360 Z" fill="#374151" /> <!-- Cuff fold -->
+
+    <!-- Leg Crease Highlight on Right Leg -->
+    <path d="M 215,140 L 235,355" stroke="#9ca3af" stroke-width="1.2" opacity="0.35" />
+
+    <!-- 3. Waistband Area -->
+    <path d="M 150,85 L 240,85 L 243,120 L 147,120 Z" fill="url(#trouserGrey)" stroke="#374151" stroke-width="0.5" />
+    
+    <!-- Fly seam -->
+    <path d="M 195,120 Q 195,150 188,165" stroke="#1f2937" stroke-width="1.2" fill="none" />
+    <path d="M 195,120 Q 198,150 191,165" stroke="#9ca3af" stroke-width="0.5" stroke-dasharray="1.5,1.5" fill="none" opacity="0.5" />
+
+    <!-- Waist Button & Hooks -->
+    <circle cx="195" cy="95" r="4.5" fill="#1f2937" stroke="#9ca3af" stroke-width="0.5" />
+
+    <!-- Belt Loops -->
+    <rect x="155" y="85" width="5" height="35" fill="#374151" />
+    <rect x="180" y="85" width="5" height="35" fill="#374151" />
+    <rect x="210" y="85" width="5" height="35" fill="#374151" />
+    <rect x="230" y="85" width="5" height="35" fill="#374151" />
+
+    <!-- Side Pockets -->
+    <!-- Left pocket line -->
+    <path d="M 152,105 L 147,135" stroke="#1f2937" stroke-width="1.5" fill="none" />
+    <!-- Right pocket line -->
+    <path d="M 238,105 L 243,135" stroke="#1f2937" stroke-width="1.5" fill="none" />
+
+    <!-- Pocket stitching highlights -->
+    <path d="M 154,105 L 149,135" stroke="#9ca3af" stroke-width="0.5" stroke-dasharray="1,1" fill="none" opacity="0.5" />
+    <path d="M 236,105 L 241,135" stroke="#9ca3af" stroke-width="0.5" stroke-dasharray="1,1" fill="none" opacity="0.5" />
+  </g>
+</svg>

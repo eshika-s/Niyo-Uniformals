@@ -6,8 +6,11 @@ export default function ImageGallery({ images = [], productName }) {
 
   if (!images.length) {
     return (
-      <div className="h-96 bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-100">
-        <Package size={64} className="text-slate-200" />
+      <div className="h-96 lg:h-[480px] bg-slate-100/80 rounded-2xl flex flex-col items-center justify-center gap-4 border border-slate-100">
+        <div className="w-24 h-24 rounded-full bg-white shadow-sm flex items-center justify-center text-slate-400 font-display font-bold text-3xl tracking-wider">
+          {productName?.split(' ').slice(0, 2).map(n => n[0]).join('').toUpperCase() || 'NA'}
+        </div>
+        <span className="text-xs font-bold text-slate-400 tracking-widest uppercase">Photo Coming Soon</span>
       </div>
     )
   }

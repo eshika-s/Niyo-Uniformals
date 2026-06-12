@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <filter id="flatShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.15" />
+    </filter>
+    
+    <linearGradient id="trackBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="70%" stop-color="#1d4ed8" />
+      <stop offset="100%" stop-color="#1e3a8a" />
+    </linearGradient>
+
+    <linearGradient id="trackBlueDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1d4ed8" />
+      <stop offset="100%" stop-color="#172554" />
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="none" />
+
+  <g filter="url(#flatShadow)">
+    <!-- 1. Track Pants (Laid underneath the jacket) -->
+    <g>
+      <!-- Waistband of Pants -->
+      <path d="M 210,210 L 280,210 L 278,225 L 212,225 Z" fill="url(#trackBlueDark)" stroke="#1e3a8a" stroke-width="0.5" />
+      <!-- Left Pant Leg -->
+      <path d="M 212,225 L 243,225 L 225,350 L 195,350 Z" fill="url(#trackBlueDark)" />
+      <!-- Right Pant Leg -->
+      <path d="M 243,225 L 278,225 L 265,350 L 235,350 Z" fill="url(#trackBlueDark)" />
+      <!-- White side stripe on pants -->
+      <path d="M 268,225 L 275,225 L 262,350 L 255,350 Z" fill="#ffffff" />
+      
+      <!-- Pant cuffs -->
+      <rect x="195" y="350" width="30" height="6" fill="#172554" rx="1" />
+      <rect x="235" y="350" width="30" height="6" fill="#172554" rx="1" />
+    </g>
+
+    <!-- 2. Track Jacket (Layered over pants on the left side) -->
+    <g>
+      <!-- Jacket Body -->
+      <path d="M 120,130 L 190,130 C 200,130 205,145 205,170 L 195,290 C 195,295 190,300 180,300 L 120,300 C 110,300 105,295 105,290 L 105,170 C 105,145 110,130 120,130 Z" fill="url(#trackBlue)" stroke="#1d4ed8" stroke-width="0.5" />
+      
+      <!-- High Collar -->
+      <path d="M 135,130 Q 155,125 175,130 L 175,112 Q 155,108 135,112 Z" fill="url(#trackBlueDark)" stroke="#172554" stroke-width="0.5" />
+      
+      <!-- Sleeves -->
+      <!-- Left Sleeve -->
+      <path d="M 110,135 C 85,150 75,200 70,250 L 85,255 L 105,175 Z" fill="url(#trackBlue)" />
+      <rect x="70" y="250" width="15" height="6" fill="#172554" rx="1" transform="rotate(18, 70, 250)" />
+      
+      <!-- Right Sleeve -->
+      <path d="M 190,135 C 215,150 225,200 230,250 L 215,255 L 195,175 Z" fill="#1d4ed8" />
+      <rect x="215" y="250" width="15" height="6" fill="#172554" rx="1" transform="rotate(-18, 215, 250)" />
+
+      <!-- White Stripe Accent on Chest/Sleeves -->
+      <path d="M 105,160 Q 150,170 195,160 L 195,170 Q 150,180 105,170 Z" fill="#ffffff" />
+      <!-- White stripes on left sleeve -->
+      <path d="M 100,143 C 83,160 77,195 73,230 L 78,232 C 82,197 88,162 103,148 Z" fill="#ffffff" />
+
+      <!-- Center Zipper Line -->
+      <line x1="150" y1="112" x2="150" y2="300" stroke="#cbd5e1" stroke-width="1.5" />
+      <rect x="148" y="130" width="4" height="8" fill="#94a3b8" rx="0.5" /> <!-- Zipper Puller -->
+
+      <!-- Ribbed Waistband (Jacket hem) -->
+      <rect x="105" y="300" width="90" height="10" fill="url(#trackBlueDark)" stroke="#172554" stroke-width="0.5" rx="1" />
+    </g>
+  </g>
+</svg>

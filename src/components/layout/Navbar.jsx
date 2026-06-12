@@ -3,12 +3,6 @@ import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { Menu, X, ShoppingBag, Phone, ChevronDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const navLinks = [
-  { label: 'Home', to: '/' },
-  { label: 'Catalogue', to: '/catalogue' },
-  { label: 'About', to: '/about' },
-  { label: 'Contact', to: '/contact' },
-]
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -23,73 +17,63 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Top announcement bar */}
-      <div className="bg-navy-900 text-center py-2 px-4 text-xs text-gold-300 font-medium tracking-wide hidden sm:block">
-        🎉 Bulk orders of 50+ pieces get <span className="text-gold-400 font-bold">special wholesale pricing</span> — <button onClick={() => navigate('/bulk-order')} className="underline hover:text-white transition-colors">Get a Quote</button>
-      </div>
-
       <header
-        className={`sticky top-0 left-0 right-0 z-50 transition-[background-color,border-color,box-shadow] duration-300 ${
-          scrolled
-            ? 'bg-white/95 backdrop-blur-xl shadow-lg shadow-slate-200/50 border-b border-slate-100'
-            : 'bg-white border-b border-slate-100'
-        }`}
+        className="sticky top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-18">
 
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 group shrink-0">
-              <div className="relative">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center shadow-md group-hover:shadow-navy-700/30 group-hover:shadow-lg transition-all duration-300">
-                  <ShoppingBag size={19} className="text-gold-400" />
-                </div>
-                <div className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-gold-400 rounded-full border-2 border-white" />
-              </div>
-              <div className="leading-none">
-                <span className="block text-navy-900 font-display font-bold text-xl tracking-tight">Niyo</span>
-                <span className="block text-gold-600 text-[10px] font-bold tracking-[0.2em] uppercase mt-0.5">Uniformals</span>
-              </div>
+            <Link to="/" className="flex items-baseline gap-1.5 shrink-0">
+              <span className="text-[#0a1128] font-display text-2xl md:text-3xl font-semibold tracking-wider">NIYO</span>
+              <span className="text-[#b3913b] font-display text-2xl md:text-3xl italic tracking-wide">Uniformals</span>
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center gap-0.5">
-              {navLinks.map(link => (
-                <NavLink
-                  key={link.to}
-                  to={link.to}
-                  end={link.to === '/'}
-                  className={({ isActive }) =>
-                    `relative px-4 py-2 text-sm font-medium transition-colors duration-200 group ${
-                      isActive ? 'text-navy-800' : 'text-slate-500 hover:text-navy-800'
-                    }`
-                  }
-                >
-                  {({ isActive }) => (
-                    <>
-                      {link.label}
-                      <span className={`absolute bottom-0 left-4 right-4 h-0.5 bg-gold-500 rounded-full transition-all duration-300 ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-40'}`} />
-                    </>
-                  )}
-                </NavLink>
-              ))}
+            <nav className="hidden md:flex items-center gap-2">
+              <a
+                href="/#sectors"
+                className="px-4 py-2 text-sm font-bold text-[#0a1128] hover:text-[#b3913b] transition-colors duration-200 uppercase tracking-wider"
+              >
+                Sectors
+              </a>
+
+              <a
+                href="/#manufacturing"
+                className="px-4 py-2 text-sm font-bold text-[#0a1128] hover:text-[#b3913b] transition-colors duration-200 uppercase tracking-wider"
+              >
+                Manufacturing
+              </a>
+
+              <NavLink
+                to="/catalogue"
+                className="px-4 py-2 text-sm font-bold text-[#0a1128] hover:text-[#b3913b] transition-colors duration-200 uppercase tracking-wider"
+              >
+                Catalogue
+              </NavLink>
+
+              <NavLink
+                to="/about"
+                className="px-4 py-2 text-sm font-bold text-[#0a1128] hover:text-[#b3913b] transition-colors duration-200 uppercase tracking-wider"
+              >
+                About
+              </NavLink>
+
+              <NavLink
+                to="/contact"
+                className="px-4 py-2 text-sm font-bold text-[#0a1128] hover:text-[#b3913b] transition-colors duration-200 uppercase tracking-wider"
+              >
+                Contact
+              </NavLink>
             </nav>
 
             {/* CTAs */}
-            <div className="hidden md:flex items-center gap-3">
-              <a
-                href="tel:+919999999999"
-                className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-navy-700 transition-colors px-3 py-2 rounded-lg hover:bg-slate-50"
-              >
-                <Phone size={13} className="text-navy-600" />
-                <span className="font-medium">+91 99999 99999</span>
-              </a>
-              <div className="h-5 w-px bg-slate-200" />
+            <div className="hidden md:flex items-center gap-4">
               <button
                 onClick={() => navigate('/bulk-order')}
-                className="px-5 py-2.5 bg-gradient-to-r from-navy-700 to-navy-800 text-white text-sm font-semibold rounded-xl hover:from-navy-600 hover:to-navy-700 active:scale-95 transition-all shadow-md hover:shadow-navy-700/20 hover:shadow-lg"
+                className="px-6 py-2.5 bg-[#0a1128] text-white text-sm font-bold uppercase tracking-wider rounded-none hover:bg-[#151f32] transition-colors shadow-sm"
               >
-                Get a Quote
+                Bulk Enquiry
               </button>
             </div>
 
@@ -120,28 +104,81 @@ export default function Navbar() {
               transition={{ duration: 0.25, ease: 'easeInOut' }}
               className="md:hidden bg-white border-t border-slate-100 shadow-xl overflow-hidden"
             >
-              <div className="max-w-7xl mx-auto px-4 py-5 flex flex-col gap-1">
-                {navLinks.map((link, i) => (
-                  <motion.div
-                    key={link.to}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 }}
+                {/* Home */}
+                <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.05 }}>
+                  <NavLink
+                    to="/"
+                    end
+                    onClick={() => setOpen(false)}
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
+                        isActive ? 'text-navy-700 bg-navy-50 font-semibold' : 'text-slate-600 hover:bg-slate-50 hover:text-navy-700'
+                      }`
+                    }
                   >
-                    <NavLink
-                      to={link.to}
-                      end={link.to === '/'}
-                      onClick={() => setOpen(false)}
-                      className={({ isActive }) =>
-                        `flex items-center px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
-                          isActive ? 'text-navy-700 bg-navy-50 font-semibold' : 'text-slate-600 hover:bg-slate-50 hover:text-navy-700'
-                        }`
-                      }
-                    >
-                      {link.label}
-                    </NavLink>
-                  </motion.div>
-                ))}
+                    Home
+                  </NavLink>
+                </motion.div>
+
+                {/* Catalogue */}
+                <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }}>
+                  <NavLink
+                    to="/catalogue"
+                    end
+                    onClick={() => setOpen(false)}
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
+                        isActive ? 'text-navy-700 bg-navy-50 font-semibold' : 'text-slate-600 hover:bg-slate-50 hover:text-navy-700'
+                      }`
+                    }
+                  >
+                    Catalogue
+                  </NavLink>
+                </motion.div>
+
+                {/* Indented Categories */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.15 }}
+                  className="pl-4 border-l-2 border-slate-100 ml-4 py-1 flex flex-col gap-1"
+                >
+                  <Link to="/catalogue?category=cat-medical" onClick={() => setOpen(false)} className="px-3 py-1.5 text-xs font-semibold text-slate-500 hover:text-navy-900 transition-colors">Healthcare & Hospital</Link>
+                  <Link to="/catalogue?category=cat-corporate" onClick={() => setOpen(false)} className="px-3 py-1.5 text-xs font-semibold text-slate-500 hover:text-navy-900 transition-colors">Corporate & Executive</Link>
+                  <Link to="/catalogue?category=cat-school" onClick={() => setOpen(false)} className="px-3 py-1.5 text-xs font-semibold text-slate-500 hover:text-navy-900 transition-colors">School & PE Uniforms</Link>
+                  <Link to="/catalogue?category=cat-hospitality" onClick={() => setOpen(false)} className="px-3 py-1.5 text-xs font-semibold text-slate-500 hover:text-navy-900 transition-colors">Hotel & Hospitality</Link>
+                  <Link to="/catalogue?category=cat-advocate" onClick={() => setOpen(false)} className="px-3 py-1.5 text-xs font-semibold text-slate-500 hover:text-navy-900 transition-colors">Advocates & Legal</Link>
+                </motion.div>
+
+                {/* About */}
+                <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}>
+                  <NavLink
+                    to="/about"
+                    onClick={() => setOpen(false)}
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
+                        isActive ? 'text-navy-700 bg-navy-50 font-semibold' : 'text-slate-600 hover:bg-slate-50 hover:text-navy-700'
+                      }`
+                    }
+                  >
+                    About
+                  </NavLink>
+                </motion.div>
+
+                {/* Contact */}
+                <motion.div initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.25 }}>
+                  <NavLink
+                    to="/contact"
+                    onClick={() => setOpen(false)}
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
+                        isActive ? 'text-navy-700 bg-navy-50 font-semibold' : 'text-slate-600 hover:bg-slate-50 hover:text-navy-700'
+                      }`
+                    }
+                  >
+                    Contact
+                  </NavLink>
+                </motion.div>
                 <div className="mt-3 pt-3 border-t border-slate-100 space-y-2">
                   <a href="tel:+919999999999" className="flex items-center gap-2 px-4 py-3 text-sm text-slate-600 hover:bg-slate-50 rounded-xl">
                     <Phone size={14} />+91 99999 99999
@@ -153,7 +190,6 @@ export default function Navbar() {
                     Get a Bulk Quote
                   </button>
                 </div>
-              </div>
             </motion.div>
           )}
         </AnimatePresence>

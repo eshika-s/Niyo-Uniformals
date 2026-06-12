@@ -1,7 +1,7 @@
 import { supabase } from '@/lib/supabase'
 
 export const enquiryService = {
-  async getAll({ type, status, page = 1, limit = 20 } = {}) {
+  async getAll({ type, status, search, dateFrom, dateTo, page = 1, limit = 50 } = {}) {
     let query = supabase
       .from('enquiries')
       .select('*, products(id, name)', { count: 'exact' })
@@ -10,6 +10,9 @@ export const enquiryService = {
 
     if (type) query = query.eq('type', type)
     if (status) query = query.eq('status', status)
+    if (search) query = query.or(`customer_name.ilike.%${search}%,phone.ilike.%${search}%`)
+    if (dateFrom) query = query.gte('created_at', dateFrom)
+    if (dateTo) query = query.lte('created_at', dateTo)
 
     return query
   },
@@ -36,7 +39,8 @@ export const enquiryService = {
       supabase.from('enquiries').select('*', { count: 'exact', head: true }).eq('status', 'new'),
     ])
     return {
-      total: total.count ?? 0,
+      // `enquiries` key used by Dashboard stats spread
+      enquiries: total.count ?? 0,
       today: todayCount.count ?? 0,
       unread: unread.count ?? 0,
     }
