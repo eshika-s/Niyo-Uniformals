@@ -1,32 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-navy-50: #f4f4f5;
-  --color-navy-100: #e4e4e7;
-  --color-navy-200: #d4d4d8;
-  --color-navy-300: #a1a1aa;
-  --color-navy-400: #71717a;
-  --color-navy-500: #3f3f46;
-  --color-navy-600: #27272a;
-  --color-navy-700: #18181b;
-  --color-navy-800: #0f0f12;
-  --color-navy-900: #08080a;
-  --color-navy-950: #000000;
+  --color-obsidian-50: #f8fafc;
+  --color-obsidian-100: #f1f5f9;
+  --color-obsidian-200: #e2e8f0;
+  --color-obsidian-300: #cbd5e1;
+  --color-obsidian-400: #94a3b8;
+  --color-obsidian-500: #64748b;
+  --color-obsidian-600: #475569;
+  --color-obsidian-700: #334155;
+  --color-obsidian-800: #1e293b;
+  --color-obsidian-900: #0f172a;
+  --color-obsidian-950: #020617;
 
-  --color-gold-50: #faf8f0;
-  --color-gold-100: #f3edd6;
-  --color-gold-200: #e7dbad;
-  --color-gold-300: #dbc984;
-  --color-gold-400: #cdaf5b;
-  --color-gold-500: #C9A84C;
-  --color-gold-600: #b3913b;
-  --color-gold-700: #90722c;
-  --color-gold-800: #6d5520;
-  --color-gold-900: #4a3a14;
+  --color-electric-50: #eff6ff;
+  --color-electric-100: #dbeafe;
+  --color-electric-200: #bfdbfe;
+  --color-electric-300: #93c5fd;
+  --color-electric-400: #60a5fa;
+  --color-electric-500: #3b82f6;
+  --color-electric-600: #2563eb;
+  --color-electric-700: #1d4ed8;
+  --color-electric-800: #1e40af;
+  --color-electric-900: #1e3a8a;
 
-  --font-sans: 'Outfit', 'Inter', system-ui, sans-serif;
-  --font-display: 'Playfair Display', Georgia, serif;
+  --color-neon-50: #eef2ff;
+  --color-neon-100: #e0e7ff;
+  --color-neon-200: #c7d2fe;
+  --color-neon-300: #a5b4fc;
+  --color-neon-400: #818cf8;
+  --color-neon-500: #6366f1;
+  --color-neon-600: #4f46e5;
+  --color-neon-700: #4338ca;
+  --color-neon-800: #3730a3;
+  --color-neon-900: #312e81;
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Space Grotesk', 'Outfit', sans-serif;
+  --font-price: 'Outfit', sans-serif;
 }
 
 *, *::before, *::after {
@@ -44,20 +56,21 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ffffff;
-  color: #1e293b;
+  background-color: #f8fafc;
+  color: #0f172a;
   overflow-x: hidden;
 }
 
 /* Premium selection color */
 ::selection {
-  background: #fbbf24;
-  color: #040b24;
+  background: #3b82f6;
+  color: #ffffff;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  line-height: 1.2;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 #root {
@@ -66,36 +79,50 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
 }
 
-/* ── Premium Scrollbar ─────────────────────── */
+/* ── Sleek Scrollbar ─────────────────────── */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: #f8fafc; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
 ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 999px; }
 ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
-/* ── Premium Focus Ring ────────────────────── */
+/* ── Focus Ring ────────────────────── */
 :focus-visible {
-  outline: 2px solid #f59e0b;
+  outline: 2px solid #3b82f6;
   outline-offset: 3px;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
-/* ── Form Input Gold Focus ─────────────────── */
+/* ── Modern Input Focus ─────────────────── */
 .input-premium:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #fbbf24, 0 1px 3px rgba(0,0,0,0.06);
-  border-color: #fbbf24;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3), 0 1px 2px rgba(0,0,0,0.05);
+  border-color: #3b82f6;
 }
 
-/* ── Gold Section Divider ──────────────────── */
-.gold-divider {
-  width: 48px;
-  height: 3px;
-  background: linear-gradient(90deg, #f59e0b, #fbbf24);
-  border-radius: 999px;
-  margin: 12px auto 0;
+/* ── Dynamic Gradient Text ──────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
+/* ── Glass Panel Utilities ──────────────────── */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(15, 23, 42, 0.05);
+}
 
+.glass-panel-dark {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
 
 /* Premium image loading shimmer */
 @keyframes shimmer {

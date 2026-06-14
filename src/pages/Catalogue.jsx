@@ -12,9 +12,9 @@ const PAGE_SIZE = 12
 
 const getCategoryBanner = (categoryId) => {
   const baseBanner = {
-    bgClass: 'bg-[#0a1128]',
+    bgClass: 'bg-obsidian-900 border-b border-obsidian-800',
     titleColor: 'text-white',
-    textColor: 'text-[#94a3b8]'
+    textColor: 'text-obsidian-300'
   }
 
   switch (categoryId) {
@@ -81,12 +81,16 @@ export default function Catalogue() {
   const banner = getCategoryBanner(filters.category)
 
   return (
-    <main className="min-h-screen bg-stone-50 pt-[72px]">
+    <main className="min-h-screen bg-obsidian-50 pt-[72px]">
       <title>Catalogue — NIYO Uni-formals</title>
 
       {/* Category Header Banner Strip */}
-      <div className={`w-full py-14 px-4 sm:px-6 lg:px-8 relative overflow-hidden transition-all duration-300 ${banner.bgClass}`}>
-        <div className="absolute inset-0 opacity-[0.02] bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]" />
+      <div className={`w-full py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden transition-all duration-300 ${banner.bgClass}`}>
+        <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:24px_24px]" />
+        
+        {/* Glow effect */}
+        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-electric-500/20 rounded-full blur-[100px] -translate-y-1/2 pointer-events-none" />
+
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
           <motion.div
             key={filters.category || 'all'}
@@ -95,10 +99,10 @@ export default function Catalogue() {
             transition={{ duration: 0.4 }}
             className="max-w-2xl"
           >
-            <h1 className={`text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-3 tracking-tight ${banner.titleColor}`}>
+            <h1 className={`text-4xl sm:text-5xl md:text-6xl font-display font-bold mb-4 tracking-tight ${banner.titleColor}`}>
               {banner.title}
             </h1>
-            <p className={`text-sm sm:text-base leading-relaxed ${banner.textColor}`}>
+            <p className={`text-sm sm:text-base md:text-lg leading-relaxed font-light ${banner.textColor}`}>
               {banner.desc}
             </p>
           </motion.div>
@@ -108,57 +112,57 @@ export default function Catalogue() {
             className="shrink-0"
           >
             {filters.category ? (
-              <span className="px-4 py-2 bg-white/10 backdrop-blur-md border border-white/10 text-white text-xs font-bold uppercase tracking-wider rounded-xl">
-                Premium Identity
+              <span className="px-5 py-2.5 glass-panel-dark text-white text-xs font-bold uppercase tracking-wider rounded-xl border border-white/10 shadow-xl inline-flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-electric-400"></span> Premium Identity
               </span>
             ) : (
-              <span className="px-4 py-2 bg-gold-500/10 border border-gold-500/20 text-gold-300 text-xs font-bold uppercase tracking-wider rounded-xl">
-                Shakti Dresses
+              <span className="px-5 py-2.5 glass-panel-dark text-white text-xs font-bold uppercase tracking-wider rounded-xl border border-electric-500/30 shadow-[0_0_15px_rgba(59,130,246,0.2)] inline-flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-electric-400"></span> All Products
               </span>
             )}
           </motion.div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {/* Active filter chips */}
         {activeFiltersCount > 0 && (
-          <div className="flex flex-wrap items-center gap-2 mb-6 p-4 bg-white rounded-2xl border border-slate-100 shadow-sm">
-            <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mr-1">Active Filters:</span>
+          <div className="flex flex-wrap items-center gap-2 mb-8 p-5 bg-white rounded-2xl border border-obsidian-200 shadow-[0_4px_20px_rgb(0,0,0,0.03)]">
+            <span className="text-xs font-bold text-obsidian-400 uppercase tracking-wider mr-2">Active Filters:</span>
             {filters.search && (
-              <span className="flex items-center gap-1.5 px-3 py-1.5 bg-navy-50 border border-navy-100 text-navy-700 text-xs font-semibold rounded-full">
+              <span className="flex items-center gap-1.5 px-3 py-1.5 bg-obsidian-50 border border-obsidian-200 text-obsidian-700 text-xs font-semibold rounded-full shadow-sm">
                 Search: "{filters.search}"
                 <button onClick={() => { setFilters(f => ({ ...f, search: '' })); setPage(1) }}>
-                  <X size={11} className="text-navy-500 hover:text-red-500 transition-colors" />
+                  <X size={11} className="text-obsidian-400 hover:text-red-500 transition-colors" />
                 </button>
               </span>
             )}
             {filters.category && (
-              <span className="flex items-center gap-1.5 px-3 py-1.5 bg-gold-50 border border-gold-200 text-gold-700 text-xs font-semibold rounded-full">
+              <span className="flex items-center gap-1.5 px-3 py-1.5 bg-electric-50 border border-electric-200 text-electric-700 text-xs font-semibold rounded-full shadow-sm">
                 Category: {categories.find(c => c.id === filters.category)?.name || 'Filtered'}
                 <button onClick={() => { setFilters(f => ({ ...f, category: null })); setPage(1) }}>
-                  <X size={11} className="text-gold-600 hover:text-red-500 transition-colors" />
+                  <X size={11} className="text-electric-600 hover:text-red-500 transition-colors" />
                 </button>
               </span>
             )}
             {filters.gender && (
-              <span className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold rounded-full">
+              <span className="flex items-center gap-1.5 px-3 py-1.5 bg-electric-50 border border-electric-200 text-electric-700 text-xs font-semibold rounded-full shadow-sm">
                 Gender: {filters.gender}
                 <button onClick={() => { setFilters(f => ({ ...f, gender: null })); setPage(1) }}>
-                  <X size={11} className="text-blue-500 hover:text-red-500 transition-colors" />
+                  <X size={11} className="text-electric-500 hover:text-red-500 transition-colors" />
                 </button>
               </span>
             )}
             {filters.fabric_type && (
-              <span className="flex items-center gap-1.5 px-3 py-1.5 bg-purple-50 border border-purple-200 text-purple-700 text-xs font-semibold rounded-full">
+              <span className="flex items-center gap-1.5 px-3 py-1.5 bg-neon-50 border border-neon-200 text-neon-700 text-xs font-semibold rounded-full shadow-sm">
                 Fabric: {filters.fabric_type}
                 <button onClick={() => { setFilters(f => ({ ...f, fabric_type: null })); setPage(1) }}>
-                  <X size={11} className="text-purple-500 hover:text-red-500 transition-colors" />
+                  <X size={11} className="text-neon-500 hover:text-red-500 transition-colors" />
                 </button>
               </span>
             )}
             {(filters.customization === 'true' || filters.customization === true) && (
-              <span className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold rounded-full">
+              <span className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold rounded-full shadow-sm">
                 Customization Available
                 <button onClick={() => { setFilters(f => ({ ...f, customization: null })); setPage(1) }}>
                   <X size={11} className="text-emerald-500 hover:text-red-500 transition-colors" />
@@ -166,17 +170,17 @@ export default function Catalogue() {
               </span>
             )}
             {filters.max_price && (
-              <span className="flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 border border-amber-200 text-amber-700 text-xs font-semibold rounded-full">
+              <span className="flex items-center gap-1.5 px-3 py-1.5 bg-obsidian-100 border border-obsidian-200 text-obsidian-700 text-xs font-semibold rounded-full shadow-sm">
                 Max Price: ₹{filters.max_price}
                 <button onClick={() => { setFilters(f => ({ ...f, max_price: null })); setPage(1) }}>
-                  <X size={11} className="text-amber-500 hover:text-red-500 transition-colors" />
+                  <X size={11} className="text-obsidian-500 hover:text-red-500 transition-colors" />
                 </button>
               </span>
             )}
           </div>
         )}
 
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="flex flex-col lg:flex-row gap-10">
           {/* Filters */}
           <FilterPanel
             categories={categories}
@@ -188,32 +192,32 @@ export default function Catalogue() {
           {/* Products */}
           <div className="flex-1">
             {/* Result count */}
-            <div className="flex items-center justify-between mb-6">
-              <p className="text-sm text-slate-500">
+            <div className="flex items-center justify-between mb-8 pb-4 border-b border-obsidian-200">
+              <p className="text-sm font-medium text-obsidian-500">
                 {loading ? 'Loading…' : (
                   <span>
-                    <span className="font-semibold text-navy-900">{count}</span>
-                    {' '}product{count !== 1 ? 's' : ''} found
+                    <span className="font-bold text-obsidian-900">{count}</span>
+                    {' '}product{count !== 1 ? 's' : ''}
                   </span>
                 )}
               </p>
               {activeFiltersCount > 0 && (
-                <div className="flex items-center gap-1.5 text-xs text-slate-400">
-                  <SlidersHorizontal size={11} />
-                  {activeFiltersCount} filter{activeFiltersCount > 1 ? 's' : ''} active
+                <div className="flex items-center gap-1.5 text-xs font-semibold text-obsidian-400 bg-white px-3 py-1.5 rounded-lg border border-obsidian-200 shadow-sm">
+                  <SlidersHorizontal size={12} />
+                  {activeFiltersCount} active
                 </div>
               )}
             </div>
 
             {loading ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
                 {[...Array(6)].map((_, i) => (
-                  <div key={i} className="h-80 bg-slate-100 rounded-2xl animate-pulse" />
+                  <div key={i} className="h-[400px] bg-obsidian-100 rounded-3xl animate-pulse" />
                 ))}
               </div>
             ) : products.length > 0 ? (
               <>
-                <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
                   {products.map((product, i) => (
                     <motion.div
                       key={product.id}
@@ -228,22 +232,22 @@ export default function Catalogue() {
 
                 {/* Pagination */}
                 {totalPages > 1 && (
-                  <div className="flex items-center justify-center gap-2 mt-12">
+                  <div className="flex items-center justify-center gap-2 mt-16">
                     <button
                       onClick={() => setPage(p => Math.max(1, p - 1))}
                       disabled={page === 1}
-                      className="p-2.5 rounded-xl border border-slate-200 disabled:opacity-40 hover:bg-slate-50 hover:border-slate-300 transition-all text-slate-600"
+                      className="p-3 rounded-xl border border-obsidian-200 disabled:opacity-40 hover:bg-white hover:border-obsidian-300 transition-all text-obsidian-600 shadow-sm hover:shadow-md"
                     >
-                      <ChevronLeft size={15} />
+                      <ChevronLeft size={16} />
                     </button>
                     {[...Array(totalPages)].map((_, i) => (
                       <button
                         key={i}
                         onClick={() => setPage(i + 1)}
-                        className={`w-10 h-10 rounded-xl text-sm font-semibold transition-all ${
+                        className={`w-12 h-12 rounded-xl text-sm font-bold transition-all shadow-sm ${
                           page === i + 1
-                            ? 'bg-navy-800 text-white shadow-md shadow-navy-900/20'
-                            : 'border border-slate-200 text-slate-600 hover:bg-slate-50 hover:border-slate-300'
+                            ? 'bg-electric-500 text-white shadow-electric-500/30'
+                            : 'border border-obsidian-200 text-obsidian-600 hover:bg-white hover:border-obsidian-300 hover:shadow-md'
                         }`}
                       >
                         {i + 1}
@@ -252,9 +256,9 @@ export default function Catalogue() {
                     <button
                       onClick={() => setPage(p => Math.min(totalPages, p + 1))}
                       disabled={page === totalPages}
-                      className="p-2.5 rounded-xl border border-slate-200 disabled:opacity-40 hover:bg-slate-50 hover:border-slate-300 transition-all text-slate-600"
+                      className="p-3 rounded-xl border border-obsidian-200 disabled:opacity-40 hover:bg-white hover:border-obsidian-300 transition-all text-obsidian-600 shadow-sm hover:shadow-md"
                     >
-                      <ChevronRight size={15} />
+                      <ChevronRight size={16} />
                     </button>
                   </div>
                 )}
@@ -264,20 +268,20 @@ export default function Catalogue() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
-                className="text-center py-24 border border-dashed border-slate-200 rounded-3xl"
+                className="text-center py-32 bg-white border border-dashed border-obsidian-300 rounded-[2rem] shadow-sm"
               >
                 <motion.div
                   initial={{ scale: 0.8 }}
                   animate={{ scale: 1 }}
                   transition={{ type: 'spring', stiffness: 200, damping: 12, delay: 0.2 }}
                 >
-                  <Package size={56} className="text-slate-200 mx-auto mb-4" />
+                  <Package size={64} className="text-obsidian-200 mx-auto mb-6" />
                 </motion.div>
-                <h3 className="font-display font-semibold text-slate-500 mb-1">No products found</h3>
-                <p className="text-sm text-slate-400 mb-4">Try adjusting your search or filters</p>
+                <h3 className="font-display text-xl font-bold text-obsidian-900 mb-2">No products found</h3>
+                <p className="text-base text-obsidian-500 mb-6 font-light">Try adjusting your search or filters to find what you're looking for.</p>
                 {activeFiltersCount > 0 && (
                   <button onClick={clearFilters}
-                    className="text-xs font-semibold text-gold-600 hover:underline">
+                    className="px-6 py-2.5 bg-obsidian-100 hover:bg-obsidian-200 text-obsidian-900 font-semibold rounded-xl transition-colors">
                     Clear all filters
                   </button>
                 )}

@@ -71,12 +71,12 @@ export default function ProductDetail() {
 
   if (loading) {
     return (
-      <main className="min-h-screen pt-24 bg-stone-50">
+      <main className="min-h-screen pt-24 bg-obsidian-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <div className="h-96 bg-slate-100 rounded-none animate-pulse" />
-            <div className="space-y-4">
-              {[...Array(5)].map((_, i) => <div key={i} className="h-8 bg-slate-100 rounded-none animate-pulse" />)}
+            <div className="h-[500px] bg-obsidian-100 rounded-3xl animate-pulse" />
+            <div className="space-y-6">
+              {[...Array(5)].map((_, i) => <div key={i} className="h-10 bg-obsidian-100 rounded-xl animate-pulse" />)}
             </div>
           </div>
         </div>
@@ -90,15 +90,15 @@ export default function ProductDetail() {
 
   const tabContent = {
     overview: (
-      <div className="prose prose-sm max-w-none text-slate-600 leading-relaxed text-left">
+      <div className="prose prose-sm max-w-none text-obsidian-600 leading-relaxed text-left font-light">
         {product.description
           ? <p>{product.description}</p>
-          : <p className="text-slate-400 italic">No description provided for this product.</p>
+          : <p className="text-obsidian-400 italic">No description provided for this product.</p>
         }
       </div>
     ),
     specifications: (
-      <div className="space-y-3 text-left">
+      <div className="space-y-4 text-left">
         {[
           { label: 'Fabric / Material', value: product.fabric },
           { label: 'Available Colors', value: product.colors?.join(', ') },
@@ -107,29 +107,29 @@ export default function ProductDetail() {
           { label: 'Min. Order Qty', value: product.min_order_qty ? `${product.min_order_qty} pieces` : null },
           { label: 'Customization', value: product.customization_available ? 'Available (Embroidery, printing, custom labels)' : 'Not Available' },
         ].filter(r => r.value).map(row => (
-          <div key={row.label} className="flex items-start gap-4 py-3 border-b border-slate-50 last:border-0">
-            <span className="text-xs font-bold text-slate-400 uppercase tracking-wider w-36 shrink-0 pt-0.5">{row.label}</span>
-            <span className="text-sm text-navy-800 font-medium">{row.value}</span>
+          <div key={row.label} className="flex items-start gap-4 py-3 border-b border-obsidian-100 last:border-0">
+            <span className="text-xs font-bold text-obsidian-400 uppercase tracking-widest w-36 shrink-0 pt-0.5">{row.label}</span>
+            <span className="text-sm text-obsidian-900 font-semibold">{row.value}</span>
           </div>
         ))}
       </div>
     ),
     delivery: (
-      <div className="space-y-4 text-sm text-slate-600 text-left">
-        <div className="flex items-start gap-3 p-4 bg-slate-50 rounded-none border border-slate-100">
-          <Truck size={16} className="text-[#b3913b] mt-0.5 shrink-0" />
+      <div className="space-y-4 text-sm text-obsidian-600 text-left">
+        <div className="flex items-start gap-4 p-5 bg-obsidian-50 rounded-2xl border border-obsidian-200 shadow-sm">
+          <Truck size={20} className="text-electric-500 shrink-0" />
           <div>
-            <p className="font-semibold text-navy-800 mb-0.5">Est. Delivery Timeline</p>
-            <p className="leading-relaxed text-slate-500">
+            <p className="font-bold text-obsidian-900 mb-1">Est. Delivery Timeline</p>
+            <p className="leading-relaxed text-obsidian-500 font-light">
               Bulk manufacturing & shipping: {product.delivery_timeline || '7-10 working days'}. Pan-India express logistics enabled.
             </p>
           </div>
         </div>
-        <div className="flex items-start gap-3 p-4 bg-slate-50 rounded-none border border-slate-100">
-          <Shirt size={16} className="text-[#b3913b] mt-0.5 shrink-0" />
+        <div className="flex items-start gap-4 p-5 bg-obsidian-50 rounded-2xl border border-obsidian-200 shadow-sm">
+          <Shirt size={20} className="text-electric-500 shrink-0" />
           <div>
-            <p className="font-semibold text-navy-800 mb-0.5">Care Instructions</p>
-            <p className="leading-relaxed text-slate-500">
+            <p className="font-bold text-obsidian-900 mb-1">Care Instructions</p>
+            <p className="leading-relaxed text-obsidian-500 font-light">
               {product.fabric_care || 'Machine wash warm, tumble dry low, warm iron.'}
             </p>
           </div>
@@ -146,28 +146,30 @@ export default function ProductDetail() {
   const waLink = `https://wa.me/919999999999?text=${encodeURIComponent(waMessage)}`
 
   return (
-    <main className="min-h-screen bg-stone-50 pt-24">
+    <main className="min-h-screen bg-obsidian-50 pt-28 pb-20">
       <title>{product.name} — NIYO Uni-formals</title>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back */}
         <button
           onClick={() => navigate(-1)}
-          className="flex items-center gap-2 text-sm text-slate-400 hover:text-navy-700 transition-colors mb-8 group"
+          className="flex items-center gap-2 text-sm font-semibold text-obsidian-500 hover:text-electric-600 transition-colors mb-8 group bg-white px-4 py-2 rounded-full border border-obsidian-200 shadow-sm w-fit"
         >
-          <ArrowLeft size={14} className="group-hover:-translate-x-0.5 transition-transform" />
+          <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
           Back to Catalogue
         </button>
 
         {/* Main layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-16 mb-24">
           {/* Left: Gallery */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            <ImageGallery images={product.images || []} productName={product.name} />
+            <div className="sticky top-32">
+              <ImageGallery images={product.images || []} productName={product.name} />
+            </div>
           </motion.div>
 
           {/* Right: Info */}
@@ -175,7 +177,7 @@ export default function ProductDetail() {
             initial="hidden"
             animate="visible"
             variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
-            className="space-y-6 text-left"
+            className="space-y-8 text-left"
           >
             {/* Category badge & Customization badge */}
             <motion.div
@@ -183,13 +185,13 @@ export default function ProductDetail() {
               className="flex flex-wrap items-center gap-3"
             >
               {product.categories && (
-                <div className="flex items-center gap-2">
-                  <Tag size={12} className="text-[#b3913b]" />
-                  <span className="text-xs font-bold text-[#b3913b] uppercase tracking-wider">{product.categories.name}</span>
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-electric-50 border border-electric-200 rounded-lg">
+                  <Tag size={12} className="text-electric-600" />
+                  <span className="text-[10px] font-bold text-electric-700 uppercase tracking-widest">{product.categories.name}</span>
                 </div>
               )}
               {product.customization_available && (
-                <span className="px-2.5 py-0.5 bg-emerald-50 text-emerald-700 border border-emerald-100 text-[10px] font-bold rounded-none uppercase tracking-wide">
+                <span className="px-3 py-1.5 bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-bold rounded-lg uppercase tracking-widest shadow-sm">
                   🎨 Customization Available
                 </span>
               )}
@@ -197,7 +199,7 @@ export default function ProductDetail() {
 
             <motion.h1
               variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0 } }}
-              className="text-3xl md:text-4xl font-display font-bold text-[#0a1128] leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-obsidian-900 leading-tight tracking-tight"
             >
               {product.name}
             </motion.h1>
@@ -205,18 +207,18 @@ export default function ProductDetail() {
             {/* Pricing cards */}
             <motion.div
               variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0 } }}
-              className="flex flex-wrap gap-3"
+              className="flex flex-wrap gap-4"
             >
               {product.price_range && (
-                <div className="px-5 py-3 bg-navy-50 rounded-none border border-navy-100">
-                  <p className="text-[10px] text-navy-500 font-bold uppercase tracking-wider mb-0.5">Price Range</p>
-                  <p className="text-xl font-display font-bold text-[#0a1128]">{product.price_range}</p>
+                <div className="px-6 py-4 bg-white rounded-2xl border border-obsidian-200 shadow-sm flex-1 min-w-[150px]">
+                  <p className="text-[10px] text-obsidian-400 font-bold uppercase tracking-widest mb-1">Price Range</p>
+                  <p className="text-2xl font-price font-bold text-obsidian-900">{product.price_range}</p>
                 </div>
               )}
               {product.min_order_qty && (
-                <div className="px-5 py-3 bg-gold-50 rounded-none border border-gold-100">
-                  <p className="text-[10px] text-[#b3913b] font-bold uppercase tracking-wider mb-0.5">Min. Order Qty</p>
-                  <p className="text-xl font-display font-bold text-[#b3913b]">{product.min_order_qty} pcs</p>
+                <div className="px-6 py-4 bg-electric-50 rounded-2xl border border-electric-200 shadow-sm flex-1 min-w-[150px]">
+                  <p className="text-[10px] text-electric-600 font-bold uppercase tracking-widest mb-1">Min. Order Qty</p>
+                  <p className="text-2xl font-display font-bold text-electric-700">{product.min_order_qty} <span className="text-base font-medium">pcs</span></p>
                 </div>
               )}
             </motion.div>
@@ -225,10 +227,15 @@ export default function ProductDetail() {
             {product.colors?.length > 0 && (
               <motion.div
                 variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0 } }}
-                className="space-y-2.5"
+                className="space-y-3 bg-white p-6 rounded-2xl border border-obsidian-200 shadow-sm"
               >
-                <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Select Color</p>
-                <div className="flex flex-wrap gap-2.5">
+                <div className="flex items-center justify-between">
+                  <p className="text-xs font-bold text-obsidian-400 uppercase tracking-widest">Select Color</p>
+                  {selectedColor && (
+                    <p className="text-xs font-semibold text-obsidian-500">Selected: <span className="text-obsidian-900 font-bold">{selectedColor}</span></p>
+                  )}
+                </div>
+                <div className="flex flex-wrap gap-3">
                   {product.colors.map(color => {
                     const hex = colorMap[color.toLowerCase()] || '#94a3b8'
                     const isSelected = selectedColor === color
@@ -236,26 +243,23 @@ export default function ProductDetail() {
                       <button
                         key={color}
                         onClick={() => setSelectedColor(color)}
-                        className={`group relative flex items-center justify-center p-0.5 rounded-full border-2 transition-all duration-200 ${
-                          isSelected ? 'border-navy-800 scale-110 shadow-sm' : 'border-transparent hover:border-slate-300'
+                        className={`group relative flex items-center justify-center p-1 rounded-full border-2 transition-all duration-300 ${
+                          isSelected ? 'border-electric-500 scale-110 shadow-md' : 'border-transparent hover:border-obsidian-300 hover:scale-105'
                         }`}
                         title={color}
                       >
                         <span
-                          className="w-7 h-7 rounded-full border border-slate-200 flex items-center justify-center shrink-0"
+                          className="w-8 h-8 rounded-full shadow-inner border border-obsidian-200 flex items-center justify-center shrink-0"
                           style={{ backgroundColor: hex }}
                         >
                           {isSelected && (
-                            <span className={`w-1.5 h-1.5 rounded-full ${color.toLowerCase() === 'white' ? 'bg-slate-900' : 'bg-stone-50'}`} />
+                            <span className={`w-2 h-2 rounded-full ${color.toLowerCase() === 'white' ? 'bg-obsidian-900' : 'bg-white'}`} />
                           )}
                         </span>
                       </button>
                     )
                   })}
                 </div>
-                {selectedColor && (
-                  <p className="text-xs font-semibold text-slate-500">Selected Color: <span className="text-[#0a1128]">{selectedColor}</span></p>
-                )}
               </motion.div>
             )}
 
@@ -263,28 +267,28 @@ export default function ProductDetail() {
             {product.sizes?.length > 0 && (
               <motion.div
                 variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0 } }}
-                className="space-y-2.5"
+                className="space-y-3 bg-white p-6 rounded-2xl border border-obsidian-200 shadow-sm"
               >
-                <div className="flex items-center justify-between max-w-xs">
-                  <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Select Size</p>
+                <div className="flex items-center justify-between">
+                  <p className="text-xs font-bold text-obsidian-400 uppercase tracking-widest">Select Size</p>
                   <button
                     onClick={() => setShowSizeChart(true)}
-                    className="text-xs font-bold text-[#b3913b] hover:text-[#b3913b] underline flex items-center gap-1"
+                    className="text-xs font-bold text-electric-600 hover:text-electric-500 underline flex items-center gap-1"
                   >
-                    Size Chart
+                    View Size Chart
                   </button>
                 </div>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-3">
                   {product.sizes.map(size => {
                     const isSelected = selectedSize === size
                     return (
                       <button
                         key={size}
                         onClick={() => setSelectedSize(size)}
-                        className={`px-4 py-2 text-xs font-bold rounded-none border transition-all duration-200 ${
+                        className={`w-12 h-12 text-sm font-bold rounded-xl transition-all duration-200 ${
                           isSelected
-                            ? 'bg-navy-800 border-navy-800 text-white shadow-sm'
-                            : 'bg-stone-50 border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300'
+                            ? 'bg-obsidian-900 text-white shadow-lg shadow-obsidian-900/20 scale-105'
+                            : 'bg-obsidian-50 border border-obsidian-200 text-obsidian-700 hover:bg-white hover:border-obsidian-400 hover:shadow-sm'
                         }`}
                       >
                         {size}
@@ -295,27 +299,25 @@ export default function ProductDetail() {
               </motion.div>
             )}
 
-
-
             {/* Premium CTA Buttons */}
             <motion.div
               variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0 } }}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md pt-2"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4"
             >
               <button
                 onClick={() => document.getElementById('product-enquiry-section')?.scrollIntoView({ behavior: 'smooth' })}
-                className="w-full py-4 bg-navy-800 hover:bg-navy-700 text-white font-bold rounded-none transition-all duration-200 active:scale-[0.98] shadow-lg shadow-navy-950/10 flex items-center justify-center gap-2"
+                className="w-full py-4 bg-obsidian-900 hover:bg-electric-600 text-white font-bold rounded-xl transition-all duration-300 active:scale-[0.98] shadow-lg shadow-obsidian-900/20 flex items-center justify-center gap-2 hover:-translate-y-1"
               >
-                <MessageCircle size={16} />
+                <MessageCircle size={18} />
                 Request Custom Quote
               </button>
               <a
                 href={waLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-none transition-all duration-200 active:scale-[0.98] shadow-lg shadow-emerald-600/10 flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-white font-bold rounded-xl transition-all duration-300 active:scale-[0.98] shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 cursor-pointer hover:-translate-y-1"
               >
-                <MessageCircle size={16} />
+                <MessageCircle size={18} />
                 Order on WhatsApp
               </a>
             </motion.div>
@@ -323,21 +325,21 @@ export default function ProductDetail() {
             {/* Tabbed spec panel */}
             <motion.div
               variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0 } }}
-              className="bg-stone-50 border border-slate-100 rounded-none overflow-hidden shadow-sm"
+              className="bg-white border border-obsidian-200 rounded-2xl overflow-hidden shadow-sm mt-8"
             >
               {/* Tab headers */}
-              <div className="flex border-b border-slate-100">
+              <div className="flex border-b border-obsidian-100">
                 {TABS.map(tab => (
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`flex-1 flex items-center justify-center gap-1.5 py-3.5 text-xs font-semibold transition-all duration-200 ${
+                    className={`flex-1 flex items-center justify-center gap-2 py-4 text-xs font-bold uppercase tracking-widest transition-all duration-200 ${
                       activeTab === tab.id
-                        ? 'text-navy-800 border-b-2 border-gold-500 bg-gold-50/30'
-                        : 'text-slate-400 hover:text-slate-600 hover:bg-slate-50'
+                        ? 'text-electric-600 border-b-2 border-electric-500 bg-electric-50/50'
+                        : 'text-obsidian-400 hover:text-obsidian-700 hover:bg-obsidian-50'
                     }`}
                   >
-                    <tab.icon size={12} />
+                    <tab.icon size={14} />
                     {tab.label}
                   </button>
                 ))}
@@ -346,11 +348,11 @@ export default function ProductDetail() {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeTab}
-                  initial={{ opacity: 0, y: 6 }}
+                  initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -6 }}
+                  exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.2 }}
-                  className="p-5"
+                  className="p-6 md:p-8"
                 >
                   {tabContent[activeTab]}
                 </motion.div>
@@ -361,9 +363,12 @@ export default function ProductDetail() {
             <motion.div
               variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0 } }}
               id="product-enquiry-section"
-              className="pt-4"
+              className="pt-8"
             >
-              <EnquiryForm product={product} />
+              <div className="bg-white p-6 md:p-8 rounded-2xl border border-obsidian-200 shadow-sm">
+                <h3 className="text-xl font-display font-bold text-obsidian-900 mb-6">Enquire about this product</h3>
+                <EnquiryForm product={product} />
+              </div>
             </motion.div>
           </motion.div>
         </div>
@@ -375,15 +380,15 @@ export default function ProductDetail() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="border-t border-slate-100 pt-16"
+            className="pt-20 border-t border-obsidian-200"
           >
-            <div className="flex items-end justify-between mb-8">
+            <div className="flex items-end justify-between mb-10">
               <div className="text-left">
-                <p className="text-[#b3913b] text-xs font-bold uppercase tracking-[0.18em] mb-2">You May Also Like</p>
-                <h2 className="text-2xl font-display font-bold text-[#0a1128]">Related Products</h2>
+                <p className="text-electric-500 text-xs font-bold uppercase tracking-[0.2em] mb-2">You May Also Like</p>
+                <h2 className="text-3xl font-display font-bold text-obsidian-900">Related Products</h2>
               </div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {relatedProducts.map((p, i) => (
                 <motion.div
                   key={p.id}
@@ -407,38 +412,41 @@ export default function ProductDetail() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-obsidian-900/60 backdrop-blur-md"
             onClick={() => setShowSizeChart(false)}
           >
             <motion.div
-              initial={{ scale: 0.95, y: 15 }}
+              initial={{ scale: 0.95, y: 20 }}
               animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.95, y: 15 }}
-              transition={{ type: 'spring', duration: 0.4 }}
-              className="bg-stone-50 rounded-none p-6 md:p-8 max-w-lg w-full shadow-2xl border border-slate-100 text-left relative overflow-hidden"
+              exit={{ scale: 0.95, y: 20 }}
+              transition={{ type: 'spring', duration: 0.5 }}
+              className="bg-white rounded-3xl p-6 md:p-8 max-w-2xl w-full shadow-2xl border border-obsidian-200 text-left relative overflow-hidden"
               onClick={e => e.stopPropagation()}
             >
               <button
                 onClick={() => setShowSizeChart(false)}
-                className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition-colors"
+                className="absolute top-6 right-6 text-obsidian-400 hover:text-obsidian-900 hover:bg-obsidian-100 p-2 rounded-full transition-colors"
               >
                 <X size={20} />
               </button>
-              <h3 className="text-xl font-display font-bold text-[#0a1128] mb-1">Standard Size Chart</h3>
-              <p className="text-slate-400 text-xs mb-6 font-medium">All measurements are in inches. Body fit measurements.</p>
               
-              <div className="overflow-x-auto border border-slate-100 rounded-none">
+              <div className="mb-8">
+                <h3 className="text-2xl font-display font-bold text-obsidian-900 mb-2">Standard Size Chart</h3>
+                <p className="text-obsidian-500 text-sm font-light">All measurements are in inches. Standard body fit measurements.</p>
+              </div>
+              
+              <div className="overflow-x-auto rounded-xl border border-obsidian-200">
                 <table className="w-full text-sm text-left border-collapse">
                   <thead>
-                    <tr className="bg-slate-50 border-b border-slate-100 text-[#0a1128] font-semibold text-xs uppercase tracking-wider">
-                      <th className="px-4 py-3">Size</th>
-                      <th className="px-4 py-3">Chest</th>
-                      <th className="px-4 py-3">Waist</th>
-                      <th className="px-4 py-3">Sleeve</th>
-                      <th className="px-4 py-3">Length</th>
+                    <tr className="bg-obsidian-50 border-b border-obsidian-200 text-obsidian-900 font-bold text-xs uppercase tracking-widest">
+                      <th className="px-6 py-4">Size</th>
+                      <th className="px-6 py-4">Chest</th>
+                      <th className="px-6 py-4">Waist</th>
+                      <th className="px-6 py-4">Sleeve</th>
+                      <th className="px-6 py-4">Length</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-100 text-slate-600 font-medium">
+                  <tbody className="divide-y divide-obsidian-100 text-obsidian-600">
                     {[
                       { size: 'XS', chest: '34-36', waist: '28-30', sleeve: '24.5', length: '27.5' },
                       { size: 'S', chest: '36-38', waist: '30-32', sleeve: '25.0', length: '28.0' },
@@ -447,22 +455,22 @@ export default function ProductDetail() {
                       { size: 'XL', chest: '42-44', waist: '36-38', sleeve: '26.5', length: '29.5' },
                       { size: 'XXL', chest: '44-46', waist: '38-40', sleeve: '27.0', length: '30.0' },
                     ].map(row => (
-                      <tr key={row.size} className="hover:bg-slate-50/50">
-                        <td className="px-4 py-3 font-bold text-[#0a1128]">{row.size}</td>
-                        <td className="px-4 py-3">{row.chest}</td>
-                        <td className="px-4 py-3">{row.waist}</td>
-                        <td className="px-4 py-3">{row.sleeve}</td>
-                        <td className="px-4 py-3">{row.length}</td>
+                      <tr key={row.size} className="hover:bg-electric-50/50 transition-colors">
+                        <td className="px-6 py-4 font-bold text-obsidian-900">{row.size}</td>
+                        <td className="px-6 py-4">{row.chest}</td>
+                        <td className="px-6 py-4">{row.waist}</td>
+                        <td className="px-6 py-4">{row.sleeve}</td>
+                        <td className="px-6 py-4">{row.length}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
               
-              <div className="mt-6 p-4 bg-gold-50/50 border border-gold-100 rounded-none flex gap-3">
-                <Info size={16} className="text-[#b3913b] shrink-0 mt-0.5" />
-                <p className="text-[11px] text-gold-800 leading-normal font-medium">
-                  <strong>Tip:</strong> If your measurements fall between sizes, select the larger size for a relaxed uniform fit. We also provide bespoke custom measurements for bulk orders.
+              <div className="mt-8 p-5 bg-electric-50 border border-electric-200 rounded-xl flex gap-4">
+                <Info size={20} className="text-electric-500 shrink-0" />
+                <p className="text-sm text-electric-900 leading-relaxed font-light">
+                  <strong className="font-semibold">Tip:</strong> If your measurements fall between sizes, select the larger size for a relaxed uniform fit. We also provide bespoke custom measurements for bulk orders over 100 units.
                 </p>
               </div>
             </motion.div>

@@ -1,0 +1,278 @@
+[
+  {
+    "id": "prod-doctor-male",
+    "title": "Premium Men's Professional Lab Coat",
+    "description": "Classic full-length men's professional lab coat featuring a tailored chest fit, side vent openings for pocket access, multiple utility pockets, and durable reinforced stitching. Anti-microbial treated.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Premium%20Men's%20Professional%20Lab%20Coat.%20Classic%20full-length%20men's%20professional%20lab%20coat%20featuring%20a%20tailored%20chest%20fit%2C%20side%20vent%20openings%20for%20pocket%20access%2C%20multiple%20utility%20pockets%2C%20and%20durable%20reinforced%20stitching.%20Anti-microbial%20treated.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-doctor-female",
+    "title": "Premium Women's Tailored Lab Coat",
+    "description": "Princess-seamed women's professional lab coat featuring a slim, elegant tailored fit, side pocket access, chest utility pocket, and anti-wrinkle fabric.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Premium%20Women's%20Tailored%20Lab%20Coat.%20Princess-seamed%20women's%20professional%20lab%20coat%20featuring%20a%20slim%2C%20elegant%20tailored%20fit%2C%20side%20pocket%20access%2C%20chest%20utility%20pocket%2C%20and%20anti-wrinkle%20fabric.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-doctor-2",
+    "title": "Premium Hospital Unisex OT Scrub Suit",
+    "description": "Classic medical scrubs set (top and cargo trousers) featuring double chest pockets and drawstring waist. Antimicrobial treated for surgical and general ward duty.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Premium%20Hospital%20Unisex%20OT%20Scrub%20Suit.%20Classic%20medical%20scrubs%20set%20(top%20and%20cargo%20trousers)%20featuring%20double%20chest%20pockets%20and%20drawstring%20waist.%20Antimicrobial%20treated%20for%20surgical%20and%20general%20ward%20duty.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-nurse-1",
+    "title": "Premium Nurse Tunic Uniform (Zip Front)",
+    "description": "Professional nursing tunic featuring elegant contrast piping, zip front closure, dual deep side pockets, and back action pleats for high flexibility during duty.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Premium%20Nurse%20Tunic%20Uniform%20(Zip%20Front).%20Professional%20nursing%20tunic%20featuring%20elegant%20contrast%20piping%2C%20zip%20front%20closure%2C%20dual%20deep%20side%20pockets%2C%20and%20back%20action%20pleats%20for%20high%20flexibility%20during%20duty.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-nurse-2",
+    "title": "Female V-Neck Patient Care Scrub Set",
+    "description": "Lightweight scrubs designed for nurses, dental assistants, and clinic care teams. Soft touch, fade-resistant fabric with 4-way stretch utility.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Female%20V-Neck%20Patient%20Care%20Scrub%20Set.%20Lightweight%20scrubs%20designed%20for%20nurses%2C%20dental%20assistants%2C%20and%20clinic%20care%20teams.%20Soft%20touch%2C%20fade-resistant%20fabric%20with%204-way%20stretch%20utility.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-patient-1",
+    "title": "Premium Patient Hospital Gown (Unisex)",
+    "description": "Comfortable and breathable patient gown featuring a classic back-tie closure and roomy sleeves. Lightweight fabric ensures maximum comfort during extended hospital stays.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Premium%20Patient%20Hospital%20Gown%20(Unisex).%20Comfortable%20and%20breathable%20patient%20gown%20featuring%20a%20classic%20back-tie%20closure%20and%20roomy%20sleeves.%20Lightweight%20fabric%20ensures%20maximum%20comfort%20during%20extended%20hospital%20stays.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-patient-2",
+    "title": "Disposable Sterile SMS Patient Gown",
+    "description": "Single-use fluid-resistant sterile patient gown designed for surgical and diagnostic prep. Lightweight SMS barrier fabric provides hygienic protection.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Disposable%20Sterile%20SMS%20Patient%20Gown.%20Single-use%20fluid-resistant%20sterile%20patient%20gown%20designed%20for%20surgical%20and%20diagnostic%20prep.%20Lightweight%20SMS%20barrier%20fabric%20provides%20hygienic%20protection.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-medical-apron",
+    "title": "Surgical Disposable Wraparound Apron",
+    "description": "Fluid-proof wraparound surgical apron for theatre, autopsy, and clinical procedures. Neck-tie and waist-tie adjustable fit with full torso coverage.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Surgical%20Disposable%20Wraparound%20Apron.%20Fluid-proof%20wraparound%20surgical%20apron%20for%20theatre%2C%20autopsy%2C%20and%20clinical%20procedures.%20Neck-tie%20and%20waist-tie%20adjustable%20fit%20with%20full%20torso%20coverage.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-medical-cap",
+    "title": "Disposable Surgeon Bouffant Cap (Pack of 100)",
+    "description": "Breathable non-woven bouffant caps with elastic band. Ideal for operation theatres, pharmaceutical labs, and food processing units.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Disposable%20Surgeon%20Bouffant%20Cap%20(Pack%20of%20100).%20Breathable%20non-woven%20bouffant%20caps%20with%20elastic%20band.%20Ideal%20for%20operation%20theatres%2C%20pharmaceutical%20labs%2C%20and%20food%20processing%20units.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-medical-shoe",
+    "title": "Disposable Anti-Skid Shoe Cover (Pack of 50)",
+    "description": "Fluid-resistant shoe covers with anti-skid sole grip. Essential for OT, ICU, pharmaceutical clean rooms, and lab environments.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Disposable%20Anti-Skid%20Shoe%20Cover%20(Pack%20of%2050).%20Fluid-resistant%20shoe%20covers%20with%20anti-skid%20sole%20grip.%20Essential%20for%20OT%2C%20ICU%2C%20pharmaceutical%20clean%20rooms%2C%20and%20lab%20environments.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-scrub-jogger",
+    "title": "Unisex Premium Jogger Scrub Set",
+    "description": "Modern athletic fit scrub set featuring moisture-wicking 4-way stretch fabric, ribbed knit collar, jogger pants with elastic ankle cuffs, and 6 functional utility pockets.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Unisex%20Premium%20Jogger%20Scrub%20Set.%20Modern%20athletic%20fit%20scrub%20set%20featuring%20moisture-wicking%204-way%20stretch%20fabric%2C%20ribbed%20knit%20collar%2C%20jogger%20pants%20with%20elastic%20ankle%20cuffs%2C%20and%206%20functional%20utility%20pockets.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-scrub-pediatric",
+    "title": "Pediatric Specialist Printed Scrub Top",
+    "description": "Friendly, printed pediatric scrub top featuring cute cartoon characters, stethoscopes, and animal illustrations. Helps put young patients at ease during clinical visits.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Pediatric%20Specialist%20Printed%20Scrub%20Top.%20Friendly%2C%20printed%20pediatric%20scrub%20top%20featuring%20cute%20cartoon%20characters%2C%20stethoscopes%2C%20and%20animal%20illustrations.%20Helps%20put%20young%20patients%20at%20ease%20during%20clinical%20visits.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-tunic-dentist",
+    "title": "Dentist & Specialist Clinic Wrap Tunic",
+    "description": "Ergonomic wrap-style tunic with asymmetrical side button closure, mock neck, and twin hip pockets. Designed for dentists, dermatologists, and aesthetic clinic staff.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Dentist%20%26%20Specialist%20Clinic%20Wrap%20Tunic.%20Ergonomic%20wrap-style%20tunic%20with%20asymmetrical%20side%20button%20closure%2C%20mock%20neck%2C%20and%20twin%20hip%20pockets.%20Designed%20for%20dentists%2C%20dermatologists%2C%20and%20aesthetic%20clinic%20staff.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-staff-wardboy",
+    "title": "Hospital Ward Attendant & Staff Uniform Set",
+    "description": "High-durability utility uniform consisting of a short-sleeve comfort tunic and straight-fit cargo pants. Designed for ward boys, hospital helper staff, and stretcher attendants.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Hospital%20Ward%20Attendant%20%26%20Staff%20Uniform%20Set.%20High-durability%20utility%20uniform%20consisting%20of%20a%20short-sleeve%20comfort%20tunic%20and%20straight-fit%20cargo%20pants.%20Designed%20for%20ward%20boys%2C%20hospital%20helper%20staff%2C%20and%20stretcher%20attendants.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-gown-isolation",
+    "title": "Autoclavable Surgical Isolation Gown",
+    "description": "Reusable surgical isolation gown with full back overlap, stockinette cuffs, and tie closures. Constructed to withstand frequent autoclave sterilization cycles.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Autoclavable%20Surgical%20Isolation%20Gown.%20Reusable%20surgical%20isolation%20gown%20with%20full%20back%20overlap%2C%20stockinette%20cuffs%2C%20and%20tie%20closures.%20Constructed%20to%20withstand%20frequent%20autoclave%20sterilization%20cycles.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-doctor-blazer",
+    "title": "Premium Medical Consultation Blazer",
+    "description": "Tailored short consultation coat for senior doctors and medical consultants. Features elegant notch lapels, structured shoulders, and clean lining.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Premium%20Medical%20Consultation%20Blazer.%20Tailored%20short%20consultation%20coat%20for%20senior%20doctors%20and%20medical%20consultants.%20Features%20elegant%20notch%20lapels%2C%20structured%20shoulders%2C%20and%20clean%20lining.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-maternity-scrub",
+    "title": "Maternity Comfort Scrub Top",
+    "description": "Specially tailored maternity scrub top with side-panel stretch panels and adjustable drawstrings, allowing comfort and room to grow throughout pregnancy.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Maternity%20Comfort%20Scrub%20Top.%20Specially%20tailored%20maternity%20scrub%20top%20with%20side-panel%20stretch%20panels%20and%20adjustable%20drawstrings%2C%20allowing%20comfort%20and%20room%20to%20grow%20throughout%20pregnancy.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-patient-pajama",
+    "title": "Premium Two-Piece Patient Suit",
+    "description": "Deluxe patient uniform including a front-buttoned short-sleeve shirt and matching elastic waist trousers. Offers dignity and comfort for long-term recovery stays.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Premium%20Two-Piece%20Patient%20Suit.%20Deluxe%20patient%20uniform%20including%20a%20front-buttoned%20short-sleeve%20shirt%20and%20matching%20elastic%20waist%20trousers.%20Offers%20dignity%20and%20comfort%20for%20long-term%20recovery%20stays.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-medical-lab-apron",
+    "title": "Pharmacist Short Sleeve Lab Jacket",
+    "description": "Professional waist-length lab jacket featuring short sleeves, three patch pockets, and snap-button front. Perfect for pharmacists, lab technicians, and lab assistants.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Pharmacist%20Short%20Sleeve%20Lab%20Jacket.%20Professional%20waist-length%20lab%20jacket%20featuring%20short%20sleeves%2C%20three%20patch%20pockets%2C%20and%20snap-button%20front.%20Perfect%20for%20pharmacists%2C%20lab%20technicians%2C%20and%20lab%20assistants.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-scrub-premium-fit",
+    "title": "Elite Stretch V-Neck Scrub Suit",
+    "description": "Designer-grade athletic scrub suit with yoga-style waistband, clean V-neck, mesh lining for breathability, and zip pockets. Antimicrobial and wrinkle-free.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Elite%20Stretch%20V-Neck%20Scrub%20Suit.%20Designer-grade%20athletic%20scrub%20suit%20with%20yoga-style%20waistband%2C%20clean%20V-neck%2C%20mesh%20lining%20for%20breathability%2C%20and%20zip%20pockets.%20Antimicrobial%20and%20wrinkle-free.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-chef-1",
+    "title": "Double-Breasted Master Chef Jacket",
+    "description": "Elite hospitality chef coat designed for hot kitchen environments. Features breathable mesh underarms, a thermometer arm pocket, and reversible front closure.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Double-Breasted%20Master%20Chef%20Jacket.%20Elite%20hospitality%20chef%20coat%20designed%20for%20hot%20kitchen%20environments.%20Features%20breathable%20mesh%20underarms%2C%20a%20thermometer%20arm%20pocket%2C%20and%20reversible%20front%20closure.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-chef-2",
+    "title": "Premium Chef Kitchen Bib Apron",
+    "description": "Professional kitchen bib apron tailored from stain-resistant canvas twill. Features dual deep pockets, reinforced loops, and adjustable neck straps.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Premium%20Chef%20Kitchen%20Bib%20Apron.%20Professional%20kitchen%20bib%20apron%20tailored%20from%20stain-resistant%20canvas%20twill.%20Features%20dual%20deep%20pockets%2C%20reinforced%20loops%2C%20and%20adjustable%20neck%20straps.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-chef-pants",
+    "title": "Chef Check Baggy Trouser",
+    "description": "Classic houndstooth check chef trouser with elastic drawstring waist. Loose-fit for comfortable kitchen movement. Industrial wash-safe and colour-fast.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Chef%20Check%20Baggy%20Trouser.%20Classic%20houndstooth%20check%20chef%20trouser%20with%20elastic%20drawstring%20waist.%20Loose-fit%20for%20comfortable%20kitchen%20movement.%20Industrial%20wash-safe%20and%20colour-fast.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-chef-hat",
+    "title": "Tall Pleated Chef Toque Hat",
+    "description": "Traditional tall white chef toque with adjustable velcro band. Pleated design with internal mesh lining for ventilation.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Tall%20Pleated%20Chef%20Toque%20Hat.%20Traditional%20tall%20white%20chef%20toque%20with%20adjustable%20velcro%20band.%20Pleated%20design%20with%20internal%20mesh%20lining%20for%20ventilation.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-waiter-1",
+    "title": "Waiter Formal Vest & Bow Tie Set",
+    "description": "Classic five-button waistcoat with adjustable back buckle and matching bow tie. Designed for dining banquets and executive bar staff.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Waiter%20Formal%20Vest%20%26%20Bow%20Tie%20Set.%20Classic%20five-button%20waistcoat%20with%20adjustable%20back%20buckle%20and%20matching%20bow%20tie.%20Designed%20for%20dining%20banquets%20and%20executive%20bar%20staff.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-waiter-shirt",
+    "title": "Formal Waiter Long-Sleeve Service Shirt",
+    "description": "Crisp formal shirt tailored for waiters, bartenders, and front-of-house staff. Features reinforced cuffs, chest pocket, and wrinkle-resistant finish.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Formal%20Waiter%20Long-Sleeve%20Service%20Shirt.%20Crisp%20formal%20shirt%20tailored%20for%20waiters%2C%20bartenders%2C%20and%20front-of-house%20staff.%20Features%20reinforced%20cuffs%2C%20chest%20pocket%2C%20and%20wrinkle-resistant%20finish.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-corporate-1",
+    "title": "Slim Fit Corporate Men's Blazer",
+    "description": "Ultra-modern corporate wool-blend blazer with double vent, notch lapel, and customized satin lining. Ideal for corporate office environments.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Slim%20Fit%20Corporate%20Men's%20Blazer.%20Ultra-modern%20corporate%20wool-blend%20blazer%20with%20double%20vent%2C%20notch%20lapel%2C%20and%20customized%20satin%20lining.%20Ideal%20for%20corporate%20office%20environments.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-corporate-women-blazer",
+    "title": "Women's Tailored Corporate Blazer",
+    "description": "Single-breasted feminine blazer with princess seam, padded shoulders, and functional pockets. Perfect for front-office, banking, and airline staff.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Women's%20Tailored%20Corporate%20Blazer.%20Single-breasted%20feminine%20blazer%20with%20princess%20seam%2C%20padded%20shoulders%2C%20and%20functional%20pockets.%20Perfect%20for%20front-office%2C%20banking%2C%20and%20airline%20staff.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-corporate-2",
+    "title": "Tailored Poly-Wool Corporate Nehru Jacket",
+    "description": "Modern corporate sleeveless Modi waistcoat featuring traditional mandarin collar and high-quality button closures. Gives security or front office teams a premium identity.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Tailored%20Poly-Wool%20Corporate%20Nehru%20Jacket.%20Modern%20corporate%20sleeveless%20Modi%20waistcoat%20featuring%20traditional%20mandarin%20collar%20and%20high-quality%20button%20closures.%20Gives%20security%20or%20front%20office%20teams%20a%20premium%20identity.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-corporate-3",
+    "title": "Premium Corporate Oxford Shirt",
+    "description": "Classic Oxford button-down shirt. Wrinkle-free finish with reinforced collar stays. Ideal for daily corporate and banking wear.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Premium%20Corporate%20Oxford%20Shirt.%20Classic%20Oxford%20button-down%20shirt.%20Wrinkle-free%20finish%20with%20reinforced%20collar%20stays.%20Ideal%20for%20daily%20corporate%20and%20banking%20wear.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-corporate-trouser",
+    "title": "Corporate Formal Flat-Front Trouser",
+    "description": "Classic flat-front formal trouser with permanent crease, hook-bar closure, and belt loops. Machine washable with shape-retention fabric.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Corporate%20Formal%20Flat-Front%20Trouser.%20Classic%20flat-front%20formal%20trouser%20with%20permanent%20crease%2C%20hook-bar%20closure%2C%20and%20belt%20loops.%20Machine%20washable%20with%20shape-retention%20fabric.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-corporate-tie",
+    "title": "Corporate Silk Necktie & Pocket Square Set",
+    "description": "Premium woven silk tie with matching pocket square. Available in solid, stripe, and micro-dot patterns. Custom logo printing available for bulk orders.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Corporate%20Silk%20Necktie%20%26%20Pocket%20Square%20Set.%20Premium%20woven%20silk%20tie%20with%20matching%20pocket%20square.%20Available%20in%20solid%2C%20stripe%2C%20and%20micro-dot%20patterns.%20Custom%20logo%20printing%20available%20for%20bulk%20orders.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-corporate-polo",
+    "title": "Corporate Branded Polo T-Shirt",
+    "description": "Relaxed-fit corporate polo with ribbed collar, 3-button placket, and side vents. Perfect for casual Fridays, tech teams, and field staff. Custom logo embroidery included.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Corporate%20Branded%20Polo%20T-Shirt.%20Relaxed-fit%20corporate%20polo%20with%20ribbed%20collar%2C%203-button%20placket%2C%20and%20side%20vents.%20Perfect%20for%20casual%20Fridays%2C%20tech%20teams%2C%20and%20field%20staff.%20Custom%20logo%20embroidery%20included.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-corporate-suit",
+    "title": "Men's 2-Piece Executive Suit Set",
+    "description": "Complete 2-piece suit (blazer + trouser) tailored from premium tropical wool. Single-breasted, double-vent, with full canvas construction for a structured silhouette.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Men's%202-Piece%20Executive%20Suit%20Set.%20Complete%202-piece%20suit%20(blazer%20%2B%20trouser)%20tailored%20from%20premium%20tropical%20wool.%20Single-breasted%2C%20double-vent%2C%20with%20full%20canvas%20construction%20for%20a%20structured%20silhouette.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-school-1",
+    "title": "Premium School Blazer (Embroidered Crest)",
+    "description": "High-durability school blazer tailored from premium terry-wool fabric. Resists fading and pilling over daily wash. Custom school crest embroidery included.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Premium%20School%20Blazer%20(Embroidered%20Crest).%20High-durability%20school%20blazer%20tailored%20from%20premium%20terry-wool%20fabric.%20Resists%20fading%20and%20pilling%20over%20daily%20wash.%20Custom%20school%20crest%20embroidery%20included.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-school-2",
+    "title": "Classic Girls Pleated Pinafore",
+    "description": "Standard school pinafore featuring elegant box pleats and a side button closure. Tailored from sweat-wicking twill. Custom check pattern available.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Classic%20Girls%20Pleated%20Pinafore.%20Standard%20school%20pinafore%20featuring%20elegant%20box%20pleats%20and%20a%20side%20button%20closure.%20Tailored%20from%20sweat-wicking%20twill.%20Custom%20check%20pattern%20available.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-school-shirt",
+    "title": "School Uniform Formal Shirt (Half / Full Sleeve)",
+    "description": "Crisp white or coloured school shirt with pointed collar, chest pocket with logo embroidery, and reinforced seams. Available in both half and full sleeve.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20School%20Uniform%20Formal%20Shirt%20(Half%20%2F%20Full%20Sleeve).%20Crisp%20white%20or%20coloured%20school%20shirt%20with%20pointed%20collar%2C%20chest%20pocket%20with%20logo%20embroidery%2C%20and%20reinforced%20seams.%20Available%20in%20both%20half%20and%20full%20sleeve.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-school-trouser",
+    "title": "School Uniform Formal Trouser",
+    "description": "Durable school trouser with elastic waist option for juniors and belt-loop for seniors. Colour-fast fabric that resists fading even after 100+ washes.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20School%20Uniform%20Formal%20Trouser.%20Durable%20school%20trouser%20with%20elastic%20waist%20option%20for%20juniors%20and%20belt-loop%20for%20seniors.%20Colour-fast%20fabric%20that%20resists%20fading%20even%20after%20100%2B%20washes.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-school-tie",
+    "title": "School Striped Necktie (Elastic / Regular)",
+    "description": "Woven polyester school tie in house colours with diagonal stripe pattern. Available in both elastic clip-on (for juniors) and regular knot styles.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20School%20Striped%20Necktie%20(Elastic%20%2F%20Regular).%20Woven%20polyester%20school%20tie%20in%20house%20colours%20with%20diagonal%20stripe%20pattern.%20Available%20in%20both%20elastic%20clip-on%20(for%20juniors)%20and%20regular%20knot%20styles.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-school-sweater",
+    "title": "School V-Neck Pullover Sweater",
+    "description": "Warm acrylic-wool blend V-neck pullover with ribbed cuffs and hemband. School crest embroidery on chest. Pill-resistant and machine-washable.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20School%20V-Neck%20Pullover%20Sweater.%20Warm%20acrylic-wool%20blend%20V-neck%20pullover%20with%20ribbed%20cuffs%20and%20hemband.%20School%20crest%20embroidery%20on%20chest.%20Pill-resistant%20and%20machine-washable.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-school-skirt",
+    "title": "Girls Pleated School Skirt (Knee-Length)",
+    "description": "Classic knife-pleated school skirt with concealed side zipper and elastic waistband for comfort. Stain-resistant and easy-wash.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Girls%20Pleated%20School%20Skirt%20(Knee-Length).%20Classic%20knife-pleated%20school%20skirt%20with%20concealed%20side%20zipper%20and%20elastic%20waistband%20for%20comfort.%20Stain-resistant%20and%20easy-wash.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-school-pe",
+    "title": "School PE / Sports Track Suit Set",
+    "description": "Comfortable sportswear track suit (jacket + track pant) with school colour accents. Moisture-wicking fabric for outdoor games and PT classes.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20School%20PE%20%2F%20Sports%20Track%20Suit%20Set.%20Comfortable%20sportswear%20track%20suit%20(jacket%20%2B%20track%20pant)%20with%20school%20colour%20accents.%20Moisture-wicking%20fabric%20for%20outdoor%20games%20and%20PT%20classes.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-school-belt",
+    "title": "School Uniform Leather Belt (Logo Buckle)",
+    "description": "Genuine leather school belt with custom school-crest metal buckle. Adjustable length with pre-punched holes. Polished brass or chrome finish.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20School%20Uniform%20Leather%20Belt%20(Logo%20Buckle).%20Genuine%20leather%20school%20belt%20with%20custom%20school-crest%20metal%20buckle.%20Adjustable%20length%20with%20pre-punched%20holes.%20Polished%20brass%20or%20chrome%20finish.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-school-socks",
+    "title": "School Uniform Knee-High Socks (Pack of 3)",
+    "description": "Premium cotton-blend school socks with reinforced heel and toe. Elastic cuff for stay-up fit. Colour-fast after 100+ washes. Pack of 3 pairs.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20School%20Uniform%20Knee-High%20Socks%20(Pack%20of%203).%20Premium%20cotton-blend%20school%20socks%20with%20reinforced%20heel%20and%20toe.%20Elastic%20cuff%20for%20stay-up%20fit.%20Colour-fast%20after%20100%2B%20washes.%20Pack%20of%203%20pairs.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-industrial-boiler",
+    "title": "Heavy Duty Cotton Boiler Suit (Coverall)",
+    "description": "Full-body industrial coverall boiler suit featuring heavy-duty brass double-zipper front, action back for flexibility, and multiple pockets for tools.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Heavy%20Duty%20Cotton%20Boiler%20Suit%20(Coverall).%20Full-body%20industrial%20coverall%20boiler%20suit%20featuring%20heavy-duty%20brass%20double-zipper%20front%2C%20action%20back%20for%20flexibility%2C%20and%20multiple%20pockets%20for%20tools.?width=800&height=600&nologo=true&seed=42"
+  },
+  {
+    "id": "prod-industrial-jacket",
+    "title": "Reflective High-Visibility Work Jacket",
+    "description": "Two-tone industrial work jacket with 3M reflective safety stripes. Designed for road construction, airport crew, and warehouse safety.",
+    "image": "https://image.pollinations.ai/prompt/Professional%20catalog%20photo%20of%20Reflective%20High-Visibility%20Work%20Jacket.%20Two-tone%20industrial%20work%20jacket%20with%203M%20reflective%20safety%20stripes.%20Designed%20for%20road%20construction%2C%20airport%20crew%2C%20and%20warehouse%20safety.?width=800&height=600&nologo=true&seed=42"
+  }
+]

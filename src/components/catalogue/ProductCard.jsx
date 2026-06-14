@@ -26,7 +26,6 @@ const colorMap = {
   'denim blue': '#6f8faf',
   beige: '#f5f0e1',
   olive: '#6b8e23',
-  'navy blue': '#1e3a5f',
 }
 
 export default function ProductCard({ product, onQuickView, layout = 'vertical' }) {
@@ -42,47 +41,48 @@ export default function ProductCard({ product, onQuickView, layout = 'vertical' 
       whileHover={{ y: -6 }}
       whileTap={{ scale: 0.98 }}
       transition={{ type: 'spring', stiffness: 280, damping: 20 }}
-      className={`group bg-white overflow-hidden border border-[#e2e8f0] hover:border-[#b3913b] hover:shadow-xl transition-all duration-300 cursor-pointer flex ${isHorizontal ? 'flex-row h-full' : 'flex-col'}`}
+      className={`group bg-white rounded-2xl overflow-hidden border border-obsidian-200 hover:border-electric-400/50 shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-all duration-300 cursor-pointer flex ${isHorizontal ? 'flex-row h-full' : 'flex-col'}`}
       onClick={() => navigate(`/product/${product.id}`)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
       {/* Image area */}
-      <div className={`relative bg-stone-50 overflow-hidden shrink-0 ${isHorizontal ? 'w-2/5 sm:w-48 h-full min-h-[240px]' : 'h-64'}`}>
+      <div className={`relative bg-obsidian-50 overflow-hidden shrink-0 ${isHorizontal ? 'w-2/5 sm:w-48 h-full min-h-[240px]' : 'h-64'}`}>
         {mainImage && !imgError ? (
           <img
             src={mainImage}
             alt={product.name}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 bg-slate-50"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 bg-obsidian-50"
             onError={() => setImgError(true)}
           />
         ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center gap-4 bg-stone-50 border-b border-[#e2e8f0]">
-            <div className="text-[#0a1128] font-display font-bold text-2xl tracking-widest italic opacity-40">
+          <div className="w-full h-full flex flex-col items-center justify-center gap-4 bg-obsidian-50 border-b border-obsidian-200">
+            <div className="text-obsidian-300 font-display font-bold text-2xl tracking-widest opacity-40">
               {product.name?.split(' ').slice(0, 2).map(n => n[0]).join('').toUpperCase() || 'NA'}
             </div>
-            <span className="text-[10px] font-bold text-[#94a3b8] tracking-[0.2em] uppercase text-center px-4">Photo Coming Soon</span>
+            <span className="text-[10px] font-bold text-obsidian-400 tracking-[0.2em] uppercase text-center px-4">Image Pending</span>
           </div>
         )}
 
         {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950/80 via-obsidian-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
         {/* Badges */}
         <div className="absolute top-4 left-4 flex flex-wrap gap-2 z-10 max-w-[calc(100%-2rem)]">
           {product.is_featured && (
-            <span className="px-3 py-1 bg-[#b3913b] text-[#0a1128] text-[10px] font-bold uppercase tracking-wider rounded-none shadow-sm">
-              ✦ Featured
+            <span className="px-3 py-1.5 glass-panel-dark text-electric-400 text-[10px] font-bold uppercase tracking-wider rounded-lg shadow-sm border border-electric-500/30 flex items-center gap-1">
+              <span className="w-1.5 h-1.5 bg-electric-500 rounded-full animate-pulse"></span>
+              Featured
             </span>
           )}
           {product.categories && !isHorizontal && (
-            <span className="px-3 py-1 bg-[#0a1128] text-white text-[10px] font-bold uppercase tracking-wider rounded-none shadow-sm hidden sm:block">
+            <span className="px-3 py-1.5 bg-obsidian-900/90 backdrop-blur-md text-white border border-obsidian-700 text-[10px] font-bold uppercase tracking-wider rounded-lg shadow-sm hidden sm:block">
               {product.categories.name}
             </span>
           )}
           {product.customization_available && !isHorizontal && (
-            <span className="px-2.5 py-1 bg-emerald-600 text-white text-[11px] font-bold rounded-lg shadow-sm hidden sm:flex items-center gap-1">
-              🎨 Customization Available
+            <span className="px-2.5 py-1.5 bg-emerald-500/90 backdrop-blur-md text-white text-[11px] font-bold rounded-lg shadow-sm hidden sm:flex items-center gap-1 border border-emerald-400">
+              🎨 Custom
             </span>
           )}
         </div>
@@ -90,34 +90,34 @@ export default function ProductCard({ product, onQuickView, layout = 'vertical' 
         {/* Quick view button */}
         <motion.button
           initial={false}
-          animate={{ opacity: hovered ? 1 : 0, y: hovered ? 0 : 8 }}
+          animate={{ opacity: hovered ? 1 : 0, y: hovered ? 0 : 10, scale: hovered ? 1 : 0.95 }}
           transition={{ duration: 0.2 }}
           id={`quickview-${product.id}`}
           onClick={e => { e.stopPropagation(); onQuickView?.(product) }}
-          className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-2 bg-white text-navy-800 text-xs font-bold rounded-xl shadow-xl hover:bg-gold-50 transition-colors whitespace-nowrap"
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 px-5 py-2.5 glass-panel text-obsidian-900 text-xs font-bold rounded-xl shadow-xl hover:bg-white hover:text-electric-600 transition-colors whitespace-nowrap border border-white/50"
         >
-          <Eye size={13} />
+          <Eye size={14} />
           Quick View
         </motion.button>
       </div>
 
       {/* Content */}
       <div className={`p-6 flex flex-col flex-1 ${isHorizontal ? 'justify-between py-6 px-8' : ''}`}>
-        <h3 className="font-display font-bold text-[#0a1128] text-lg leading-snug mb-3 line-clamp-2 group-hover:text-[#b3913b] transition-colors">
+        <h3 className="font-display font-bold text-obsidian-900 text-xl leading-tight mb-2 line-clamp-2 group-hover:text-electric-600 transition-colors">
           {product.name}
         </h3>
 
         {product.fabric && (
-          <div className="flex items-center gap-1 text-[11px] text-slate-400 mb-3 font-medium uppercase tracking-wide relative group/tooltip w-fit">
+          <div className="flex items-center gap-1.5 text-[11px] text-obsidian-500 mb-4 font-semibold uppercase tracking-wider relative group/tooltip w-fit">
             <span>{product.fabric}</span>
             {product.fabric_care && (
               <div className="relative inline-block">
-                <span className="cursor-help inline-flex items-center justify-center w-3.5 h-3.5 rounded-full bg-slate-100 text-slate-500 font-bold hover:bg-slate-200 text-[9px] transition-colors normal-case ml-0.5">
+                <span className="cursor-help inline-flex items-center justify-center w-4 h-4 rounded-full bg-obsidian-100 text-obsidian-600 font-bold hover:bg-electric-100 hover:text-electric-600 text-[10px] transition-colors normal-case">
                   i
                 </span>
-                <div className="absolute z-30 bottom-full left-0 mb-2 hidden group-hover/tooltip:block w-48 p-2.5 bg-slate-900/95 backdrop-blur-sm text-[10px] text-slate-100 font-normal normal-case rounded-lg shadow-xl border border-slate-800 leading-normal pointer-events-none">
+                <div className="absolute z-30 bottom-full left-0 mb-2 hidden group-hover/tooltip:block w-56 p-3 glass-panel-dark text-[11px] text-obsidian-100 font-normal normal-case rounded-xl shadow-2xl border border-obsidian-700 leading-relaxed pointer-events-none">
                   {product.fabric_care}
-                  <div className="absolute top-full left-3 w-1.5 h-1.5 bg-slate-900/95 rotate-45 -translate-y-0.5 border-r border-b border-slate-800" />
+                  <div className="absolute top-full left-3 w-2 h-2 bg-obsidian-800 rotate-45 -translate-y-1 border-r border-b border-obsidian-700" />
                 </div>
               </div>
             )}
@@ -126,11 +126,11 @@ export default function ProductCard({ product, onQuickView, layout = 'vertical' 
 
         {/* Sizes */}
         {product.sizes?.length > 0 && (
-          <div className="mb-3">
-            <p className="text-[10px] font-bold text-[#94a3b8] uppercase tracking-wider mb-2">Sizes</p>
+          <div className="mb-4">
+            <p className="text-[10px] font-bold text-obsidian-400 uppercase tracking-widest mb-2">Sizes</p>
             <div className="flex flex-wrap gap-1.5">
               {product.sizes.map(size => (
-                <span key={size} className="px-2.5 py-1 text-[10px] font-bold text-[#0a1128] bg-stone-50 border border-[#e2e8f0] rounded-none">
+               <span key={size} className="px-2.5 py-1.5 text-[11px] font-bold text-obsidian-700 bg-obsidian-50 border border-obsidian-200 rounded-lg hover:border-obsidian-300 hover:bg-obsidian-100 transition-colors cursor-default">
                   {size}
                 </span>
               ))}
@@ -140,13 +140,13 @@ export default function ProductCard({ product, onQuickView, layout = 'vertical' 
 
         {/* Colors */}
         {product.colors?.length > 0 && (
-          <div className="mb-3">
-            <p className="text-[10px] font-semibold text-slate-500 uppercase tracking-wider mb-1.5">Colors</p>
-            <div className="flex flex-wrap gap-1.5">
+          <div className="mb-4">
+            <p className="text-[10px] font-bold text-obsidian-400 uppercase tracking-widest mb-2">Colors</p>
+            <div className="flex flex-wrap gap-2">
               {product.colors.map(color => (
-                <span key={color} className="flex items-center gap-1 px-2 py-0.5 text-[10px] font-medium text-slate-600 bg-slate-50 border border-slate-100 rounded-md">
+                <span key={color} className="flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-semibold text-obsidian-700 bg-white border border-obsidian-200 rounded-lg shadow-sm">
                   <span
-                    className="w-2.5 h-2.5 rounded-full border border-slate-200 shrink-0"
+                    className="w-3 h-3 rounded-full shadow-inner border border-obsidian-200 shrink-0"
                     style={{ backgroundColor: colorMap[color.toLowerCase()] || '#94a3b8' }}
                   />
                   {color}
@@ -156,26 +156,24 @@ export default function ProductCard({ product, onQuickView, layout = 'vertical' 
           </div>
         )}
 
-
-
         {/* Delivery timeline */}
         {product.delivery_timeline && (
-          <div className="flex items-center gap-1.5 text-[11px] text-slate-500 mb-3.5 font-medium">
-            <Truck size={13} className="text-gold-500 shrink-0" />
+          <div className="flex items-center gap-2 text-xs text-obsidian-600 mb-4 font-medium bg-obsidian-50 w-fit px-3 py-1.5 rounded-lg border border-obsidian-100">
+            <Truck size={14} className="text-electric-500 shrink-0" />
             <span>Est. Delivery: {product.delivery_timeline}</span>
           </div>
         )}
 
-        <div className="mt-auto pt-4">
+        <div className="mt-auto pt-4 border-t border-obsidian-100">
           {/* Price & MOQ */}
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center justify-between mb-5">
             {product.price_range ? (
-              <span className="text-[#0a1128] font-display font-bold text-lg">{product.price_range}</span>
+              <span className="text-obsidian-900 font-price font-bold text-xl tracking-tight">{product.price_range}</span>
             ) : (
-              <span className="text-[#64748b] text-xs font-semibold">Price on enquiry</span>
+              <span className="text-obsidian-500 text-sm font-semibold">Price on enquiry</span>
             )}
             {product.min_order_qty && (
-              <span className="text-[10px] font-bold uppercase tracking-wider text-[#94a3b8] px-2 py-1 bg-stone-50 border border-[#e2e8f0]">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-obsidian-500 px-2.5 py-1.5 bg-obsidian-50 border border-obsidian-200 rounded-lg">
                 MOQ {product.min_order_qty}+
               </span>
             )}
@@ -183,11 +181,11 @@ export default function ProductCard({ product, onQuickView, layout = 'vertical' 
 
           {/* CTA */}
           <button
-            className="w-full py-3 flex items-center justify-center gap-2 bg-transparent hover:bg-[#0a1128] text-[#0a1128] hover:text-white text-xs font-bold uppercase tracking-wider border border-[#0a1128] transition-colors duration-200 group/btn rounded-none"
+            className="w-full py-3.5 flex items-center justify-center gap-2 bg-obsidian-900 hover:bg-electric-500 text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all duration-300 group/btn shadow-[0_4px_14px_0_rgba(15,23,42,0.39)] hover:shadow-[0_6px_20px_rgba(59,130,246,0.23)] hover:-translate-y-0.5"
             onClick={e => { e.stopPropagation(); navigate(`/product/${product.id}`) }}
           >
             View Details
-            <ArrowUpRight size={14} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+            <ArrowUpRight size={15} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
           </button>
         </div>
       </div>

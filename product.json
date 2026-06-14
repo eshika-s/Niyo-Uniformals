@@ -1,0 +1,2315 @@
+[
+  {
+    "id": "prod-doctor-male",
+    "name": "Premium Men's Professional Lab Coat",
+    "description": "Classic full-length men's professional lab coat featuring a tailored chest fit, side vent openings for pocket access, multiple utility pockets, and durable reinforced stitching. Anti-microbial treated.",
+    "category_id": "cat-medical",
+    "images": [
+      "/images/premium_mens_lab_coat_1781424925528.png"
+    ],
+    "fabric": "100% Cotton with Liquid Barrier Finish",
+    "is_featured": true,
+    "is_visible": true,
+    "price_range": "₹450 - ₹650",
+    "min_order_qty": 50,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "White",
+      "Light Blue",
+      "Navy Blue"
+    ],
+    "categories": {
+      "id": "cat-medical",
+      "name": "Healthcare & Hospital Uniforms",
+      "slug": "medical"
+    },
+    "created_at": "2026-06-14T08:08:55.309Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Men",
+    "price_min": 450,
+    "price_max": 650
+  },
+  {
+    "id": "prod-doctor-female",
+    "name": "Premium Women's Tailored Lab Coat",
+    "description": "Princess-seamed women's professional lab coat featuring a slim, elegant tailored fit, side pocket access, chest utility pocket, and anti-wrinkle fabric.",
+    "category_id": "cat-medical",
+    "images": [
+      "/images/premium_womens_lab_coat_1781424937311.png"
+    ],
+    "fabric": "100% Cotton with Liquid Barrier Finish",
+    "is_featured": true,
+    "is_visible": true,
+    "price_range": "₹450 - ₹650",
+    "min_order_qty": 50,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "White",
+      "Light Blue",
+      "Soft Pink"
+    ],
+    "categories": {
+      "id": "cat-medical",
+      "name": "Healthcare & Hospital Uniforms",
+      "slug": "medical"
+    },
+    "created_at": "2026-06-14T08:08:05.326Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Women",
+    "price_min": 450,
+    "price_max": 650
+  },
+  {
+    "id": "prod-doctor-2",
+    "name": "Premium Hospital Unisex OT Scrub Suit",
+    "description": "Classic medical scrubs set (top and cargo trousers) featuring double chest pockets and drawstring waist. Antimicrobial treated for surgical and general ward duty.",
+    "category_id": "cat-medical",
+    "images": [
+      "/images/premium_hospital_ot_scrub_1781424949074.png"
+    ],
+    "fabric": "Breathable Poly-Cotton Medical Weave",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹480 - ₹690",
+    "min_order_qty": 100,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Green",
+      "Teal",
+      "Navy Blue",
+      "Maroon"
+    ],
+    "categories": {
+      "id": "cat-medical",
+      "name": "Healthcare & Hospital Uniforms",
+      "slug": "medical"
+    },
+    "created_at": "2026-06-14T08:07:15.326Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 480,
+    "price_max": 690
+  },
+  {
+    "id": "prod-nurse-1",
+    "name": "Premium Nurse Tunic Uniform (Zip Front)",
+    "description": "Professional nursing tunic featuring elegant contrast piping, zip front closure, dual deep side pockets, and back action pleats for high flexibility during duty.",
+    "category_id": "cat-medical",
+    "images": [
+      "/images/premium_nurse_tunic_1781424962870.png"
+    ],
+    "fabric": "Poly-Cotton Easy-Care Poplin",
+    "is_featured": true,
+    "is_visible": true,
+    "price_range": "₹420 - ₹580",
+    "min_order_qty": 100,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Navy Blue",
+      "Burgundy",
+      "Teal"
+    ],
+    "categories": {
+      "id": "cat-medical",
+      "name": "Healthcare & Hospital Uniforms",
+      "slug": "medical"
+    },
+    "created_at": "2026-06-14T08:03:55.326Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 420,
+    "price_max": 580
+  },
+  {
+    "id": "prod-nurse-2",
+    "name": "Female V-Neck Patient Care Scrub Set",
+    "description": "Lightweight scrubs designed for nurses, dental assistants, and clinic care teams. Soft touch, fade-resistant fabric with 4-way stretch utility.",
+    "category_id": "cat-medical",
+    "images": [
+      "/images/female_vneck_scrub_1781425001237.png"
+    ],
+    "fabric": "Stretchable Poly-Rayon Blend",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹450 - ₹600",
+    "min_order_qty": 80,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Ceil Blue",
+      "Wine",
+      "Hunter Green"
+    ],
+    "categories": {
+      "id": "cat-medical",
+      "name": "Healthcare & Hospital Uniforms",
+      "slug": "medical"
+    },
+    "created_at": "2026-06-14T08:01:25.326Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Women",
+    "price_min": 450,
+    "price_max": 600
+  },
+  {
+    "id": "prod-patient-1",
+    "name": "Premium Patient Hospital Gown (Unisex)",
+    "description": "Comfortable and breathable patient gown featuring a classic back-tie closure and roomy sleeves. Lightweight fabric ensures maximum comfort during extended hospital stays.",
+    "category_id": "cat-medical",
+    "images": [
+      "/images/patient_hospital_gown_1781425011177.png"
+    ],
+    "fabric": "100% Breathable Soft Cotton",
+    "is_featured": true,
+    "is_visible": true,
+    "price_range": "₹180 - ₹280",
+    "min_order_qty": 100,
+    "sizes": [
+      "Free Size",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Light Blue",
+      "White",
+      "Green"
+    ],
+    "categories": {
+      "id": "cat-medical",
+      "name": "Healthcare & Hospital Uniforms",
+      "slug": "medical"
+    },
+    "created_at": "2026-06-14T08:01:25.326Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 180,
+    "price_max": 280
+  },
+  {
+    "id": "prod-patient-2",
+    "name": "Disposable Sterile SMS Patient Gown",
+    "description": "Single-use fluid-resistant sterile patient gown designed for surgical and diagnostic prep. Lightweight SMS barrier fabric provides hygienic protection.",
+    "category_id": "cat-medical",
+    "images": [
+      "/images/sterile_sms_gown_1781425025393.png"
+    ],
+    "fabric": "Fluid-Resistant SMS Non-Woven",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹90 - ₹140",
+    "min_order_qty": 250,
+    "sizes": [
+      "Free Size"
+    ],
+    "colors": [
+      "Blue",
+      "Green"
+    ],
+    "categories": {
+      "id": "cat-medical",
+      "name": "Healthcare & Hospital Uniforms",
+      "slug": "medical"
+    },
+    "created_at": "2026-06-14T08:00:55.326Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 90,
+    "price_max": 140
+  },
+  {
+    "id": "prod-medical-apron",
+    "name": "Surgical Disposable Wraparound Apron",
+    "description": "Fluid-proof wraparound surgical apron for theatre, autopsy, and clinical procedures. Neck-tie and waist-tie adjustable fit with full torso coverage.",
+    "category_id": "cat-medical",
+    "images": [
+      "/images/surgical_apron_1781425037112.png"
+    ],
+    "fabric": "Waterproof PE Laminated Non-Woven",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹45 - ₹80",
+    "min_order_qty": 500,
+    "sizes": [
+      "Free Size"
+    ],
+    "colors": [
+      "Blue",
+      "White"
+    ],
+    "categories": {
+      "id": "cat-medical",
+      "name": "Healthcare & Hospital Uniforms",
+      "slug": "medical"
+    },
+    "created_at": "2026-06-14T08:00:25.326Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 45,
+    "price_max": 80
+  },
+  {
+    "id": "prod-medical-cap",
+    "name": "Disposable Surgeon Bouffant Cap (Pack of 100)",
+    "description": "Breathable non-woven bouffant caps with elastic band. Ideal for operation theatres, pharmaceutical labs, and food processing units.",
+    "category_id": "cat-medical",
+    "images": [],
+    "fabric": "Spunbond Polypropylene Non-Woven",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹250 - ₹350",
+    "min_order_qty": 100,
+    "sizes": [
+      "Free Size"
+    ],
+    "colors": [
+      "Blue",
+      "Green",
+      "White"
+    ],
+    "categories": {
+      "id": "cat-medical",
+      "name": "Healthcare & Hospital Uniforms",
+      "slug": "medical"
+    },
+    "created_at": "2026-06-14T08:00:15.326Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 250,
+    "price_max": 350
+  },
+  {
+    "id": "prod-medical-shoe",
+    "name": "Disposable Anti-Skid Shoe Cover (Pack of 50)",
+    "description": "Fluid-resistant shoe covers with anti-skid sole grip. Essential for OT, ICU, pharmaceutical clean rooms, and lab environments.",
+    "category_id": "cat-medical",
+    "images": [],
+    "fabric": "CPE Waterproof Film",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹180 - ₹250",
+    "min_order_qty": 200,
+    "sizes": [
+      "Free Size"
+    ],
+    "colors": [
+      "Blue",
+      "White"
+    ],
+    "categories": {
+      "id": "cat-medical",
+      "name": "Healthcare & Hospital Uniforms",
+      "slug": "medical"
+    },
+    "created_at": "2026-06-14T08:00:05.326Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 180,
+    "price_max": 250
+  },
+  {
+    "id": "prod-scrub-jogger",
+    "name": "Unisex Premium Jogger Scrub Set",
+    "description": "Modern athletic fit scrub set featuring moisture-wicking 4-way stretch fabric, ribbed knit collar, jogger pants with elastic ankle cuffs, and 6 functional utility pockets.",
+    "category_id": "cat-medical",
+    "images": [],
+    "fabric": "4-Way Stretch Polyester-Spandex Blend",
+    "is_featured": true,
+    "is_visible": true,
+    "price_range": "₹750 - ₹950",
+    "min_order_qty": 80,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Teal",
+      "Navy Blue",
+      "Ceil Blue",
+      "Charcoal Grey"
+    ],
+    "categories": {
+      "id": "cat-medical",
+      "name": "Healthcare & Hospital Uniforms",
+      "slug": "medical"
+    },
+    "created_at": "2026-06-14T08:00:00.326Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 750,
+    "price_max": 950
+  },
+  {
+    "id": "prod-scrub-pediatric",
+    "name": "Pediatric Specialist Printed Scrub Top",
+    "description": "Friendly, printed pediatric scrub top featuring cute cartoon characters, stethoscopes, and animal illustrations. Helps put young patients at ease during clinical visits.",
+    "category_id": "cat-medical",
+    "images": [],
+    "fabric": "Soft-Touch Breathable Cotton-Blend",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹320 - ₹450",
+    "min_order_qty": 50,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Light Blue Print",
+      "Pink Print",
+      "Mint Print"
+    ],
+    "categories": {
+      "id": "cat-medical",
+      "name": "Healthcare & Hospital Uniforms",
+      "slug": "medical"
+    },
+    "created_at": "2026-06-14T07:59:55.326Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 320,
+    "price_max": 450
+  },
+  {
+    "id": "prod-tunic-dentist",
+    "name": "Dentist & Specialist Clinic Wrap Tunic",
+    "description": "Ergonomic wrap-style tunic with asymmetrical side button closure, mock neck, and twin hip pockets. Designed for dentists, dermatologists, and aesthetic clinic staff.",
+    "category_id": "cat-medical",
+    "images": [],
+    "fabric": "Stain-Resistant Cotton-Poly Drill",
+    "is_featured": true,
+    "is_visible": true,
+    "price_range": "₹490 - ₹690",
+    "min_order_qty": 50,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Pristine White",
+      "Lilac",
+      "Mint Green"
+    ],
+    "categories": {
+      "id": "cat-medical",
+      "name": "Healthcare & Hospital Uniforms",
+      "slug": "medical"
+    },
+    "created_at": "2026-06-14T07:59:50.326Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 490,
+    "price_max": 690
+  },
+  {
+    "id": "prod-staff-wardboy",
+    "name": "Hospital Ward Attendant & Staff Uniform Set",
+    "description": "High-durability utility uniform consisting of a short-sleeve comfort tunic and straight-fit cargo pants. Designed for ward boys, hospital helper staff, and stretcher attendants.",
+    "category_id": "cat-medical",
+    "images": [],
+    "fabric": "Heavy-Duty Industrial Poly-Cotton",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹380 - ₹520",
+    "min_order_qty": 100,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Navy Blue",
+      "Slate Grey",
+      "Olive Green"
+    ],
+    "categories": {
+      "id": "cat-medical",
+      "name": "Healthcare & Hospital Uniforms",
+      "slug": "medical"
+    },
+    "created_at": "2026-06-14T07:59:45.326Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 380,
+    "price_max": 520
+  },
+  {
+    "id": "prod-gown-isolation",
+    "name": "Autoclavable Surgical Isolation Gown",
+    "description": "Reusable surgical isolation gown with full back overlap, stockinette cuffs, and tie closures. Constructed to withstand frequent autoclave sterilization cycles.",
+    "category_id": "cat-medical",
+    "images": [],
+    "fabric": "100% Cotton Canvas with Liquid Barrier",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹280 - ₹380",
+    "min_order_qty": 100,
+    "sizes": [
+      "Free Size"
+    ],
+    "colors": [
+      "Surgical Green",
+      "Sky Blue"
+    ],
+    "categories": {
+      "id": "cat-medical",
+      "name": "Healthcare & Hospital Uniforms",
+      "slug": "medical"
+    },
+    "created_at": "2026-06-14T07:59:40.326Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 280,
+    "price_max": 380
+  },
+  {
+    "id": "prod-doctor-blazer",
+    "name": "Premium Medical Consultation Blazer",
+    "description": "Tailored short consultation coat for senior doctors and medical consultants. Features elegant notch lapels, structured shoulders, and clean lining.",
+    "category_id": "cat-medical",
+    "images": [],
+    "fabric": "Premium Tropical Poly-Viscose",
+    "is_featured": true,
+    "is_visible": true,
+    "price_range": "₹950 - ₹1,400",
+    "min_order_qty": 30,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "White",
+      "Charcoal Grey",
+      "Navy Blue"
+    ],
+    "categories": {
+      "id": "cat-medical",
+      "name": "Healthcare & Hospital Uniforms",
+      "slug": "medical"
+    },
+    "created_at": "2026-06-14T07:59:35.326Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 950,
+    "price_max": 1400
+  },
+  {
+    "id": "prod-maternity-scrub",
+    "name": "Maternity Comfort Scrub Top",
+    "description": "Specially tailored maternity scrub top with side-panel stretch panels and adjustable drawstrings, allowing comfort and room to grow throughout pregnancy.",
+    "category_id": "cat-medical",
+    "images": [],
+    "fabric": "Super Soft Bamboo-Cotton Blend",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹480 - ₹620",
+    "min_order_qty": 30,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Royal Blue",
+      "Ceil Blue",
+      "Burgundy"
+    ],
+    "categories": {
+      "id": "cat-medical",
+      "name": "Healthcare & Hospital Uniforms",
+      "slug": "medical"
+    },
+    "created_at": "2026-06-14T07:59:30.326Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 480,
+    "price_max": 620
+  },
+  {
+    "id": "prod-patient-pajama",
+    "name": "Premium Two-Piece Patient Suit",
+    "description": "Deluxe patient uniform including a front-buttoned short-sleeve shirt and matching elastic waist trousers. Offers dignity and comfort for long-term recovery stays.",
+    "category_id": "cat-medical",
+    "images": [],
+    "fabric": "100% Soft Combed Cotton (Hospital Grade)",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹320 - ₹480",
+    "min_order_qty": 100,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Blue Striped",
+      "Green Patterned",
+      "Solid White"
+    ],
+    "categories": {
+      "id": "cat-medical",
+      "name": "Healthcare & Hospital Uniforms",
+      "slug": "medical"
+    },
+    "created_at": "2026-06-14T07:59:25.326Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 320,
+    "price_max": 480
+  },
+  {
+    "id": "prod-medical-lab-apron",
+    "name": "Pharmacist Short Sleeve Lab Jacket",
+    "description": "Professional waist-length lab jacket featuring short sleeves, three patch pockets, and snap-button front. Perfect for pharmacists, lab technicians, and lab assistants.",
+    "category_id": "cat-medical",
+    "images": [],
+    "fabric": "Durable Twill Poplin",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹290 - ₹390",
+    "min_order_qty": 50,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "White",
+      "Light Grey"
+    ],
+    "categories": {
+      "id": "cat-medical",
+      "name": "Healthcare & Hospital Uniforms",
+      "slug": "medical"
+    },
+    "created_at": "2026-06-14T07:59:20.327Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 290,
+    "price_max": 390
+  },
+  {
+    "id": "prod-scrub-premium-fit",
+    "name": "Elite Stretch V-Neck Scrub Suit",
+    "description": "Designer-grade athletic scrub suit with yoga-style waistband, clean V-neck, mesh lining for breathability, and zip pockets. Antimicrobial and wrinkle-free.",
+    "category_id": "cat-medical",
+    "images": [],
+    "fabric": "Elite Rayon-Poly-Spandex Blend",
+    "is_featured": true,
+    "is_visible": true,
+    "price_range": "₹890 - ₹1,190",
+    "min_order_qty": 50,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Olive",
+      "Royal Blue",
+      "Steel Grey"
+    ],
+    "categories": {
+      "id": "cat-medical",
+      "name": "Healthcare & Hospital Uniforms",
+      "slug": "medical"
+    },
+    "created_at": "2026-06-14T07:59:15.327Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 890,
+    "price_max": 1190
+  },
+  {
+    "id": "prod-chef-1",
+    "name": "Double-Breasted Master Chef Jacket",
+    "description": "Elite hospitality chef coat designed for hot kitchen environments. Features breathable mesh underarms, a thermometer arm pocket, and reversible front closure.",
+    "category_id": "cat-hospitality",
+    "images": [],
+    "fabric": "Heavy Duty Canvas Cotton with Breathable Mesh",
+    "is_featured": true,
+    "is_visible": true,
+    "price_range": "₹750 - ₹1,100",
+    "min_order_qty": 30,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "White",
+      "Black",
+      "Grey"
+    ],
+    "categories": {
+      "id": "cat-hospitality",
+      "name": "Hotel & Hospitality Uniforms",
+      "slug": "hospitality"
+    },
+    "created_at": "2026-06-14T07:57:15.327Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 750,
+    "price_max": 1100
+  },
+  {
+    "id": "prod-chef-2",
+    "name": "Premium Chef Kitchen Bib Apron",
+    "description": "Professional kitchen bib apron tailored from stain-resistant canvas twill. Features dual deep pockets, reinforced loops, and adjustable neck straps.",
+    "category_id": "cat-hospitality",
+    "images": [],
+    "fabric": "Stain-Resistant Cotton Canvas Twill",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹180 - ₹260",
+    "min_order_qty": 100,
+    "sizes": [
+      "Free Size"
+    ],
+    "colors": [
+      "Black",
+      "Brown",
+      "Navy",
+      "Denim Blue"
+    ],
+    "categories": {
+      "id": "cat-hospitality",
+      "name": "Hotel & Hospitality Uniforms",
+      "slug": "hospitality"
+    },
+    "created_at": "2026-06-14T07:56:55.327Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 180,
+    "price_max": 260
+  },
+  {
+    "id": "prod-chef-pants",
+    "name": "Chef Check Baggy Trouser",
+    "description": "Classic houndstooth check chef trouser with elastic drawstring waist. Loose-fit for comfortable kitchen movement. Industrial wash-safe and colour-fast.",
+    "category_id": "cat-hospitality",
+    "images": [],
+    "fabric": "Poly-Cotton Twill with Check Pattern",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹320 - ₹480",
+    "min_order_qty": 50,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL",
+      "3XL"
+    ],
+    "colors": [
+      "Black & White Check",
+      "Black",
+      "Grey"
+    ],
+    "categories": {
+      "id": "cat-hospitality",
+      "name": "Hotel & Hospitality Uniforms",
+      "slug": "hospitality"
+    },
+    "created_at": "2026-06-14T07:56:45.327Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 320,
+    "price_max": 480
+  },
+  {
+    "id": "prod-chef-hat",
+    "name": "Tall Pleated Chef Toque Hat",
+    "description": "Traditional tall white chef toque with adjustable velcro band. Pleated design with internal mesh lining for ventilation.",
+    "category_id": "cat-hospitality",
+    "images": [],
+    "fabric": "Starched Poly-Cotton with Mesh Lining",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹120 - ₹200",
+    "min_order_qty": 50,
+    "sizes": [
+      "Free Size"
+    ],
+    "colors": [
+      "White",
+      "Black"
+    ],
+    "categories": {
+      "id": "cat-hospitality",
+      "name": "Hotel & Hospitality Uniforms",
+      "slug": "hospitality"
+    },
+    "created_at": "2026-06-14T07:56:35.327Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 120,
+    "price_max": 200
+  },
+  {
+    "id": "prod-waiter-1",
+    "name": "Waiter Formal Vest & Bow Tie Set",
+    "description": "Classic five-button waistcoat with adjustable back buckle and matching bow tie. Designed for dining banquets and executive bar staff.",
+    "category_id": "cat-hospitality",
+    "images": [],
+    "fabric": "Poly-Viscose Gabardine with Satin Back",
+    "is_featured": true,
+    "is_visible": true,
+    "price_range": "₹650 - ₹900",
+    "min_order_qty": 50,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Black",
+      "Charcoal Grey",
+      "Maroon"
+    ],
+    "categories": {
+      "id": "cat-hospitality",
+      "name": "Hotel & Hospitality Uniforms",
+      "slug": "hospitality"
+    },
+    "created_at": "2026-06-14T07:53:55.327Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 650,
+    "price_max": 900
+  },
+  {
+    "id": "prod-waiter-shirt",
+    "name": "Formal Waiter Long-Sleeve Service Shirt",
+    "description": "Crisp formal shirt tailored for waiters, bartenders, and front-of-house staff. Features reinforced cuffs, chest pocket, and wrinkle-resistant finish.",
+    "category_id": "cat-hospitality",
+    "images": [],
+    "fabric": "Easy-Iron Poly-Cotton Poplin",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹350 - ₹500",
+    "min_order_qty": 50,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "White",
+      "Black",
+      "Light Blue",
+      "Cream"
+    ],
+    "categories": {
+      "id": "cat-hospitality",
+      "name": "Hotel & Hospitality Uniforms",
+      "slug": "hospitality"
+    },
+    "created_at": "2026-06-14T07:54:15.327Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 350,
+    "price_max": 500
+  },
+  {
+    "id": "prod-corporate-1",
+    "name": "Slim Fit Corporate Men's Blazer",
+    "description": "Ultra-modern corporate wool-blend blazer with double vent, notch lapel, and customized satin lining. Ideal for corporate office environments.",
+    "category_id": "cat-corporate",
+    "images": [],
+    "fabric": "Premium Tropical Wool Blend",
+    "is_featured": true,
+    "is_visible": true,
+    "price_range": "₹1,800 - ₹2,400",
+    "min_order_qty": 50,
+    "sizes": [
+      "36",
+      "38",
+      "40",
+      "42",
+      "44",
+      "46"
+    ],
+    "colors": [
+      "Navy Blue",
+      "Charcoal",
+      "Black"
+    ],
+    "categories": {
+      "id": "cat-corporate",
+      "name": "Corporate (Suits, Blazers, Shirts)",
+      "slug": "corporate"
+    },
+    "created_at": "2026-06-14T07:52:15.327Z",
+    "customization_available": true,
+    "fabric_care": "Dry clean only. Iron on low heat.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Men",
+    "price_min": 1800,
+    "price_max": 2400
+  },
+  {
+    "id": "prod-corporate-women-blazer",
+    "name": "Women's Tailored Corporate Blazer",
+    "description": "Single-breasted feminine blazer with princess seam, padded shoulders, and functional pockets. Perfect for front-office, banking, and airline staff.",
+    "category_id": "cat-corporate",
+    "images": [],
+    "fabric": "Premium Poly-Viscose Suiting",
+    "is_featured": true,
+    "is_visible": true,
+    "price_range": "₹1,600 - ₹2,200",
+    "min_order_qty": 50,
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Navy Blue",
+      "Black",
+      "Charcoal"
+    ],
+    "categories": {
+      "id": "cat-corporate",
+      "name": "Corporate (Suits, Blazers, Shirts)",
+      "slug": "corporate"
+    },
+    "created_at": "2026-06-14T07:51:55.327Z",
+    "customization_available": true,
+    "fabric_care": "Dry clean only. Iron on low heat.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Women",
+    "price_min": 1600,
+    "price_max": 2200
+  },
+  {
+    "id": "prod-corporate-2",
+    "name": "Tailored Poly-Wool Corporate Nehru Jacket",
+    "description": "Modern corporate sleeveless Modi waistcoat featuring traditional mandarin collar and high-quality button closures. Gives security or front office teams a premium identity.",
+    "category_id": "cat-corporate",
+    "images": [],
+    "fabric": "Premium Poly-Wool Tweed Weave",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹850 - ₹1,200",
+    "min_order_qty": 50,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Charcoal Grey",
+      "Black",
+      "Beige"
+    ],
+    "categories": {
+      "id": "cat-corporate",
+      "name": "Corporate (Suits, Blazers, Shirts)",
+      "slug": "corporate"
+    },
+    "created_at": "2026-06-14T07:50:35.327Z",
+    "customization_available": true,
+    "fabric_care": "Dry clean only. Iron on low heat.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 850,
+    "price_max": 1200
+  },
+  {
+    "id": "prod-corporate-3",
+    "name": "Premium Corporate Oxford Shirt",
+    "description": "Classic Oxford button-down shirt. Wrinkle-free finish with reinforced collar stays. Ideal for daily corporate and banking wear.",
+    "category_id": "cat-corporate",
+    "images": [],
+    "fabric": "Egyptian Cotton Oxford Weave",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹480 - ₹700",
+    "min_order_qty": 55,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "White",
+      "Light Blue",
+      "Grey",
+      "Sky Blue Stripe"
+    ],
+    "categories": {
+      "id": "cat-corporate",
+      "name": "Corporate (Suits, Blazers, Shirts)",
+      "slug": "corporate"
+    },
+    "created_at": "2026-06-14T07:48:55.327Z",
+    "customization_available": true,
+    "fabric_care": "Dry clean only. Iron on low heat.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 480,
+    "price_max": 700
+  },
+  {
+    "id": "prod-corporate-trouser",
+    "name": "Corporate Formal Flat-Front Trouser",
+    "description": "Classic flat-front formal trouser with permanent crease, hook-bar closure, and belt loops. Machine washable with shape-retention fabric.",
+    "category_id": "cat-corporate",
+    "images": [],
+    "fabric": "Premium Poly-Viscose Suiting",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹550 - ₹850",
+    "min_order_qty": 50,
+    "sizes": [
+      "28",
+      "30",
+      "32",
+      "34",
+      "36",
+      "38",
+      "40",
+      "42"
+    ],
+    "colors": [
+      "Navy Blue",
+      "Black",
+      "Charcoal",
+      "Khaki"
+    ],
+    "categories": {
+      "id": "cat-corporate",
+      "name": "Corporate (Suits, Blazers, Shirts)",
+      "slug": "corporate"
+    },
+    "created_at": "2026-06-14T07:48:45.327Z",
+    "customization_available": true,
+    "fabric_care": "Dry clean only. Iron on low heat.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 550,
+    "price_max": 850
+  },
+  {
+    "id": "prod-corporate-tie",
+    "name": "Corporate Silk Necktie & Pocket Square Set",
+    "description": "Premium woven silk tie with matching pocket square. Available in solid, stripe, and micro-dot patterns. Custom logo printing available for bulk orders.",
+    "category_id": "cat-corporate",
+    "images": [],
+    "fabric": "100% Woven Silk",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹350 - ₹600",
+    "min_order_qty": 50,
+    "sizes": [
+      "Standard (148 cm)"
+    ],
+    "colors": [
+      "Navy Blue",
+      "Maroon",
+      "Black",
+      "Royal Blue"
+    ],
+    "categories": {
+      "id": "cat-corporate",
+      "name": "Corporate (Suits, Blazers, Shirts)",
+      "slug": "corporate"
+    },
+    "created_at": "2026-06-14T07:48:35.327Z",
+    "customization_available": true,
+    "fabric_care": "Dry clean only. Iron on low heat.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 350,
+    "price_max": 600
+  },
+  {
+    "id": "prod-corporate-polo",
+    "name": "Corporate Branded Polo T-Shirt",
+    "description": "Relaxed-fit corporate polo with ribbed collar, 3-button placket, and side vents. Perfect for casual Fridays, tech teams, and field staff. Custom logo embroidery included.",
+    "category_id": "cat-corporate",
+    "images": [],
+    "fabric": "Honeycomb Knit Lacoste Cotton",
+    "is_featured": true,
+    "is_visible": true,
+    "price_range": "₹280 - ₹420",
+    "min_order_qty": 100,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL",
+      "3XL"
+    ],
+    "colors": [
+      "White",
+      "Navy Blue",
+      "Black",
+      "Red",
+      "Grey"
+    ],
+    "categories": {
+      "id": "cat-corporate",
+      "name": "Corporate (Suits, Blazers, Shirts)",
+      "slug": "corporate"
+    },
+    "created_at": "2026-06-14T07:48:25.327Z",
+    "customization_available": true,
+    "fabric_care": "Dry clean only. Iron on low heat.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Unisex",
+    "price_min": 280,
+    "price_max": 420
+  },
+  {
+    "id": "prod-corporate-suit",
+    "name": "Men's 2-Piece Executive Suit Set",
+    "description": "Complete 2-piece suit (blazer + trouser) tailored from premium tropical wool. Single-breasted, double-vent, with full canvas construction for a structured silhouette.",
+    "category_id": "cat-corporate",
+    "images": [],
+    "fabric": "Super 120s Tropical Wool",
+    "is_featured": true,
+    "is_visible": true,
+    "price_range": "₹3,500 - ₹5,500",
+    "min_order_qty": 30,
+    "sizes": [
+      "36",
+      "38",
+      "40",
+      "42",
+      "44",
+      "46",
+      "48"
+    ],
+    "colors": [
+      "Navy Blue",
+      "Charcoal",
+      "Black",
+      "Mid Grey"
+    ],
+    "categories": {
+      "id": "cat-corporate",
+      "name": "Corporate (Suits, Blazers, Shirts)",
+      "slug": "corporate"
+    },
+    "created_at": "2026-06-14T07:52:35.327Z",
+    "customization_available": true,
+    "fabric_care": "Dry clean only. Iron on low heat.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Men",
+    "price_min": 3500,
+    "price_max": 5500
+  },
+  {
+    "id": "prod-school-1",
+    "name": "Premium School Blazer (Embroidered Crest)",
+    "description": "High-durability school blazer tailored from premium terry-wool fabric. Resists fading and pilling over daily wash. Custom school crest embroidery included.",
+    "category_id": "cat-school",
+    "images": [],
+    "fabric": "Terry-Wool Premium Blend",
+    "is_featured": true,
+    "is_visible": true,
+    "price_range": "₹850 - ₹1,200",
+    "min_order_qty": 100,
+    "sizes": [
+      "22",
+      "24",
+      "26",
+      "28",
+      "30",
+      "32",
+      "34",
+      "36",
+      "38",
+      "40"
+    ],
+    "colors": [
+      "Navy Blue",
+      "Black",
+      "Maroon",
+      "Bottle Green"
+    ],
+    "categories": {
+      "id": "cat-school",
+      "name": "School Uniforms",
+      "slug": "school"
+    },
+    "created_at": "2026-06-14T07:47:15.327Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Kids",
+    "price_min": 850,
+    "price_max": 1200
+  },
+  {
+    "id": "prod-school-2",
+    "name": "Classic Girls Pleated Pinafore",
+    "description": "Standard school pinafore featuring elegant box pleats and a side button closure. Tailored from sweat-wicking twill. Custom check pattern available.",
+    "category_id": "cat-school",
+    "images": [],
+    "fabric": "Premium Polyester-Cotton Twill",
+    "is_featured": true,
+    "is_visible": true,
+    "price_range": "₹350 - ₹500",
+    "min_order_qty": 150,
+    "sizes": [
+      "22",
+      "24",
+      "26",
+      "28",
+      "30",
+      "32"
+    ],
+    "colors": [
+      "Grey",
+      "Navy Blue",
+      "Brown",
+      "Check Pattern"
+    ],
+    "categories": {
+      "id": "cat-school",
+      "name": "School Uniforms",
+      "slug": "school"
+    },
+    "created_at": "2026-06-14T07:45:35.327Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Women",
+    "price_min": 350,
+    "price_max": 500
+  },
+  {
+    "id": "prod-school-shirt",
+    "name": "School Uniform Formal Shirt (Half / Full Sleeve)",
+    "description": "Crisp white or coloured school shirt with pointed collar, chest pocket with logo embroidery, and reinforced seams. Available in both half and full sleeve.",
+    "category_id": "cat-school",
+    "images": [],
+    "fabric": "Premium Poly-Cotton Poplin",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹180 - ₹280",
+    "min_order_qty": 200,
+    "sizes": [
+      "22",
+      "24",
+      "26",
+      "28",
+      "30",
+      "32",
+      "34",
+      "36",
+      "38"
+    ],
+    "colors": [
+      "White",
+      "Light Blue",
+      "Cream"
+    ],
+    "categories": {
+      "id": "cat-school",
+      "name": "School Uniforms",
+      "slug": "school"
+    },
+    "created_at": "2026-06-14T07:46:55.327Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Kids",
+    "price_min": 180,
+    "price_max": 280
+  },
+  {
+    "id": "prod-school-trouser",
+    "name": "School Uniform Formal Trouser",
+    "description": "Durable school trouser with elastic waist option for juniors and belt-loop for seniors. Colour-fast fabric that resists fading even after 100+ washes.",
+    "category_id": "cat-school",
+    "images": [],
+    "fabric": "Premium Poly-Cotton Drill",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹250 - ₹400",
+    "min_order_qty": 200,
+    "sizes": [
+      "22",
+      "24",
+      "26",
+      "28",
+      "30",
+      "32",
+      "34",
+      "36",
+      "38"
+    ],
+    "colors": [
+      "Grey",
+      "Navy Blue",
+      "Black",
+      "Khaki"
+    ],
+    "categories": {
+      "id": "cat-school",
+      "name": "School Uniforms",
+      "slug": "school"
+    },
+    "created_at": "2026-06-14T07:46:45.327Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Kids",
+    "price_min": 250,
+    "price_max": 400
+  },
+  {
+    "id": "prod-school-tie",
+    "name": "School Striped Necktie (Elastic / Regular)",
+    "description": "Woven polyester school tie in house colours with diagonal stripe pattern. Available in both elastic clip-on (for juniors) and regular knot styles.",
+    "category_id": "cat-school",
+    "images": [],
+    "fabric": "Woven Polyester Satin",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹60 - ₹120",
+    "min_order_qty": 200,
+    "sizes": [
+      "Junior (35 cm)",
+      "Senior (50 cm)"
+    ],
+    "colors": [
+      "Maroon & Gold",
+      "Navy & Silver",
+      "Green & Gold",
+      "Custom House Colours"
+    ],
+    "categories": {
+      "id": "cat-school",
+      "name": "School Uniforms",
+      "slug": "school"
+    },
+    "created_at": "2026-06-14T07:46:35.327Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Kids",
+    "price_min": 60,
+    "price_max": 120
+  },
+  {
+    "id": "prod-school-sweater",
+    "name": "School V-Neck Pullover Sweater",
+    "description": "Warm acrylic-wool blend V-neck pullover with ribbed cuffs and hemband. School crest embroidery on chest. Pill-resistant and machine-washable.",
+    "category_id": "cat-school",
+    "images": [],
+    "fabric": "Acrylic-Wool Blend Knit",
+    "is_featured": true,
+    "is_visible": true,
+    "price_range": "₹380 - ₹550",
+    "min_order_qty": 100,
+    "sizes": [
+      "22",
+      "24",
+      "26",
+      "28",
+      "30",
+      "32",
+      "34",
+      "36",
+      "38",
+      "40"
+    ],
+    "colors": [
+      "Navy Blue",
+      "Maroon",
+      "Grey",
+      "Bottle Green"
+    ],
+    "categories": {
+      "id": "cat-school",
+      "name": "School Uniforms",
+      "slug": "school"
+    },
+    "created_at": "2026-06-14T07:46:25.327Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Kids",
+    "price_min": 380,
+    "price_max": 550
+  },
+  {
+    "id": "prod-school-skirt",
+    "name": "Girls Pleated School Skirt (Knee-Length)",
+    "description": "Classic knife-pleated school skirt with concealed side zipper and elastic waistband for comfort. Stain-resistant and easy-wash.",
+    "category_id": "cat-school",
+    "images": [],
+    "fabric": "Premium Poly-Viscose Twill",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹220 - ₹350",
+    "min_order_qty": 150,
+    "sizes": [
+      "22",
+      "24",
+      "26",
+      "28",
+      "30",
+      "32"
+    ],
+    "colors": [
+      "Grey",
+      "Navy Blue",
+      "Check Pattern"
+    ],
+    "categories": {
+      "id": "cat-school",
+      "name": "School Uniforms",
+      "slug": "school"
+    },
+    "created_at": "2026-06-14T07:46:15.327Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Women",
+    "price_min": 220,
+    "price_max": 350
+  },
+  {
+    "id": "prod-school-pe",
+    "name": "School PE / Sports Track Suit Set",
+    "description": "Comfortable sportswear track suit (jacket + track pant) with school colour accents. Moisture-wicking fabric for outdoor games and PT classes.",
+    "category_id": "cat-school",
+    "images": [],
+    "fabric": "Micro-Mesh Polyester with Lycra",
+    "is_featured": true,
+    "is_visible": true,
+    "price_range": "₹450 - ₹700",
+    "min_order_qty": 100,
+    "sizes": [
+      "22",
+      "24",
+      "26",
+      "28",
+      "30",
+      "32",
+      "34",
+      "36",
+      "38"
+    ],
+    "colors": [
+      "Navy & White",
+      "Maroon & White",
+      "Green & Gold",
+      "Black & Red"
+    ],
+    "categories": {
+      "id": "cat-school",
+      "name": "School Uniforms",
+      "slug": "school"
+    },
+    "created_at": "2026-06-14T07:46:05.327Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Kids",
+    "price_min": 450,
+    "price_max": 700
+  },
+  {
+    "id": "prod-school-belt",
+    "name": "School Uniform Leather Belt (Logo Buckle)",
+    "description": "Genuine leather school belt with custom school-crest metal buckle. Adjustable length with pre-punched holes. Polished brass or chrome finish.",
+    "category_id": "cat-school",
+    "images": [],
+    "fabric": "Genuine Leather with Metal Buckle",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹120 - ₹220",
+    "min_order_qty": 200,
+    "sizes": [
+      "S (22-26)",
+      "M (28-32)",
+      "L (34-38)"
+    ],
+    "colors": [
+      "Black",
+      "Brown"
+    ],
+    "categories": {
+      "id": "cat-school",
+      "name": "School Uniforms",
+      "slug": "school"
+    },
+    "created_at": "2026-06-14T07:45:55.327Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Kids",
+    "price_min": 120,
+    "price_max": 220
+  },
+  {
+    "id": "prod-school-socks",
+    "name": "School Uniform Knee-High Socks (Pack of 3)",
+    "description": "Premium cotton-blend school socks with reinforced heel and toe. Elastic cuff for stay-up fit. Colour-fast after 100+ washes. Pack of 3 pairs.",
+    "category_id": "cat-school",
+    "images": [],
+    "fabric": "Combed Cotton with Spandex",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹90 - ₹150",
+    "min_order_qty": 500,
+    "sizes": [
+      "Junior (1-3)",
+      "Medium (4-6)",
+      "Senior (7-10)"
+    ],
+    "colors": [
+      "White",
+      "Navy Blue",
+      "Grey",
+      "Black"
+    ],
+    "categories": {
+      "id": "cat-school",
+      "name": "School Uniforms",
+      "slug": "school"
+    },
+    "created_at": "2026-06-14T07:45:45.327Z",
+    "customization_available": true,
+    "fabric_care": "Machine wash warm. Tumble dry low. Do not iron on print.",
+    "delivery_timeline": "7-10 working days",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "gender": "Kids",
+    "price_min": 90,
+    "price_max": 150
+  },
+  {
+    "id": "prod-industrial-boiler",
+    "name": "Heavy Duty Cotton Boiler Suit (Coverall)",
+    "description": "Full-body industrial coverall boiler suit featuring heavy-duty brass double-zipper front, action back for flexibility, and multiple pockets for tools.",
+    "category_id": "cat-industrial",
+    "images": [],
+    "fabric": "100% Heavy-Duty Cotton Drill",
+    "is_featured": true,
+    "is_visible": true,
+    "price_range": "₹650 - ₹950",
+    "min_order_qty": 30,
+    "sizes": [
+      "M",
+      "L",
+      "XL",
+      "XXL",
+      "3XL"
+    ],
+    "colors": [
+      "Royal Blue",
+      "Orange",
+      "Navy Blue"
+    ],
+    "categories": {
+      "id": "cat-industrial",
+      "name": "Industrial & Factory Workwear",
+      "slug": "industrial"
+    },
+    "created_at": "2026-06-14T07:43:35.327Z",
+    "customization_available": true,
+    "fabric_care": "Hot wash safe, machine dry medium, heavy iron.",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "8% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "15% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "25% Off"
+      }
+    ],
+    "delivery_timeline": "10-15 working days",
+    "gender": "Unisex",
+    "price_min": 650,
+    "price_max": 950
+  },
+  {
+    "id": "prod-industrial-jacket",
+    "name": "Reflective High-Visibility Work Jacket",
+    "description": "Two-tone industrial work jacket with 3M reflective safety stripes. Designed for road construction, airport crew, and warehouse safety.",
+    "category_id": "cat-industrial",
+    "images": [],
+    "fabric": "Durable Polyester with PU Lamination",
+    "is_featured": false,
+    "is_visible": true,
+    "price_range": "₹420 - ₹580",
+    "min_order_qty": 50,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "colors": [
+      "Neon Yellow",
+      "Neon Orange"
+    ],
+    "categories": {
+      "id": "cat-industrial",
+      "name": "Industrial & Factory Workwear",
+      "slug": "industrial"
+    },
+    "created_at": "2026-06-14T07:43:25.327Z",
+    "customization_available": true,
+    "fabric_care": "Wash cold inside out, do not iron on reflective tape.",
+    "bulk_discounts": [
+      {
+        "qty": 50,
+        "discount": "5% Off"
+      },
+      {
+        "qty": 100,
+        "discount": "10% Off"
+      },
+      {
+        "qty": 500,
+        "discount": "20% Off"
+      }
+    ],
+    "delivery_timeline": "7-10 working days",
+    "gender": "Unisex",
+    "price_min": 420,
+    "price_max": 580
+  }
+]
