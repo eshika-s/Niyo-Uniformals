@@ -14,15 +14,14 @@ export default function HeroSection() {
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full flex flex-col items-center text-center">
         
         {/* Eyebrow */}
-        <motion.div
-          initial={{ opacity: 0, y: 10, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel-dark mb-8 border border-white/10"
+          className="text-gold-400 font-bold text-sm tracking-[0.2em] uppercase mb-6"
         >
-          <span className="w-2 h-2 rounded-full bg-electric-400 animate-pulse" />
-          <span className="text-obsidian-300 font-medium text-xs tracking-wider uppercase">Next-Gen Uniforms</span>
-        </motion.div>
+          Premium Uniform Solutions
+        </motion.p>
 
         {/* Headline */}
         <motion.h1

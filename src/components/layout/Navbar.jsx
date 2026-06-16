@@ -26,7 +26,7 @@ export default function Navbar() {
 
             {/* Logo */}
             <Link to="/" className="flex items-baseline gap-1.5 shrink-0 group">
-              <span className={`font-display text-2xl md:text-3xl font-bold tracking-tight transition-colors ${scrolled ? 'text-obsidian-900' : 'text-obsidian-900'}`}>
+              <span className={`font-display text-2xl md:text-3xl font-bold tracking-tight transition-colors ${scrolled ? 'text-obsidian-900' : 'text-white'}`}>
                 NIYO
               </span>
               <span className={`font-display text-2xl md:text-3xl font-bold italic tracking-tight transition-colors ${scrolled ? 'text-electric-500' : 'text-electric-500'}`}>

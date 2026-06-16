@@ -36,6 +36,30 @@
   --color-neon-800: #3730a3;
   --color-neon-900: #312e81;
 
+  --color-navy-50: #f0f4f8;
+  --color-navy-100: #d9e2ec;
+  --color-navy-200: #bcccdc;
+  --color-navy-300: #9fb3c8;
+  --color-navy-400: #829ab1;
+  --color-navy-500: #627d98;
+  --color-navy-600: #486581;
+  --color-navy-700: #334e68;
+  --color-navy-800: #243b53;
+  --color-navy-900: #102a43;
+  --color-navy-950: #0a1128;
+
+  --color-gold-50: #fbf8f1;
+  --color-gold-100: #f6ecdb;
+  --color-gold-200: #eedab7;
+  --color-gold-300: #e4c38e;
+  --color-gold-400: #d8a860;
+  --color-gold-500: #b3913b;
+  --color-gold-600: #93732c;
+  --color-gold-700: #765823;
+  --color-gold-800: #614620;
+  --color-gold-900: #513b1d;
+  --color-gold-950: #2e200c;
+
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-display: 'Space Grotesk', 'Outfit', sans-serif;
   --font-price: 'Outfit', sans-serif;
