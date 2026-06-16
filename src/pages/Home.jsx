@@ -175,12 +175,19 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative hidden lg:block"
             >
-              <div className="aspect-[4/5] bg-obsidian-100 rounded-3xl overflow-hidden relative shadow-2xl">
-                <img
-                  src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&q=80&w=1200"
-                  alt="Modern textile manufacturing"
-                  className="w-full h-full object-cover"
-                />
+              <div className="aspect-[4/5] bg-obsidian-50 rounded-3xl overflow-hidden relative shadow-2xl grid grid-cols-2 grid-rows-2 gap-2 p-2 border border-obsidian-100">
+                <div className="bg-white rounded-2xl overflow-hidden relative flex items-center justify-center">
+                  <img src="/images/corporate_mens_blazer.png" alt="Corporate" className="w-full h-full object-contain p-4 drop-shadow-md hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="bg-white rounded-2xl overflow-hidden relative flex items-center justify-center">
+                  <img src="/images/medical_scrubs.png" alt="Medical" className="w-full h-full object-contain p-4 drop-shadow-md hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="bg-white rounded-2xl overflow-hidden relative flex items-center justify-center">
+                  <img src="/images/hospitality_coat.png" alt="Hospitality" className="w-full h-full object-contain p-4 drop-shadow-md hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="bg-white rounded-2xl overflow-hidden relative flex items-center justify-center">
+                  <img src="/images/industrial_coverall.png" alt="Industrial" className="w-full h-full object-contain p-4 drop-shadow-md hover:scale-105 transition-transform duration-500" />
+                </div>
               </div>
               <div className="absolute -bottom-8 -left-8 bg-white p-8 rounded-2xl shadow-xl">
                 <div className="text-5xl font-display font-bold text-electric-500 mb-2">0.2%</div>

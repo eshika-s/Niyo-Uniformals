@@ -45,11 +45,9 @@ export default function HeroSection() {
               className="font-poppins font-semibold text-white leading-tight tracking-tight mb-8"
               style={{ fontFamily: "'Poppins', sans-serif", fontSize: 'clamp(2.5rem, 5vw, 4.5rem)' }}
             >
-              Uniforms that
+              Redefining the uniform,
               <br />
-              make you look
-              <br />
-              <span className="text-white/50">the part.</span>
+              <span className="text-white/50">profession by profession.</span>
             </motion.h1>
 
             {/* Tagline */}

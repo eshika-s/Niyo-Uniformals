@@ -47,7 +47,7 @@ export default function Footer() {
               <p>Main Market Road</p>
               <p>New Delhi, 110031</p>
             </div>
-            <div className="w-full h-32 rounded-lg overflow-hidden border border-white/10    ">
+            <div className="w-full h-32 rounded-lg overflow-hidden border border-white/10 opacity-80 hover:opacity-100 transition-opacity">
               <iframe
                 title="Delhi Office Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14005.14389657065!2d77.26084615!3d28.6511677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfc8d45ba8903%3A0xc0fb19ce77de144e!2sGandhi%20Nagar%2C%20New%20Delhi%2C%20Delhi%20110031!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
