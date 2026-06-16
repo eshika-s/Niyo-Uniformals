@@ -1,72 +1,130 @@
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
+import { ArrowRight } from 'lucide-react'
 
 export default function HeroSection() {
   const navigate = useNavigate()
-  
+
+  const stats = [
+    { num: '10,000+', label: 'Units / Month' },
+    { num: '500+', label: 'Clients Served' },
+    { num: '5', label: 'Sectors Covered' },
+    { num: '0.2%', label: 'Defect Rate' },
+  ]
+
   return (
-    <section className="bg-obsidian-900 pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden relative min-h-[90vh] flex items-center">
-      
-      {/* Background glowing orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-electric-500/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-500/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none" />
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#0f172a]">
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full flex flex-col items-center text-center">
-        
-        {/* Eyebrow */}
-        <motion.div
-          initial={{ opacity: 0, y: 10, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel-dark mb-8 border border-white/10"
-        >
-          <span className="w-2 h-2 rounded-full bg-electric-400 animate-pulse" />
-          <span className="text-obsidian-300 font-medium text-xs tracking-wider uppercase">Next-Gen Uniforms</span>
-        </motion.div>
+      {/* ── Main layout ── */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pt-36 pb-24">
+        <div className="grid lg:grid-cols-12 gap-16 items-center">
 
-        {/* Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="font-display text-white text-5xl md:text-7xl lg:text-[6rem] leading-[1.05] mb-8 max-w-5xl font-bold tracking-tight"
-        >
-          Engineering the <br className="hidden md:block" />
-          <span className="gradient-text">future of workwear.</span>
-        </motion.h1>
+          {/* Left Column: Text & Content */}
+          <div className="lg:col-span-6 text-left">
+            {/* Top label row */}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="flex items-center gap-4 mb-8"
+            >
+              <span className="text-xs font-bold uppercase tracking-widest text-white/60">
+                NIYO Uni-formals
+              </span>
+              <span className="w-12 h-px bg-white/20" />
+              <span className="text-xs font-semibold uppercase tracking-widest text-white/40">
+                By Shakti Dresses
+              </span>
+            </motion.div>
 
-        {/* Subheadline */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="text-obsidian-300 text-base md:text-xl leading-relaxed max-w-2xl mx-auto mb-12 font-light"
-        >
-          Precision-cut textiles designed for modern professionals. From surgical wards to corporate boardrooms, we build uniforms that command authority.
-        </motion.p>
-        
-        {/* Actions */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
-        >
-          <button 
-            onClick={() => navigate('/catalogue')}
-            className="px-8 py-4 rounded-xl bg-electric-500 hover:bg-electric-400 text-white font-semibold text-base transition-all hover:scale-105 active:scale-95 shadow-[0_0_40px_-10px_rgba(59,130,246,0.5)]"
-          >
-            Explore Catalogue
-          </button>
-          <button 
-            onClick={() => navigate('/bulk-order')}
-            className="px-8 py-4 rounded-xl bg-white/5 hover:bg-white/10 text-white font-semibold text-base transition-all border border-white/10 backdrop-blur-md"
-          >
-            Request Bulk Quote
-          </button>
-        </motion.div>
+            {/* Hero headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="font-poppins font-semibold text-white leading-tight tracking-tight mb-8"
+              style={{ fontFamily: "'Poppins', sans-serif", fontSize: 'clamp(2.5rem, 5vw, 4.5rem)' }}
+            >
+              Uniforms that
+              <br />
+              make you look
+              <br />
+              <span className="text-white/50">the part.</span>
+            </motion.h1>
+
+            {/* Tagline */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-white/60 text-lg md:text-xl font-poppins font-light leading-relaxed mb-12 max-w-md"
+            >
+              Good uniforms don't just dress your team — they build your brand.
+              We craft high-performance uniforms for schools, hospitals, offices & industries.
+            </motion.p>
+
+            {/* Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="flex flex-wrap gap-5 items-center mb-16"
+            >
+              <button
+                onClick={() => navigate('/catalogue')}
+                className="group inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-sm transition-all hover:scale-105 active:scale-95 bg-white text-black"
+              >
+                Browse Catalogue
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+
+              <button
+                onClick={() => navigate('/bulk-order')}
+                className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-sm text-white transition-all hover:bg-white/10 active:scale-95 border border-white/20"
+              >
+                Request Bulk Quote
+              </button>
+            </motion.div>
+
+            {/* Stats row */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.4 }}
+              className="pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-8"
+            >
+              {stats.map((s) => (
+                <div key={s.label}>
+                  <div className="font-poppins font-semibold text-2xl text-white mb-1">
+                    {s.num}
+                  </div>
+                  <div className="text-[10px] font-medium uppercase tracking-widest text-white/50">
+                    {s.label}
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Right Column: Clean Image */}
+          <div className="lg:col-span-6 flex justify-center lg:justify-end mt-12 lg:mt-0">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="relative w-full max-w-[500px] aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10"
+            >
+              <img
+                src="/images/category_corporate.png"
+                alt="Corporate Uniforms"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black/10 mix-blend-overlay pointer-events-none" />
+            </motion.div>
+          </div>
+
+        </div>
       </div>
-
     </section>
   )
 }

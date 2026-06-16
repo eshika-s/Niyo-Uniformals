@@ -4,13 +4,33 @@ export default function Footer() {
   return (
     <footer className="bg-obsidian-950 border-t border-white/10 py-12 md:py-16 text-white">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-        
+
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16 pb-12 md:pb-16 border-b border-white/10">
           {/* Brand */}
           <div className="md:col-span-1">
-            <Link to="/" className="flex items-baseline gap-1.5 shrink-0 mb-6 inline-block group">
-              <span className="font-display text-xl md:text-2xl font-bold tracking-tight text-white group-hover:text-obsidian-300 transition-colors">NIYO</span>
-              <span className="font-display text-xl md:text-2xl italic tracking-tight text-electric-500 group-hover:text-electric-400 transition-colors">Uniformals</span>
+            <Link to="/" className="shrink-0 flex items-center mb-6">
+              <div
+                className="rounded-full overflow-hidden transition-all duration-300 flex-shrink-0"
+                style={{
+                  width: '80px',
+                  height: '80px',
+                  boxShadow: '0 2px 16px rgba(201,168,76,0.25)',
+                  border: '1.5px solid rgba(201,168,76,0.3)',
+                }}
+              >
+                <img
+                  src="/images/logo1.jpeg"
+                  alt="NIYO Uni-formals"
+                  style={{
+                    width: '209%',
+                    height: '250%',
+                    marginLeft: '0%',
+                    marginTop: '-63%',
+                    objectFit: 'cover',
+                    display: 'block',
+                  }}
+                />
+              </div>
             </Link>
             <p className="text-obsidian-400 text-sm leading-relaxed pr-4 font-light">
               Wholesale garment manufacturing and institutional apparel supply since 1994.
@@ -22,10 +42,22 @@ export default function Footer() {
             <h4 className="text-obsidian-300 font-bold text-[11px] tracking-[0.2em] uppercase mb-6">
               Delhi Office
             </h4>
-            <div className="text-obsidian-500 text-sm space-y-1.5 leading-relaxed font-light">
+            <div className="text-obsidian-500 text-sm space-y-1.5 leading-relaxed font-light mb-4">
               <p>12/481 Gandhi Nagar</p>
               <p>Main Market Road</p>
               <p>New Delhi, 110031</p>
+            </div>
+            <div className="w-full h-32 rounded-lg overflow-hidden border border-white/10    ">
+              <iframe
+                title="Delhi Office Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14005.14389657065!2d77.26084615!3d28.6511677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfc8d45ba8903%3A0xc0fb19ce77de144e!2sGandhi%20Nagar%2C%20New%20Delhi%2C%20Delhi%20110031!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
 

@@ -28,7 +28,7 @@ export default function QuickViewModal({ product, onClose }) {
       >
         {/* Backdrop */}
         <motion.div
-          className="absolute inset-0 bg-navy-950/70 backdrop-blur-sm"
+          className="absolute inset-0 bg-navy-950/70 backdrop-blur-sm h-20"
           onClick={onClose}
         />
 

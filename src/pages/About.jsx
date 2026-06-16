@@ -26,11 +26,11 @@ const stats = [
 
 export default function About() {
   return (
-    <main className="min-h-screen pt-16 bg-stone-50">
+    <main className="min-h-screen bg-stone-50">
       <title>About Us — NIYO Uni-formals</title>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800 py-28 px-4 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800 pt-36 pb-28 px-4 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04]"
           style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '32px 32px' }}
         />

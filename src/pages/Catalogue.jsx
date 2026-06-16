@@ -81,45 +81,45 @@ export default function Catalogue() {
   const banner = getCategoryBanner(filters.category)
 
   return (
-    <main className="min-h-screen bg-obsidian-50 pt-[72px]">
+    <main className="min-h-screen bg-obsidian-50">
       <title>Catalogue — NIYO Uni-formals</title>
 
       {/* Category Header Banner Strip */}
-      <div className={`w-full py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden transition-all duration-300 ${banner.bgClass}`}>
+      <div className={`w-full pt-32 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden transition-all duration-300 ${banner.bgClass}`}>
         <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:24px_24px]" />
-        
-        {/* Glow effect */}
-        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-electric-500/20 rounded-full blur-[100px] -translate-y-1/2 pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
+        {/* Glow effect */}
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-electric-500/20 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+
+        <div className="max-w-4xl mx-auto flex flex-col items-center justify-center text-center gap-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="shrink-0 mb-2"
+          >
+            {filters.category ? (
+              <span className="px-4 py-2 glass-panel-dark text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider rounded-full border border-white/10 shadow-xl inline-flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-electric-400"></span> Premium Identity
+              </span>
+            ) : (
+              <span className="px-4 py-2 glass-panel-dark text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider rounded-full border border-electric-500/30 shadow-[0_0_15px_rgba(59,130,246,0.2)] inline-flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-electric-400"></span> All Products
+              </span>
+            )}
+          </motion.div>
+
           <motion.div
             key={filters.category || 'all'}
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="max-w-2xl"
           >
             <h1 className={`text-4xl sm:text-5xl md:text-6xl font-display font-bold mb-4 tracking-tight ${banner.titleColor}`}>
               {banner.title}
             </h1>
-            <p className={`text-sm sm:text-base md:text-lg leading-relaxed font-light ${banner.textColor}`}>
+            <p className={`text-sm sm:text-base md:text-lg leading-relaxed font-light ${banner.textColor} max-w-2xl mx-auto`}>
               {banner.desc}
             </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="shrink-0"
-          >
-            {filters.category ? (
-              <span className="px-5 py-2.5 glass-panel-dark text-white text-xs font-bold uppercase tracking-wider rounded-xl border border-white/10 shadow-xl inline-flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-electric-400"></span> Premium Identity
-              </span>
-            ) : (
-              <span className="px-5 py-2.5 glass-panel-dark text-white text-xs font-bold uppercase tracking-wider rounded-xl border border-electric-500/30 shadow-[0_0_15px_rgba(59,130,246,0.2)] inline-flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-electric-400"></span> All Products
-              </span>
-            )}
           </motion.div>
         </div>
       </div>
@@ -244,11 +244,10 @@ export default function Catalogue() {
                       <button
                         key={i}
                         onClick={() => setPage(i + 1)}
-                        className={`w-12 h-12 rounded-xl text-sm font-bold transition-all shadow-sm ${
-                          page === i + 1
+                        className={`w-12 h-12 rounded-xl text-sm font-bold transition-all shadow-sm ${page === i + 1
                             ? 'bg-electric-500 text-white shadow-electric-500/30'
                             : 'border border-obsidian-200 text-obsidian-600 hover:bg-white hover:border-obsidian-300 hover:shadow-md'
-                        }`}
+                          }`}
                       >
                         {i + 1}
                       </button>
