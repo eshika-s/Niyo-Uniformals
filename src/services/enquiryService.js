@@ -1,48 +1,82 @@
-import { supabase } from '@/lib/supabase'
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 export const enquiryService = {
   async getAll({ type, status, search, dateFrom, dateTo, page = 1, limit = 50 } = {}) {
-    let query = supabase
-      .from('enquiries')
-      .select('*, products(id, name)', { count: 'exact' })
-      .order('created_at', { ascending: false })
-      .range((page - 1) * limit, page * limit - 1)
+    try {
+      const params = new URLSearchParams();
+      if (type) params.append('type', type);
+      if (status) params.append('status', status);
+      if (search) params.append('search', search);
+      if (dateFrom) params.append('dateFrom', dateFrom);
+      if (dateTo) params.append('dateTo', dateTo);
+      params.append('page', page);
+      params.append('limit', limit);
 
-    if (type) query = query.eq('type', type)
-    if (status) query = query.eq('status', status)
-    if (search) query = query.or(`customer_name.ilike.%${search}%,phone.ilike.%${search}%`)
-    if (dateFrom) query = query.gte('created_at', dateFrom)
-    if (dateTo) query = query.lte('created_at', dateTo)
-
-    return query
+      const res = await fetch(`${API_URL}/enquiries?${params.toString()}`);
+      if (!res.ok) throw new Error('Failed to fetch enquiries');
+      return await res.json(); // { data, count }
+    } catch (error) {
+      console.error(error);
+      return { data: [], count: 0, error };
+    }
   },
 
   async create(data) {
-    // Map `name` → `customer_name` to match DB schema
-    const { name, ...rest } = data
-    return supabase.from('enquiries').insert({ ...rest, customer_name: name ?? data.customer_name }).select().single()
+    try {
+      const res = await fetch(`${API_URL}/enquiries`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error('Failed to create enquiry');
+      return await res.json(); // { data }
+    } catch (error) {
+      console.error(error);
+      return { data: null, error };
+    }
   },
 
   async updateStatus(id, status) {
-    return supabase.from('enquiries').update({ status }).eq('id', id).select().single()
+    try {
+      const res = await fetch(`${API_URL}/enquiries/${id}/status`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status }),
+      });
+      if (!res.ok) throw new Error('Failed to update enquiry status');
+      return await res.json(); // { data }
+    } catch (error) {
+      console.error(error);
+      return { data: null, error };
+    }
   },
 
   async delete(id) {
-    return supabase.from('enquiries').delete().eq('id', id)
+    try {
+      const res = await fetch(`${API_URL}/enquiries/${id}`, {
+        method: 'DELETE',
+      });
+      if (!res.ok) throw new Error('Failed to delete enquiry');
+      return { data: null, error: null };
+    } catch (error) {
+      console.error(error);
+      return { data: null, error };
+    }
   },
 
   async getStats() {
-    const today = new Date().toISOString().split('T')[0]
-    const [total, todayCount, unread] = await Promise.all([
-      supabase.from('enquiries').select('*', { count: 'exact', head: true }),
-      supabase.from('enquiries').select('*', { count: 'exact', head: true }).gte('created_at', today),
-      supabase.from('enquiries').select('*', { count: 'exact', head: true }).eq('status', 'new'),
-    ])
-    return {
-      // `enquiries` key used by Dashboard stats spread
-      enquiries: total.count ?? 0,
-      today: todayCount.count ?? 0,
-      unread: unread.count ?? 0,
+    try {
+      const res = await fetch(`${API_URL}/enquiries/stats`);
+      if (!res.ok) throw new Error('Failed to fetch stats');
+      const { data } = await res.json();
+      return data;
+    } catch (error) {
+      console.error(error);
+      return {
+        enquiries: 0,
+        today: 0,
+        unread: 0,
+      };
     }
   },
-}
+};
