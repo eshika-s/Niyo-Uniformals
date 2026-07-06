@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { ShieldCheck } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -91,6 +92,14 @@ export default function Footer() {
             <Link to="/terms" className="hover:text-electric-400 transition-colors">Terms</Link>
             <div className="w-1 h-1 bg-obsidian-700 rounded-full"></div>
             <Link to="/privacy" className="hover:text-electric-400 transition-colors">Privacy</Link>
+            <div className="w-1 h-1 bg-obsidian-700 rounded-full"></div>
+            <Link
+              to="/admin"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gold-500/15 border border-gold-500/30 text-gold-400 hover:bg-gold-500/25 hover:border-gold-400/50 hover:text-gold-300 transition-all"
+            >
+              <ShieldCheck size={11} />
+              Admin Panel
+            </Link>
           </div>
         </div>
 

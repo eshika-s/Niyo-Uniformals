@@ -1,7 +1,8 @@
 import { useState, useEffect, useMemo } from 'react'
 import {
   Plus, Pencil, Trash2, Star, StarOff, Loader2, Package,
-  X, Upload, Eye, EyeOff, Search, Filter, ChevronUp, ChevronDown
+  X, Upload, Eye, EyeOff, Search, Filter, ChevronUp, ChevronDown,
+  Grid2x2, List, CheckSquare, Square, Minus, LayoutGrid
 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import AdminLayout from '@/components/layout/AdminLayout'
@@ -236,6 +237,9 @@ export default function AdminProducts() {
   const [showForm, setShowForm] = useState(false)
   const [search, setSearch] = useState('')
   const [catFilter, setCatFilter] = useState('')
+  const [view, setView] = useState('table') // 'table' | 'grid'
+  const [selected, setSelected] = useState(new Set()) // Set of product IDs
+  const [bulkLoading, setBulkLoading] = useState(false)
   const { categories } = useCategories()
 
   const load = async () => {
@@ -277,16 +281,81 @@ export default function AdminProducts() {
     return list
   }, [products, search, catFilter])
 
+  // ─── Bulk operations ──────────────────────────────────────────────────────
+  const allIds = filtered.map(p => p.id)
+  const allSelected = allIds.length > 0 && allIds.every(id => selected.has(id))
+  const someSelected = allIds.some(id => selected.has(id)) && !allSelected
+
+  const toggleSelect = (id) => setSelected(prev => {
+    const next = new Set(prev)
+    next.has(id) ? next.delete(id) : next.add(id)
+    return next
+  })
+
+  const toggleSelectAll = () => {
+    if (allSelected) setSelected(new Set())
+    else setSelected(new Set(allIds))
+  }
+
+  const clearSelection = () => setSelected(new Set())
+
+  const bulkOp = async (op) => {
+    if (!selected.size) return
+    setBulkLoading(true)
+    try {
+      const ids = [...selected]
+      if (op === 'delete') {
+        if (!confirm(`Delete ${ids.length} products? This cannot be undone.`)) return setBulkLoading(false)
+        await Promise.all(ids.map(id => productService.delete(id)))
+        toast.success(`${ids.length} products deleted`)
+      } else if (op === 'hide') {
+        await Promise.all(ids.map(id => productService.update(id, { is_visible: false })))
+        toast.success(`${ids.length} products hidden`)
+      } else if (op === 'show') {
+        await Promise.all(ids.map(id => productService.update(id, { is_visible: true })))
+        toast.success(`${ids.length} products made visible`)
+      } else if (op === 'feature') {
+        await Promise.all(ids.map(id => productService.update(id, { is_featured: true })))
+        toast.success(`${ids.length} products featured`)
+      } else if (op === 'unfeature') {
+        await Promise.all(ids.map(id => productService.update(id, { is_featured: false })))
+        toast.success(`${ids.length} products unfeatured`)
+      }
+      clearSelection()
+      load()
+    } catch { toast.error('Bulk operation failed') }
+    finally { setBulkLoading(false) }
+  }
+
   const addBtn = (
-    <motion.button
-      id="admin-add-product-btn"
-      onClick={() => { setEditing(null); setShowForm(true) }}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-      className="flex items-center gap-2 px-5 py-2.5 bg-navy-700 text-white text-sm font-semibold rounded-xl hover:bg-navy-800 transition-colors"
-    >
-      <Plus size={16} /> Add Product
-    </motion.button>
+    <div className="flex items-center gap-2">
+      {/* View toggle */}
+      <div className="flex items-center gap-1 bg-white border border-slate-200 rounded-xl p-1">
+        <button
+          onClick={() => setView('table')}
+          className={`p-2 rounded-lg transition-colors ${view === 'table' ? 'bg-navy-700 text-white' : 'text-slate-400 hover:text-navy-700'}`}
+          title="Table view"
+        >
+          <List size={15} />
+        </button>
+        <button
+          onClick={() => setView('grid')}
+          className={`p-2 rounded-lg transition-colors ${view === 'grid' ? 'bg-navy-700 text-white' : 'text-slate-400 hover:text-navy-700'}`}
+          title="Grid view"
+        >
+          <LayoutGrid size={15} />
+        </button>
+      </div>
+      <motion.button
+        id="admin-add-product-btn"
+        onClick={() => { setEditing(null); setShowForm(true) }}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        className="flex items-center gap-2 px-5 py-2.5 bg-navy-700 text-white text-sm font-semibold rounded-xl hover:bg-navy-800 transition-colors"
+      >
+        <Plus size={16} /> Add Product
+      </motion.button>
+    </div>
   )
 
   return (
@@ -335,12 +404,124 @@ export default function AdminProducts() {
         )}
       </motion.div>
 
-      {/* Table */}
+      {/* Bulk Action Bar */}
+      <AnimatePresence>
+        {selected.size > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 flex items-center gap-3 bg-navy-900 text-white px-5 py-3 rounded-2xl shadow-2xl border border-white/10"
+          >
+            {bulkLoading && <Loader2 size={15} className="animate-spin text-gold-400" />}
+            <span className="text-sm font-semibold">{selected.size} selected</span>
+            <div className="w-px h-5 bg-white/20" />
+            <button onClick={() => bulkOp('show')} className="text-xs font-medium px-3 py-1.5 bg-white/10 hover:bg-emerald-500/30 rounded-lg transition-colors flex items-center gap-1.5">
+              <Eye size={12} /> Show
+            </button>
+            <button onClick={() => bulkOp('hide')} className="text-xs font-medium px-3 py-1.5 bg-white/10 hover:bg-white/20 rounded-lg transition-colors flex items-center gap-1.5">
+              <EyeOff size={12} /> Hide
+            </button>
+            <button onClick={() => bulkOp('feature')} className="text-xs font-medium px-3 py-1.5 bg-white/10 hover:bg-gold-500/30 rounded-lg transition-colors flex items-center gap-1.5">
+              <Star size={12} /> Feature
+            </button>
+            <button onClick={() => bulkOp('unfeature')} className="text-xs font-medium px-3 py-1.5 bg-white/10 hover:bg-white/20 rounded-lg transition-colors flex items-center gap-1.5">
+              <StarOff size={12} /> Unfeature
+            </button>
+            <div className="w-px h-5 bg-white/20" />
+            <button onClick={() => bulkOp('delete')} className="text-xs font-medium px-3 py-1.5 bg-red-500/20 hover:bg-red-500/40 rounded-lg transition-colors flex items-center gap-1.5 text-red-300">
+              <Trash2 size={12} /> Delete
+            </button>
+            <button onClick={clearSelection} className="p-1.5 hover:bg-white/10 rounded-lg transition-colors text-slate-400">
+              <X size={13} />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Table / Grid */}
       {loading ? (
         <div className="space-y-3">
           {[...Array(5)].map((_, i) => <div key={i} className="h-16 bg-white rounded-2xl animate-pulse border border-slate-100" />)}
         </div>
+      ) : view === 'grid' ? (
+        /* ── Grid View ── */
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
+          <AnimatePresence initial={false}>
+            {filtered.map(p => (
+              <motion.div
+                key={p.id}
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                className={`bg-white rounded-2xl border shadow-sm overflow-hidden group transition-all hover:shadow-md ${
+                  selected.has(p.id) ? 'border-navy-400 ring-2 ring-navy-200' : 'border-slate-100'
+                } ${!p.is_visible ? 'opacity-50' : ''}`}
+              >
+                {/* Image */}
+                <div className="relative aspect-[4/3] bg-slate-100">
+                  {p.images?.[0]
+                    ? <img src={p.images[0]} alt={p.name} className="w-full h-full object-cover" />
+                    : <Package size={32} className="text-slate-200 absolute inset-0 m-auto" />
+                  }
+                  {/* Select checkbox */}
+                  <button
+                    onClick={() => toggleSelect(p.id)}
+                    className="absolute top-2 left-2 p-0.5 rounded-lg bg-white/90 shadow"
+                  >
+                    {selected.has(p.id)
+                      ? <CheckSquare size={16} className="text-navy-700" />
+                      : <Square size={16} className="text-slate-300" />
+                    }
+                  </button>
+                  {p.is_featured && (
+                    <span className="absolute top-2 right-2 p-1 bg-gold-500 rounded-lg">
+                      <Star size={12} className="text-white" fill="currentColor" />
+                    </span>
+                  )}
+                </div>
+                {/* Content */}
+                <div className="p-3">
+                  <p className="text-sm font-semibold text-navy-900 line-clamp-1">{p.name}</p>
+                  <p className="text-xs text-slate-400 mt-0.5">{p.categories?.name || '—'}</p>
+                  {p.price_range && <p className="text-xs text-slate-500 mt-1 font-medium">{p.price_range}</p>}
+                </div>
+                {/* Actions */}
+                <div className="flex items-center justify-between px-3 pb-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="flex items-center gap-1">
+                    <button onClick={() => toggleFeatured(p.id, p.is_featured)} className="p-1.5 hover:bg-slate-100 rounded-lg">
+                      {p.is_featured ? <Star size={13} className="text-gold-500" fill="currentColor" /> : <StarOff size={13} className="text-slate-300" />}
+                    </button>
+                    <button onClick={() => toggleVisible(p.id, p.is_visible)} className="p-1.5 hover:bg-slate-100 rounded-lg">
+                      {p.is_visible ? <Eye size={13} className="text-emerald-500" /> : <EyeOff size={13} className="text-slate-300" />}
+                    </button>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <button onClick={() => { setEditing(p); setShowForm(true) }} className="p-1.5 hover:bg-slate-100 rounded-lg text-slate-400 hover:text-navy-700">
+                      <Pencil size={13} />
+                    </button>
+                    <button onClick={() => handleDelete(p.id)} className="p-1.5 hover:bg-red-50 rounded-lg text-slate-400 hover:text-red-600">
+                      <Trash2 size={13} />
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+          {filtered.length === 0 && (
+            <div className="col-span-full py-16 text-center text-slate-400">
+              <Package size={40} className="mx-auto mb-3 opacity-30" />
+              <p className="font-medium">{search || catFilter ? 'No products match your filters' : 'No products yet'}</p>
+            </div>
+          )}
+        </motion.div>
       ) : (
+        /* ── Table View ── */
         <motion.div 
           className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden"
           initial={{ opacity: 0 }}
@@ -350,7 +531,18 @@ export default function AdminProducts() {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-slate-100 bg-slate-50/50">
-                <th className="text-left px-6 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wider">Product</th>
+                {/* Select all checkbox */}
+                <th className="px-4 py-3 w-10">
+                  <button onClick={toggleSelectAll} className="p-0.5">
+                    {allSelected
+                      ? <CheckSquare size={16} className="text-navy-700" />
+                      : someSelected
+                        ? <Minus size={16} className="text-navy-400" />
+                        : <Square size={16} className="text-slate-300" />
+                    }
+                  </button>
+                </th>
+                <th className="text-left px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wider">Product</th>
                 <th className="text-left px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wider hidden md:table-cell">Category</th>
                 <th className="text-left px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wider hidden lg:table-cell">Price</th>
                 <th className="px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wider text-center">Featured</th>
@@ -368,9 +560,20 @@ export default function AdminProducts() {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.2 }}
-                    className={`hover:bg-slate-50/50 transition-colors ${!p.is_visible ? 'opacity-50' : ''}`}
+                    className={`hover:bg-slate-50/50 transition-colors ${!p.is_visible ? 'opacity-50' : ''} ${
+                      selected.has(p.id) ? 'bg-navy-50/60' : ''
+                    }`}
                   >
-                    <td className="px-6 py-4">
+                    {/* Checkbox */}
+                    <td className="px-4 py-4 w-10">
+                      <button onClick={() => toggleSelect(p.id)} className="p-0.5">
+                        {selected.has(p.id)
+                          ? <CheckSquare size={15} className="text-navy-700" />
+                          : <Square size={15} className="text-slate-300" />
+                        }
+                      </button>
+                    </td>
+                    <td className="px-4 py-4">
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-lg bg-slate-100 overflow-hidden shrink-0">
                           {p.images?.[0]
@@ -437,7 +640,7 @@ export default function AdminProducts() {
           </table>
 
           {filtered.length === 0 && (
-            <div className="py-16 text-center text-slate-400">
+            <div className="col-span-full py-16 text-center text-slate-400">
               <Package size={40} className="mx-auto mb-3 opacity-30" />
               <p className="font-medium">{search || catFilter ? 'No products match your filters' : 'No products yet'}</p>
               <p className="text-xs mt-1">{search || catFilter ? 'Try clearing the search or filter' : 'Click "Add Product" to get started'}</p>

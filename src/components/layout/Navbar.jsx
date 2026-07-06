@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, UserCircle } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Navbar() {
@@ -110,7 +110,18 @@ export default function Navbar() {
             </nav>
 
             {/* CTAs */}
-            <div className="hidden md:flex items-center gap-4">
+            <div className="hidden md:flex items-center gap-3">
+              <button
+                onClick={() => navigate('/login')}
+                className={`flex items-center gap-2 px-4 py-2.5 text-sm font-semibold rounded-xl transition-all ${
+                  scrolled
+                    ? 'text-obsidian-600 hover:text-electric-600 border border-obsidian-200 hover:border-electric-300 bg-white hover:bg-electric-50'
+                    : 'text-white/80 border border-white/20 hover:border-white/40 hover:bg-white/10 backdrop-blur-sm'
+                }`}
+              >
+                <UserCircle size={16} />
+                Sign In
+              </button>
               <button
                 onClick={() => navigate('/bulk-order')}
                 className={`px-6 py-2.5 text-sm font-bold rounded-xl transition-all hover:-translate-y-0.5 shadow-lg ${
@@ -156,7 +167,13 @@ export default function Navbar() {
                 <NavLink to="/about" onClick={() => setOpen(false)} className="px-4 py-3 rounded-xl font-semibold text-obsidian-700 hover:bg-obsidian-50">About</NavLink>
                 <NavLink to="/contact" onClick={() => setOpen(false)} className="px-4 py-3 rounded-xl font-semibold text-obsidian-700 hover:bg-obsidian-50">Contact</NavLink>
 
-                <div className="mt-4 pt-4 border-t border-obsidian-100">
+                <div className="mt-4 pt-4 border-t border-obsidian-100 space-y-2">
+                  <button
+                    onClick={() => { navigate('/login'); setOpen(false) }}
+                    className="w-full flex items-center justify-center gap-2 px-5 py-3 border-2 border-obsidian-200 text-obsidian-700 font-bold rounded-xl"
+                  >
+                    <UserCircle size={16} /> Sign In
+                  </button>
                   <button
                     onClick={() => { navigate('/bulk-order'); setOpen(false) }}
                     className="w-full px-5 py-3.5 bg-electric-500 text-white font-bold rounded-xl shadow-lg"

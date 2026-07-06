@@ -16,6 +16,8 @@ import ProductDetail from '@/pages/ProductDetail'
 import About from '@/pages/About'
 import Contact from '@/pages/Contact'
 import BulkOrder from '@/pages/BulkOrder'
+import CustomerLogin from '@/pages/CustomerLogin'
+import VirtualShowroom from '@/pages/VirtualShowroom'
 
 // Admin pages
 import AdminLogin from '@/pages/admin/Login'
@@ -24,6 +26,10 @@ import AdminProducts from '@/pages/admin/Products'
 import AdminCategories from '@/pages/admin/Categories'
 import AdminEnquiries from '@/pages/admin/Enquiries'
 import AdminSettings from '@/pages/admin/Settings'
+import AdminMedia from '@/pages/admin/Media'
+import AdminTestimonials from '@/pages/admin/Testimonials'
+import AdminBanners from '@/pages/admin/Banners'
+import AdminPages from '@/pages/admin/Pages'
 
 // Public layout wrapper
 const pageVariants = {
@@ -100,9 +106,13 @@ function AppRoutes() {
         <Route path="/bulk-order" element={<BulkOrder />} />
       </Route>
 
+      {/* Customer login — standalone (no nav/footer) */}
+      <Route path="/login" element={<CustomerLogin />} />
+      <Route path="/signup" element={<CustomerLogin />} />
+      <Route path="/showroom" element={<VirtualShowroom />} />
+
       {/* Admin login */}
       <Route path="/admin" element={<AdminLogin />} />
-      <Route path="/login" element={<Navigate to="/admin" replace />} />
 
       {/* Protected admin routes */}
       <Route element={<ProtectedRoute />}>
@@ -111,6 +121,10 @@ function AppRoutes() {
         <Route path="/admin/categories" element={<AdminCategories />} />
         <Route path="/admin/enquiries" element={<AdminEnquiries />} />
         <Route path="/admin/settings" element={<AdminSettings />} />
+        <Route path="/admin/media" element={<AdminMedia />} />
+        <Route path="/admin/testimonials" element={<AdminTestimonials />} />
+        <Route path="/admin/banners" element={<AdminBanners />} />
+        <Route path="/admin/pages" element={<AdminPages />} />
       </Route>
 
       {/* 404 fallback */}

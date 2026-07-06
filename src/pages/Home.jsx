@@ -243,7 +243,7 @@ export default function Home() {
               Start Bulk Enquiry
             </button>
             <button
-              onClick={() => navigate('/about')}
+              onClick={() => navigate('/showroom')}
               className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold rounded-xl backdrop-blur-md transition-all"
             >
               Virtual Showroom Tour
