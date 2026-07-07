@@ -21,7 +21,7 @@ export default function CustomerLogin() {
   const [form, setForm] = useState({ name: '', email: '', password: '', confirm: '' })
   const [showPass, setShowPass] = useState(false)
   const [loading, setLoading] = useState(false)
-  const { signIn, signInWithGoogle, user, loading: authLoading, supabase } = useAuth()
+  const { signIn, signInWithGoogle, user, loading: authLoading } = useAuth()
   const navigate = useNavigate()
 
   // Redirect if already logged in
@@ -50,16 +50,33 @@ export default function CustomerLogin() {
     if (form.password.length < 6) return toast.error('Password must be at least 6 characters')
     setLoading(true)
     try {
-      const { error } = await supabase.auth.signUp({
+      const { data, error } = await supabase.auth.signUp({
         email: form.email,
         password: form.password,
         options: { data: { full_name: form.name } },
       })
       if (error) throw error
-      toast.success('Account created! Please check your email to verify.')
-      setMode('login')
+
+      // If email confirmation is disabled, Supabase returns a session immediately
+      if (data?.session) {
+        toast.success(`Welcome, ${form.name}! 🎉`)
+        navigate('/')
+      } else {
+        // Email confirmation is required — user must verify before logging in
+        toast.success('📧 Check your email inbox! Click the confirmation link to activate your account, then sign in here.', { duration: 8000 })
+        setMode('login')
+        setForm(p => ({ ...p, password: '', confirm: '' }))
+      }
     } catch (err) {
-      toast.error(err?.message || 'Signup failed. Please try again.')
+      const msg = err?.message || ''
+      if (msg.toLowerCase().includes('rate') || msg.toLowerCase().includes('exceeded')) {
+        toast.error('Too many attempts. Please wait a moment and try again.')
+      } else if (msg.toLowerCase().includes('already registered') || msg.toLowerCase().includes('already been registered')) {
+        toast.error('This email is already registered. Please sign in instead.')
+        setMode('login')
+      } else {
+        toast.error(msg || 'Signup failed. Please try again.')
+      }
     }
     setLoading(false)
   }
@@ -85,7 +102,7 @@ export default function CustomerLogin() {
   // ── Google Sign In ─────────────────────────────────────────────
   const handleGoogle = async () => {
     setLoading(true)
-    const { error } = await signInWithGoogle()
+    const { error } = await signInWithGoogle('/')
     if (error) { toast.error('Google sign-in failed'); setLoading(false) }
   }
 

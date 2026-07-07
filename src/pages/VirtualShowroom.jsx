@@ -26,7 +26,7 @@ const ZONES = [
       { name: 'Patient Gown',   price: '₹180–₹280', image: '/images/unisex_hospital_gown.png' },
     ],
     features: ['Anti-microbial treated fabric', 'Liquid barrier finish', 'Autoclave-safe options', 'Custom embroidery'],
-    slug: 'medical',
+    slug: '00000000-0000-0000-0000-000000000001',
   },
   {
     id: 'corporate',
@@ -44,7 +44,7 @@ const ZONES = [
       { name: "Women's Blazer",     price: '₹950–₹1,400',   image: '/images/corporate_womens_blazer.png' },
     ],
     features: ['Premium tropical wool', 'Custom satin lining', 'Logo embroidery', 'Pan India delivery'],
-    slug: 'corporate',
+    slug: '00000000-0000-0000-0000-000000000003',
   },
   {
     id: 'hospitality',
@@ -62,7 +62,7 @@ const ZONES = [
       { name: 'Housekeeping Set', price: '₹390–₹550',   image: '/images/hospitality_coat.png' },
     ],
     features: ['Stain-resistant twill', 'Breathable mesh panels', 'Multiple pocket design', 'Durable zippers'],
-    slug: 'hospitality',
+    slug: '00000000-0000-0000-0000-000000000002',
   },
   {
     id: 'school',
@@ -80,7 +80,7 @@ const ZONES = [
       { name: 'Sports Jersey',  price: '₹250–₹390',   image: '/images/sports_jersey.png' },
     ],
     features: ['Terry-wool blend', 'Fade-resistant colour', 'Pilling-resistant', 'Min. 100 pieces'],
-    slug: 'school',
+    slug: '00000000-0000-0000-0000-000000000005',
   },
   {
     id: 'industrial',
@@ -98,7 +98,7 @@ const ZONES = [
       { name: 'Lab Apron',          price: '₹90–₹150',    image: '/images/medical_lab_apron.png' },
     ],
     features: ['Flame-retardant Nomex', '3M reflective tape', 'Heavy-duty brass zips', 'EN ISO certified'],
-    slug: 'industrial',
+    slug: '00000000-0000-0000-0000-000000000008',
   },
   {
     id: 'aviation',
@@ -116,7 +116,7 @@ const ZONES = [
       { name: 'Doctor / Consultant Blazer', price: '₹950–₹1,400', image: '/images/doctor_blazer.png' },
     ],
     features: ['Superfine gabardine', 'Silk scarf included', 'Epaulette shoulder loops', 'Bespoke tailoring'],
-    slug: 'airline',
+    slug: '00000000-0000-0000-0000-000000000003',
   },
 ]
 
@@ -232,7 +232,7 @@ export default function VirtualShowroom() {
   const next = () => goTo((activeZone + 1) % ZONES.length)
 
   const handleEnquire = (product) => {
-    navigate(`/catalogue?category=${zone.slug}&q=${encodeURIComponent(product.name)}`)
+    navigate(`/catalogue?category=${zone.slug}&search=${encodeURIComponent(product.name)}`)
   }
 
   return (

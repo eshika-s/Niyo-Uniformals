@@ -30,11 +30,11 @@ export function AuthProvider({ children }) {
     return { data, error }
   }
 
-  const signInWithGoogle = async () => {
+  const signInWithGoogle = async (redirectPath = '/admin/dashboard') => {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: `${window.location.origin}/admin/dashboard`
+        redirectTo: `${window.location.origin}${redirectPath}`
       }
     })
     return { data, error }

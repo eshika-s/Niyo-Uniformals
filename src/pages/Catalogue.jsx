@@ -18,16 +18,24 @@ const getCategoryBanner = (categoryId) => {
   }
 
   switch (categoryId) {
-    case 'cat-medical':
+    case '00000000-0000-0000-0000-000000000001':
       return { ...baseBanner, title: 'Healthcare & Hospital', desc: 'Professional scrubs, lab coats, and staff wear crafted for hygiene, flexibility, and daily durability.' }
-    case 'cat-school':
+    case '00000000-0000-0000-0000-000000000005':
       return { ...baseBanner, title: 'Education & PE', desc: 'Comfortable, long-lasting, and smart school shirts, trousers, skirts, blazers, and PE tracks.' }
-    case 'cat-hospitality':
+    case '00000000-0000-0000-0000-000000000002':
       return { ...baseBanner, title: 'Hotel & Hospitality', desc: 'Premium chef coats, waiter uniforms, aprons, and hospitality front-desk wear.' }
-    case 'cat-corporate':
+    case '00000000-0000-0000-0000-000000000003':
       return { ...baseBanner, title: 'Corporate & Executive', desc: 'Tailored suits, blazers, shirts, and trousers designed for a modern professional corporate identity.' }
-    case 'cat-industrial':
+    case '00000000-0000-0000-0000-000000000008':
       return { ...baseBanner, title: 'Industrial Workwear', desc: 'Heavy-duty coveralls, safety shirts, and boiler suits engineered for safety and durability.' }
+    case '00000000-0000-0000-0000-000000000004':
+      return { ...baseBanner, title: 'Advocates & Legal', desc: 'Traditional legal coats, gowns, and court dress for advocates and legal professionals.' }
+    case '00000000-0000-0000-0000-000000000006':
+      return { ...baseBanner, title: 'Convocation Gowns', desc: 'Elegant graduation gowns, hoods, and caps for colleges and universities across India.' }
+    case '00000000-0000-0000-0000-000000000007':
+      return { ...baseBanner, title: 'Security & Defence', desc: 'Durable tactical uniforms, guard wear, and defence-grade clothing for security professionals.' }
+    case '00000000-0000-0000-0000-000000000009':
+      return { ...baseBanner, title: 'Sports & PE', desc: 'High-performance sports jerseys, tracksuits, and athletic wear for schools and clubs.' }
     default:
       return { ...baseBanner, title: 'The Complete Collection', desc: 'Browse our entire range of premium uniforms and corporate clothing identity solutions.' }
   }

@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
-import { Menu, X, UserCircle } from 'lucide-react'
+import { Menu, X, UserCircle, LogOut, ChevronDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useAuth } from '@/context/AuthContext'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -111,17 +112,7 @@ export default function Navbar() {
 
             {/* CTAs */}
             <div className="hidden md:flex items-center gap-3">
-              <button
-                onClick={() => navigate('/login')}
-                className={`flex items-center gap-2 px-4 py-2.5 text-sm font-semibold rounded-xl transition-all ${
-                  scrolled
-                    ? 'text-obsidian-600 hover:text-electric-600 border border-obsidian-200 hover:border-electric-300 bg-white hover:bg-electric-50'
-                    : 'text-white/80 border border-white/20 hover:border-white/40 hover:bg-white/10 backdrop-blur-sm'
-                }`}
-              >
-                <UserCircle size={16} />
-                Sign In
-              </button>
+              <UserButton scrolled={scrolled} navigate={navigate} />
               <button
                 onClick={() => navigate('/bulk-order')}
                 className={`px-6 py-2.5 text-sm font-bold rounded-xl transition-all hover:-translate-y-0.5 shadow-lg ${
@@ -168,12 +159,7 @@ export default function Navbar() {
                 <NavLink to="/contact" onClick={() => setOpen(false)} className="px-4 py-3 rounded-xl font-semibold text-obsidian-700 hover:bg-obsidian-50">Contact</NavLink>
 
                 <div className="mt-4 pt-4 border-t border-obsidian-100 space-y-2">
-                  <button
-                    onClick={() => { navigate('/login'); setOpen(false) }}
-                    className="w-full flex items-center justify-center gap-2 px-5 py-3 border-2 border-obsidian-200 text-obsidian-700 font-bold rounded-xl"
-                  >
-                    <UserCircle size={16} /> Sign In
-                  </button>
+                  <MobileUserButton navigate={navigate} setOpen={setOpen} />
                   <button
                     onClick={() => { navigate('/bulk-order'); setOpen(false) }}
                     className="w-full px-5 py-3.5 bg-electric-500 text-white font-bold rounded-xl shadow-lg"
@@ -187,5 +173,117 @@ export default function Navbar() {
         </AnimatePresence>
       </header>
     </>
+  )
+}
+
+// ── Desktop user button / avatar ──────────────────────────────────────────────
+function UserButton({ scrolled, navigate }) {
+  const [dropOpen, setDropOpen] = useState(false)
+  const { user, signOut } = useAuth()
+
+  if (!user) {
+    return (
+      <button
+        onClick={() => navigate('/login')}
+        className={`flex items-center gap-2 px-4 py-2.5 text-sm font-semibold rounded-xl transition-all ${
+          scrolled
+            ? 'text-obsidian-600 hover:text-electric-600 border border-obsidian-200 hover:border-electric-300 bg-white hover:bg-electric-50'
+            : 'text-white/80 border border-white/20 hover:border-white/40 hover:bg-white/10 backdrop-blur-sm'
+        }`}
+      >
+        <UserCircle size={16} />
+        Sign In
+      </button>
+    )
+  }
+
+  const initial = (user.user_metadata?.full_name || user.email || 'U')[0].toUpperCase()
+  const name = user.user_metadata?.full_name || ''
+  const email = user.email || ''
+
+  return (
+    <div className="relative">
+      <button
+        onClick={() => setDropOpen(v => !v)}
+        className="flex items-center gap-2 group"
+      >
+        <div className="w-9 h-9 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center text-obsidian-900 font-bold text-sm shadow-md ring-2 ring-gold-400/30 group-hover:ring-gold-400/60 transition-all">
+          {initial}
+        </div>
+        <ChevronDown size={14} className={`transition-transform duration-200 ${scrolled ? 'text-obsidian-500' : 'text-white/60'} ${dropOpen ? 'rotate-180' : ''}`} />
+      </button>
+
+      <AnimatePresence>
+        {dropOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 8, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 8, scale: 0.95 }}
+            transition={{ duration: 0.15 }}
+            className="absolute right-0 top-full mt-2 w-56 bg-white rounded-2xl shadow-2xl border border-obsidian-100 overflow-hidden z-50"
+            onMouseLeave={() => setDropOpen(false)}
+          >
+            {/* User info */}
+            <div className="px-4 py-3.5 border-b border-obsidian-50">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center text-obsidian-900 font-bold text-base shadow-sm flex-shrink-0">
+                  {initial}
+                </div>
+                <div className="min-w-0">
+                  {name && <p className="text-sm font-semibold text-obsidian-900 truncate">{name}</p>}
+                  <p className="text-xs text-obsidian-500 truncate">{email}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Sign out */}
+            <button
+              onClick={async () => { setDropOpen(false); await signOut?.(); navigate('/') }}
+              className="w-full flex items-center gap-2.5 px-4 py-3 text-sm text-red-600 hover:bg-red-50 transition-colors font-medium"
+            >
+              <LogOut size={15} />
+              Sign Out
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  )
+}
+
+// ── Mobile user button ─────────────────────────────────────────────────────────
+function MobileUserButton({ navigate, setOpen }) {
+  const { user, signOut } = useAuth()
+
+  if (!user) {
+    return (
+      <button
+        onClick={() => { navigate('/login'); setOpen(false) }}
+        className="w-full flex items-center justify-center gap-2 px-5 py-3 border-2 border-obsidian-200 text-obsidian-700 font-bold rounded-xl"
+      >
+        <UserCircle size={16} /> Sign In
+      </button>
+    )
+  }
+
+  const initial = (user.user_metadata?.full_name || user.email || 'U')[0].toUpperCase()
+  const name = user.user_metadata?.full_name || user.email || ''
+
+  return (
+    <div className="flex items-center justify-between px-4 py-3 bg-obsidian-50 rounded-xl">
+      <div className="flex items-center gap-3">
+        <div className="w-9 h-9 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center text-obsidian-900 font-bold text-sm shadow-sm">
+          {initial}
+        </div>
+        <span className="text-sm font-semibold text-obsidian-800 truncate max-w-[140px]">{name}</span>
+      </div>
+      <button
+        onClick={async () => { setOpen(false); await signOut?.(); navigate('/') }}
+        className="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors"
+        title="Sign Out"
+      >
+        <LogOut size={16} />
+      </button>
+    </div>
   )
 }

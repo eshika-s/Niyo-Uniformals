@@ -1,4 +1,16 @@
-import { Search, X, SlidersHorizontal, ChevronRight } from 'lucide-react'
+import { Search, X, SlidersHorizontal, ChevronRight, Stethoscope, Briefcase, GraduationCap, HardHat, ChefHat, ShieldCheck, Scale, GraduationCap as ConvocationIcon, Shirt, Trophy } from 'lucide-react'
+
+const PROFESSIONS = [
+  { label: 'Medical',      slug: '00000000-0000-0000-0000-000000000001', icon: Stethoscope,   color: '#0f766e' },
+  { label: 'Hospitality',  slug: '00000000-0000-0000-0000-000000000002', icon: ChefHat,        color: '#92400e' },
+  { label: 'Corporate',    slug: '00000000-0000-0000-0000-000000000003', icon: Briefcase,      color: '#1e3a8a' },
+  { label: 'Advocate',     slug: '00000000-0000-0000-0000-000000000004', icon: Scale,          color: '#4a044e' },
+  { label: 'School',       slug: '00000000-0000-0000-0000-000000000005', icon: GraduationCap,  color: '#162d6e' },
+  { label: 'Convocation',  slug: '00000000-0000-0000-0000-000000000006', icon: ConvocationIcon,color: '#713f12' },
+  { label: 'Security',     slug: '00000000-0000-0000-0000-000000000007', icon: ShieldCheck,    color: '#166534' },
+  { label: 'Industrial',   slug: '00000000-0000-0000-0000-000000000008', icon: HardHat,        color: '#c2410c' },
+  { label: 'Sports',       slug: '00000000-0000-0000-0000-000000000009', icon: Trophy,         color: '#b45309' },
+]
 
 export default function FilterPanel({ categories, filters, onChange, onClear }) {
   const hasFilters =
@@ -44,6 +56,33 @@ export default function FilterPanel({ categories, filters, onChange, onClear }) 
 
         {/* Scrollable Filters */}
         <div className="p-5 overflow-y-auto space-y-6 flex-1 custom-scrollbar">
+          {/* Profession / Sector */}
+          <div>
+            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-2">Shop by Profession</label>
+            <div className="grid grid-cols-2 gap-1.5">
+              {PROFESSIONS.map(p => {
+                const Icon = p.icon
+                const isActive = filters.category === p.slug
+                return (
+                  <button
+                    key={p.slug}
+                    type="button"
+                    onClick={() => onChange({ ...filters, category: isActive ? null : p.slug })}
+                    title={p.label}
+                    className={`flex items-center gap-2 px-2.5 py-2 text-xs font-semibold rounded-none border transition-all duration-200 ${
+                      isActive
+                        ? 'border-[#0a1128] text-white shadow-sm'
+                        : 'bg-stone-50 border-[#e2e8f0] text-slate-600 hover:bg-slate-100'
+                    }`}
+                    style={isActive ? { backgroundColor: p.color, borderColor: p.color } : {}}
+                  >
+                    <Icon size={12} style={{ color: isActive ? '#fff' : p.color }} />
+                    <span className="truncate">{p.label}</span>
+                  </button>
+                )
+              })}
+            </div>
+          </div>
           {/* Search */}
           <div>
             <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-2">Search</label>

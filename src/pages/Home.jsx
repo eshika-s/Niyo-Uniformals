@@ -5,11 +5,11 @@ import { useNavigate } from 'react-router-dom'
 import { ArrowRight, Beaker, Briefcase, GraduationCap, HardHat, ShieldCheck } from 'lucide-react'
 
 const sectors = [
-  { id: '01', title: 'Corporate', desc: 'Executive shirting & suiting', slug: 'cat-corporate', icon: Briefcase },
-  { id: '02', title: 'Medical', desc: 'Technical grade antimicrobial', slug: 'cat-medical', icon: Beaker },
-  { id: '03', title: 'Industrial', desc: 'High-tenacity workwear', slug: 'cat-industrial', icon: HardHat },
-  { id: '04', title: 'Education', desc: 'Durable institutional dress', slug: 'cat-school', icon: GraduationCap },
-  { id: '05', title: 'Security', desc: 'Tactical defense gear', slug: 'cat-security', icon: ShieldCheck },
+  { id: '01', title: 'Corporate',    desc: 'Executive shirting & suiting',    slug: '00000000-0000-0000-0000-000000000003', icon: Briefcase },
+  { id: '02', title: 'Medical',      desc: 'Technical grade antimicrobial',   slug: '00000000-0000-0000-0000-000000000001', icon: Beaker },
+  { id: '03', title: 'Industrial',   desc: 'High-tenacity workwear',          slug: '00000000-0000-0000-0000-000000000008', icon: HardHat },
+  { id: '04', title: 'Education',    desc: 'Durable institutional dress',     slug: '00000000-0000-0000-0000-000000000005', icon: GraduationCap },
+  { id: '05', title: 'Security',     desc: 'Tactical defense gear',           slug: '00000000-0000-0000-0000-000000000007', icon: ShieldCheck },
 ]
 
 export default function Home() {
